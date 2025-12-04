@@ -1,0 +1,833 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Seismic Quiz</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+            color: #fff;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 10px;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 900px;
+            background: rgba(0, 0, 0, 0.7);
+            border-radius: 20px;
+            padding: 20px;
+            box-shadow: 0 0 30px rgba(255, 105, 180, 0.3);
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .header h1 {
+            font-size: 2.5em;
+            color: #ff69b4;
+            text-shadow: 0 0 20px rgba(255, 105, 180, 0.5);
+            margin-bottom: 10px;
+        }
+
+        .header .tagline {
+            color: #ffb3d9;
+            font-size: 1.1em;
+        }
+
+        .game-screen {
+            display: none;
+        }
+
+        .game-screen.active {
+            display: block;
+        }
+
+        .start-screen {
+            text-align: center;
+            padding: 40px 20px;
+        }
+
+        .start-screen h2 {
+            font-size: 2em;
+            margin-bottom: 20px;
+            color: #ffb3d9;
+        }
+
+        .start-screen p {
+            font-size: 1.1em;
+            margin-bottom: 30px;
+            line-height: 1.6;
+        }
+
+        .btn {
+            background: linear-gradient(135deg, #ff69b4, #ff1493);
+            border: none;
+            color: white;
+            padding: 15px 40px;
+            font-size: 1.2em;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: all 0.3s;
+            box-shadow: 0 5px 15px rgba(255, 105, 180, 0.4);
+        }
+
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(255, 105, 180, 0.6);
+        }
+
+        .btn:active {
+            transform: translateY(0);
+        }
+
+        .btn:disabled {
+            background: #666;
+            cursor: not-allowed;
+            opacity: 0.5;
+        }
+
+        .game-info {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 20px;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .question-number, .prize-amount {
+            background: rgba(255, 105, 180, 0.2);
+            padding: 10px 20px;
+            border-radius: 10px;
+            font-size: 1.1em;
+            border: 2px solid #ff69b4;
+        }
+
+        .lifelines {
+            display: flex;
+            gap: 10px;
+            justify-content: center;
+            margin-bottom: 20px;
+            flex-wrap: wrap;
+        }
+
+        .lifeline-btn {
+            background: rgba(255, 182, 193, 0.3);
+            border: 2px solid #ffb6c1;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: all 0.3s;
+            font-size: 0.9em;
+        }
+
+        .lifeline-btn:hover:not(:disabled) {
+            background: rgba(255, 182, 193, 0.5);
+            transform: scale(1.05);
+        }
+
+        .lifeline-btn:disabled {
+            opacity: 0.3;
+            cursor: not-allowed;
+        }
+
+        .question-container {
+            background: rgba(255, 105, 180, 0.1);
+            border: 2px solid #ff69b4;
+            border-radius: 15px;
+            padding: 25px;
+            margin-bottom: 20px;
+            min-height: 120px;
+        }
+
+        .question-text {
+            font-size: 1.3em;
+            line-height: 1.6;
+            text-align: center;
+        }
+
+        .answers {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+
+        @media (min-width: 600px) {
+            .answers {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        .answer-btn {
+            background: rgba(30, 30, 50, 0.8);
+            border: 2px solid #ff69b4;
+            color: white;
+            padding: 20px;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: all 0.3s;
+            text-align: left;
+            font-size: 1em;
+            position: relative;
+        }
+
+        .answer-btn:hover:not(:disabled) {
+            background: rgba(255, 105, 180, 0.3);
+            transform: translateX(5px);
+        }
+
+        .answer-btn.selected {
+            background: #ff69b4;
+            border-color: #ff1493;
+        }
+
+        .answer-btn.correct {
+            background: #28a745;
+            border-color: #20c997;
+        }
+
+        .answer-btn.wrong {
+            background: #dc3545;
+            border-color: #c82333;
+        }
+
+        .answer-btn.hidden {
+            opacity: 0.2;
+            pointer-events: none;
+        }
+
+        .answer-btn:disabled {
+            cursor: not-allowed;
+        }
+
+        .action-buttons {
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .lock-btn {
+            background: linear-gradient(135deg, #ffd700, #ffed4e);
+            color: #000;
+            font-weight: bold;
+        }
+
+        .walk-btn {
+            background: linear-gradient(135deg, #ff8c00, #ffa500);
+        }
+
+        .prize-ladder {
+            background: rgba(0, 0, 0, 0.5);
+            border-radius: 10px;
+            padding: 20px;
+            margin-top: 20px;
+        }
+
+        .prize-ladder h3 {
+            color: #ff69b4;
+            margin-bottom: 15px;
+            text-align: center;
+        }
+
+        .prize-item {
+            padding: 8px 15px;
+            margin: 5px 0;
+            border-radius: 5px;
+            background: rgba(255, 255, 255, 0.1);
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .prize-item.current {
+            background: #ff69b4;
+            font-weight: bold;
+        }
+
+        .prize-item.completed {
+            background: rgba(40, 167, 69, 0.3);
+        }
+
+        .prize-item.milestone {
+            border: 2px solid #ffd700;
+        }
+
+        .end-screen {
+            text-align: center;
+            padding: 40px 20px;
+        }
+
+        .end-screen h2 {
+            font-size: 2.5em;
+            color: #ff69b4;
+            margin-bottom: 20px;
+        }
+
+        .end-screen .final-prize {
+            font-size: 3em;
+            color: #ffd700;
+            margin: 20px 0;
+            text-shadow: 0 0 20px rgba(255, 215, 0, 0.5);
+        }
+
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.8);
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+        }
+
+        .modal.active {
+            display: flex;
+        }
+
+        .modal-content {
+            background: #1a1a2e;
+            border: 2px solid #ff69b4;
+            border-radius: 15px;
+            padding: 30px;
+            max-width: 500px;
+            width: 90%;
+            text-align: center;
+        }
+
+        .modal-content h3 {
+            color: #ff69b4;
+            margin-bottom: 20px;
+            font-size: 1.8em;
+        }
+
+        .modal-content p {
+            margin-bottom: 20px;
+            font-size: 1.1em;
+            line-height: 1.6;
+        }
+
+        .audience-poll {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 10px;
+            margin: 20px 0;
+        }
+
+        .poll-bar {
+            text-align: center;
+        }
+
+        .poll-bar-fill {
+            background: #ff69b4;
+            height: 100px;
+            border-radius: 5px;
+            display: flex;
+            align-items: flex-end;
+            justify-content: center;
+            padding-bottom: 5px;
+            font-weight: bold;
+        }
+
+        @media (max-width: 600px) {
+            .header h1 {
+                font-size: 1.8em;
+            }
+            
+            .question-text {
+                font-size: 1.1em;
+            }
+            
+            .answer-btn {
+                padding: 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🌋 THE SEISMIC QUIZ 🌋</h1>
+            <p class="tagline">Who Wants to Be a Seismic Millionaire?</p>
+        </div>
+
+        <!-- Start Screen -->
+        <div id="startScreen" class="game-screen active start-screen">
+            <h2>Welcome to The Seismic Quiz!</h2>
+            <p>Answer 20 questions about Seismic and climb the prize ladder to win 1,000,000 $QUAKE!</p>
+            <p>You have 3 lifelines to help you:</p>
+            <ul style="text-align: left; display: inline-block; margin-bottom: 20px;">
+                <li>50:50 - Remove two wrong answers</li>
+                <li>Ask the Audience - See what the crowd thinks</li>
+                <li>Phone a Friend - Get expert advice</li>
+            </ul>
+            <p>Reach question 5 and 10 to secure milestone prizes!</p>
+            <button class="btn" onclick="startGame()">Start Game</button>
+        </div>
+
+        <!-- Game Screen -->
+        <div id="gameScreen" class="game-screen">
+            <div class="game-info">
+                <div class="question-number">Question: <span id="currentQuestion">1</span>/20</div>
+                <div class="prize-amount">Prize: <span id="currentPrize">100</span> $QUAKE</div>
+            </div>
+
+            <div class="lifelines">
+                <button class="lifeline-btn" id="fiftyFifty" onclick="useFiftyFifty()">50:50</button>
+                <button class="lifeline-btn" id="askAudience" onclick="useAskAudience()">Ask Audience</button>
+                <button class="lifeline-btn" id="phoneAFriend" onclick="usePhoneAFriend()">Phone a Friend</button>
+            </div>
+
+            <div class="question-container">
+                <div class="question-text" id="questionText"></div>
+            </div>
+
+            <div class="answers" id="answersContainer"></div>
+
+            <div class="action-buttons">
+                <button class="btn lock-btn" id="lockBtn" onclick="lockAnswer()" disabled>Lock In Answer</button>
+                <button class="btn walk-btn" onclick="walkAway()">Walk Away</button>
+            </div>
+
+            <div class="prize-ladder" id="prizeLadder"></div>
+        </div>
+
+        <!-- End Screen -->
+        <div id="endScreen" class="game-screen end-screen">
+            <h2 id="endTitle">Congratulations!</h2>
+            <p id="endMessage"></p>
+            <div class="final-prize" id="finalPrize">0 $QUAKE</div>
+            <button class="btn" onclick="restartGame()">Play Again</button>
+        </div>
+
+        <!-- Modal for Lifelines -->
+        <div id="modal" class="modal">
+            <div class="modal-content">
+                <h3 id="modalTitle"></h3>
+                <p id="modalText"></p>
+                <div id="modalExtra"></div>
+                <button class="btn" onclick="closeModal()">Got It!</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const questions = [
+            {
+                question: "What is the native token of Seismic?",
+                answers: ["$QUAKE", "$SEIS", "$EPIC", "$MAGN"],
+                correct: 0
+            },
+            {
+                question: "Seismic is fully compatible with which blockchain?",
+                answers: ["Solana", "Bitcoin", "Ethereum", "Polygon"],
+                correct: 2
+            },
+            {
+                question: "By default, does every transaction on Seismic use zero-knowledge proofs?",
+                answers: ["Yes, always", "Only for private transfers", "No, ZK is optional", "Only on mainnet"],
+                correct: 2
+            },
+            {
+                question: "How many core privacy levels does Seismic offer?",
+                answers: ["2", "3", "4", "5"],
+                correct: 1
+            },
+            {
+                question: "The three privacy levels on Seismic are:",
+                answers: ["Public, Hidden, Encrypted", "Public, Confidential, Private", "Open, Shielded, Secret", "Transparent, Obfuscated, Anonymous"],
+                correct: 1
+            },
+            {
+                question: "What is the name of the Seismic community leaderboard system?",
+                answers: ["Richter Scale", "Magnitude", "Epicenter", "Tremor"],
+                correct: 1
+            },
+            {
+                question: "The highest publicly seen Magnitude tier right now (Dec 2025) is:",
+                answers: ["5.5", "6.0", "7.0", "8.0"],
+                correct: 1
+            },
+            {
+                question: '"GMIC" in the Seismic community stands for:',
+                answers: ["Good Morning Intentional Community", "Great Minds In Crypto", "Gain Maximum Intentional Capital", "Good Money Is Coming"],
+                correct: 0
+            },
+            {
+                question: "Seismic's testnet is named after which scale?",
+                answers: ["Mercalli", "Fujita", "Richter", "Beaufort"],
+                correct: 2
+            },
+            {
+                question: "Which of these is a real Seismic feature for hiding balances while proving sufficiency?",
+                answers: ["Stealth Addresses", "Confidential Balances", "Ring Signatures", "Tornado Mode"],
+                correct: 1
+            },
+            {
+                question: "Which programming language does Seismic natively support?",
+                answers: ["Rust", "Solidity", "Move", "Clarity"],
+                correct: 1
+            },
+            {
+                question: "As of December 2025, Seismic mainnet is:",
+                answers: ["Already live", "Still in testnet phase", "Shut down", "In private beta only"],
+                correct: 1
+            },
+            {
+                question: "Which company/chain is NOT currently listed as a Seismic partner or integration?",
+                answers: ["Chainlink", "Circle", "Monad", "Solana"],
+                correct: 3
+            },
+            {
+                question: "The Seismic Discord channel for creators to coordinate is called:",
+                answers: ["seismic-raiders", "creator-collab", "magnitude-hunt", "privacy-lounge"],
+                correct: 1
+            },
+            {
+                question: "Which creator is famous for 6.0+ Magnitude infographics in the community?",
+                answers: ["@crypto_whale69", "@XXRuze", "@solana_maxi", "@vitalikfan69"],
+                correct: 1
+            },
+            {
+                question: "The most spammed 3-word phrase by Seismic OGs is:",
+                answers: ["Built different fr", "No luck just consistency", "Wen token tho", "Privacy is dead"],
+                correct: 1
+            },
+            {
+                question: "What is Seismic's official community color/emoji?",
+                answers: ["Blue 💙", "Green 💚", "Brown 🤎", "Purple 💜"],
+                correct: 2
+            },
+            {
+                question: "Seismic is primarily built for which type of applications?",
+                answers: ["Memecoins", "NFTs", "FinTech / Real-world finance", "Gaming"],
+                correct: 2
+            },
+            {
+                question: "In earthquake terminology (and Seismic naming), the point directly above the origin is called:",
+                answers: ["Hypocenter", "Fault line", "Epicenter", "Aftershock"],
+                correct: 2
+            },
+            {
+                question: "Can you keep transaction amounts hidden while still being compliant with regulators on Seismic?",
+                answers: ["No, everything is fully public", "Yes, using Confidential level", "Only with ZK turned on", "Only on private chains"],
+                correct: 1
+            }
+        ];
+
+        const prizeLadder = [
+            100, 200, 300, 500, 1000, 2000, 4000, 8000, 16000, 32000,
+            64000, 125000, 250000, 500000, 1000000
+        ];
+
+        // Extend to 20 questions
+        const fullPrizeLadder = [
+            100, 200, 300, 500, 1000, 2000, 4000, 8000, 16000, 32000,
+            64000, 125000, 250000, 500000, 750000, 1000000, 1250000, 1500000, 1750000, 2000000
+        ];
+
+        let currentQuestionIndex = 0;
+        let selectedAnswer = null;
+        let lifelines = {
+            fiftyFifty: true,
+            askAudience: true,
+            phoneAFriend: true
+        };
+        let hiddenAnswers = [];
+
+        function startGame() {
+            currentQuestionIndex = 0;
+            selectedAnswer = null;
+            lifelines = {
+                fiftyFifty: true,
+                askAudience: true,
+                phoneAFriend: true
+            };
+            hiddenAnswers = [];
+            
+            document.getElementById('startScreen').classList.remove('active');
+            document.getElementById('gameScreen').classList.add('active');
+            document.getElementById('endScreen').classList.remove('active');
+            
+            document.getElementById('fiftyFifty').disabled = false;
+            document.getElementById('askAudience').disabled = false;
+            document.getElementById('phoneAFriend').disabled = false;
+            
+            renderPrizeLadder();
+            loadQuestion();
+        }
+
+        function renderPrizeLadder() {
+            const ladder = document.getElementById('prizeLadder');
+            ladder.innerHTML = '<h3>Prize Ladder</h3>';
+            
+            for (let i = fullPrizeLadder.length - 1; i >= 0; i--) {
+                const item = document.createElement('div');
+                item.className = 'prize-item';
+                
+                if (i === 4 || i === 9) {
+                    item.classList.add('milestone');
+                }
+                
+                if (i === currentQuestionIndex) {
+                    item.classList.add('current');
+                } else if (i < currentQuestionIndex) {
+                    item.classList.add('completed');
+                }
+                
+                item.innerHTML = `<span>${i + 1}</span><span>${fullPrizeLadder[i].toLocaleString()} $QUAKE</span>`;
+                ladder.appendChild(item);
+            }
+        }
+
+        function loadQuestion() {
+            if (currentQuestionIndex >= questions.length) {
+                endGame(true);
+                return;
+            }
+
+            hiddenAnswers = [];
+            selectedAnswer = null;
+            document.getElementById('lockBtn').disabled = true;
+            
+            const question = questions[currentQuestionIndex];
+            document.getElementById('currentQuestion').textContent = currentQuestionIndex + 1;
+            document.getElementById('currentPrize').textContent = fullPrizeLadder[currentQuestionIndex].toLocaleString();
+            document.getElementById('questionText').textContent = question.question;
+            
+            const answersContainer = document.getElementById('answersContainer');
+            answersContainer.innerHTML = '';
+            
+            question.answers.forEach((answer, index) => {
+                const btn = document.createElement('button');
+                btn.className = 'answer-btn';
+                btn.innerHTML = `<strong>${String.fromCharCode(65 + index)}:</strong> ${answer}`;
+                btn.onclick = () => selectAnswer(index);
+                btn.id = `answer${index}`;
+                answersContainer.appendChild(btn);
+            });
+            
+            renderPrizeLadder();
+        }
+
+        function selectAnswer(index) {
+            if (hiddenAnswers.includes(index)) return;
+            
+            document.querySelectorAll('.answer-btn').forEach(btn => {
+                btn.classList.remove('selected');
+            });
+            
+            document.getElementById(`answer${index}`).classList.add('selected');
+            selectedAnswer = index;
+            document.getElementById('lockBtn').disabled = false;
+        }
+
+        function lockAnswer() {
+            if (selectedAnswer === null) return;
+            
+            const question = questions[currentQuestionIndex];
+            const answerBtns = document.querySelectorAll('.answer-btn');
+            
+            answerBtns.forEach(btn => btn.disabled = true);
+            document.getElementById('lockBtn').disabled = true;
+            
+            if (selectedAnswer === question.correct) {
+                document.getElementById(`answer${selectedAnswer}`).classList.add('correct');
+                
+                setTimeout(() => {
+                    currentQuestionIndex++;
+                    if (currentQuestionIndex >= questions.length) {
+                        endGame(true);
+                    } else {
+                        loadQuestion();
+                    }
+                }, 1500);
+            } else {
+                document.getElementById(`answer${selectedAnswer}`).classList.add('wrong');
+                document.getElementById(`answer${question.correct}`).classList.add('correct');
+                
+                setTimeout(() => {
+                    endGame(false);
+                }, 2000);
+            }
+        }
+
+        function walkAway() {
+            if (currentQuestionIndex === 0) {
+                alert("You haven't answered any questions yet!");
+                return;
+            }
+            
+            endGame(false, true);
+        }
+
+        function useFiftyFifty() {
+            if (!lifelines.fiftyFifty) return;
+            
+            lifelines.fiftyFifty = false;
+            document.getElementById('fiftyFifty').disabled = true;
+            
+            const question = questions[currentQuestionIndex];
+            const wrongAnswers = [];
+            
+            question.answers.forEach((_, index) => {
+                if (index !== question.correct) {
+                    wrongAnswers.push(index);
+                }
+            });
+            
+            // Shuffle and take 2
+            wrongAnswers.sort(() => Math.random() - 0.5);
+            hiddenAnswers = wrongAnswers.slice(0, 2);
+            
+            hiddenAnswers.forEach(index => {
+                document.getElementById(`answer${index}`).classList.add('hidden');
+            });
+        }
+
+        function useAskAudience() {
+            if (!lifelines.askAudience) return;
+            
+            lifelines.askAudience = false;
+            document.getElementById('askAudience').disabled = true;
+            
+            const question = questions[currentQuestionIndex];
+            const percentages = [0, 0, 0, 0];
+            
+            // Give correct answer highest percentage (40-60%)
+            percentages[question.correct] = 40 + Math.floor(Math.random() * 21);
+            
+            let remaining = 100 - percentages[question.correct];
+            
+            // Distribute remaining percentage
+            for (let i = 0; i < 4; i++) {
+                if (i !== question.correct && !hiddenAnswers.includes(i)) {
+                    if (i === 3 || remaining <= 0) {
+                        percentages[i] = remaining;
+                    } else {
+                        const amount = Math.floor(Math.random() * (remaining + 1));
+                        percentages[i] = amount;
+                        remaining -= amount;
+                    }
+                }
+            }
+            
+            showModal('Ask the Audience', 'Here\'s what the audience thinks:', percentages);
+        }
+
+        function usePhoneAFriend() {
+            if (!lifelines.phoneAFriend) return;
+            
+            lifelines.phoneAFriend = false;
+            document.getElementById('phoneAFriend').disabled = true;
+            
+            const question = questions[currentQuestionIndex];
+            const correctLetter = String.fromCharCode(65 + question.correct);
+            
+            const messages = [
+                `I'm pretty confident it's ${correctLetter}. That's what I'd go with!`,
+                `I think the answer is ${correctLetter}, but I'm not 100% sure.`,
+                `Based on what I know about Seismic, I'd say ${correctLetter}.`,
+                `My gut tells me it's ${correctLetter}. Hope that helps!`
+            ];
+            
+            const message = messages[Math.floor(Math.random() * messages.length)];
+            
+            showModal('Phone a Friend', `Your friend says: "${message}"`);
+        }
+
+        function showModal(title, text, audiencePoll = null) {
+            document.getElementById('modalTitle').textContent = title;
+            document.getElementById('modalText').textContent = text;
+            
+            const extra = document.getElementById('modalExtra');
+            extra.innerHTML = '';
+            
+            if (audiencePoll) {
+                const pollDiv = document.createElement('div');
+                pollDiv.className = 'audience-poll';
+                
+                audiencePoll.forEach((percent, index) => {
+                    if (!hiddenAnswers.includes(index)) {
+                        const bar = document.createElement('div');
+                        bar.className = 'poll-bar';
+                        bar.innerHTML = `
+                            <div class="poll-bar-fill" style="height: ${percent}%">
+                                ${percent}%
+                            </div>
+                            <div>${String.fromCharCode(65 + index)}</div>
+                        `;
+                        pollDiv.appendChild(bar);
+                    }
+                });
+                
+                extra.appendChild(pollDiv);
+            }
+            
+            document.getElementById('modal').classList.add('active');
+        }
+
+        function closeModal() {
+            document.getElementById('modal').classList.remove('active');
+        }
+
+        function endGame(won, walkedAway = false) {
+            document.getElementById('gameScreen').classList.remove('active');
+            document.getElementById('endScreen').classList.add('active');
+            
+            let prize = 0;
+            let title = '';
+            let message = '';
+            
+            if (won) {
+                prize = fullPrizeLadder[fullPrizeLadder.length - 1];
+                title = '🎉 INCREDIBLE! YOU WON! 🎉';
+                message = 'You answered all 20 questions correctly and won the top prize!';
+            } else if (walkedAway) {
+                prize = fullPrizeLadder[currentQuestionIndex - 1];
+                title = '💰 Smart Move! 💰';
+                message = 'You walked away with your winnings!';
+            } else {
+                // Check milestones
+                if (currentQuestionIndex >= 10) {
+                    prize = fullPrizeLadder[9]; // Milestone at question 10
+                } else if (currentQuestionIndex >= 5) {
+                    prize = fullPrizeLadder[4]; // Milestone at question 5
+                } else {
+                    prize = 0;
+                }
+                
+                title = prize > 0 ? 'Nice Try!' : 'Game Over!';
+                message = prize > 0 
+                    ? `You reached a milestone! You take home your guaranteed prize.`
+                    : 'Better luck next time! Study up on Seismic and try again!';
+            }
+            
+            document.getElementById('endTitle').textContent = title;
+            document.getElementById('endMessage').textContent = message;
+            document.getElementById('finalPrize').textContent = `${prize.toLocaleString()} $QUAKE`;
+        }
+
+        function restartGame() {
+            startGame();
+        }
+    </script>
+</body>
+</html>
