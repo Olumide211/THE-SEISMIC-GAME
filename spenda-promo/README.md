@@ -17,6 +17,6 @@ npx remotion bundle --out-dir=build && node scripts/stills.mjs   # QA stills →
 - `src/scenes/`: one file per scene (S1–S12). `src/screens/`: in-phone app screens matching the app (home, rates calculator, deposit, transfer, "Transfer sent"). `src/components/`: phone, camera path, step labels, confetti, particles, icons, logo mark.
 - `scripts/make-audio.py`: the amapiano-style soundtrack and every SFX are synthesized here.
 
-Font: Outfit (closest free match to the app's typeface). Swap it in `src/font.ts`.
+Font: Albert Sans (closest free match to the app). To use the app's exact font, drop its files into `public/fonts/` as `app-400.otf`, `app-500.otf`, … — they are picked up automatically.
 
 If Chrome Headless Shell can't be downloaded in your environment, point Remotion at a local one with `REMOTION_BROWSER=/path/to/headless_shell`.
