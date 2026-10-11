@@ -8,7 +8,7 @@ import { TypingDots } from "./TypingDots";
 
 const WA_GREEN = "#25D366";
 
-const ChatHeader: React.FC<{ typing: boolean }> = ({ typing }) => (
+const ChatHeader: React.FC<{ typing: boolean; status: string }> = ({ typing, status }) => (
   <div
     style={{
       position: "absolute",
@@ -45,7 +45,7 @@ const ChatHeader: React.FC<{ typing: boolean }> = ({ typing }) => (
     </div>
     <div style={{ flex: 1, lineHeight: 1.2 }}>
       <div style={{ fontWeight: 600, fontSize: 17, color: "#111" }}>{brand.vendorName}</div>
-      <div style={{ fontSize: 13, color: typing ? WA_GREEN : "#667781" }}>{typing ? "typing…" : "online"}</div>
+      <div style={{ fontSize: 13, color: typing ? WA_GREEN : "#667781" }}>{typing ? "typing…" : status}</div>
     </div>
     <VideoIcon size={24} color="#007AFF" />
     <div style={{ width: 14 }} />
@@ -126,12 +126,13 @@ export const ChatScreen: React.FC<{
   messages: ChatMessage[];
   typing: boolean;
   typingProgress?: number;
-}> = ({ messages, typing, typingProgress = 1 }) => {
+  status?: string;
+}> = ({ messages, typing, typingProgress = 1, status = "online" }) => {
   return (
     <div style={{ position: "absolute", inset: 0, background: "#FFFFFF", fontFamily: FONT }}>
       <Wallpaper />
       <StatusBar />
-      <ChatHeader typing={typing} />
+      <ChatHeader typing={typing} status={status} />
       <div
         style={{
           position: "absolute",

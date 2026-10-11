@@ -6,7 +6,7 @@ import { Coin } from "./Coin";
 
 type Kind = "coinN" | "coinD" | "square" | "dot" | "squiggle" | "sparkle";
 const KINDS: Kind[] = ["coinN", "coinD", "square", "dot", "squiggle", "sparkle"];
-const COLORS = [brand.colors.primary, brand.colors.accent, brand.colors.stablecoin, "#FFB020", brand.colors.primaryLight];
+const COLORS = [brand.colors.ink, brand.colors.success, brand.colors.navy, "#9ED6EF", "#F5C9A4", brand.colors.moneyIn];
 
 const Sparkle: React.FC<{ size: number; color: string }> = ({ size, color }) => (
   <svg width={size} height={size} viewBox="0 0 24 24">
@@ -20,18 +20,19 @@ const Squiggle: React.FC<{ size: number; color: string }> = ({ size, color }) =>
 );
 
 /** One-shot burst. `start` is sequence-local; origin is in px. */
-export const Confetti: React.FC<{ start: number; x: number; y: number; count?: number; seed?: number }> = ({
+export const Confetti: React.FC<{ start: number; x: number; y: number; count?: number; seed?: number; arc?: [number, number] }> = ({
   start,
   x,
   y,
   count = 30,
   seed = 7,
+  arc = [0, Math.PI * 2],
 }) => {
   const frame = useCurrentFrame();
   const pieces = useMemo(() => {
     const r = seeded(seed);
     return Array.from({ length: count }).map((_, i) => {
-      const a = (i / count) * Math.PI * 2 + (r() - 0.5) * 0.5;
+      const a = arc[0] + (i / count) * (arc[1] - arc[0]) + (r() - 0.5) * 0.3;
       const speed = 30 + r() * 34;
       return {
         kind: KINDS[i % KINDS.length],
@@ -43,7 +44,7 @@ export const Confetti: React.FC<{ start: number; x: number; y: number; count?: n
         life: 26 + r() * 14,
       };
     });
-  }, [count, seed]);
+  }, [count, seed, arc]);
 
   const t = frame - start;
   if (t < 0) return null;

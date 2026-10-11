@@ -1,46 +1,55 @@
-// All brand values live here. Colors are placeholders — swap for real Spenda colors.
-// (Observed in the live app: near-black #000000 surfaces, navy #1B3A5E tabs,
-//  success green #1FC877.)
+// All brand values live here. Colors are sampled from the live Spenda app.
 export const brand = {
   name: "Spenda",
-  version: "2.0",
   colors: {
-    darkBg: "#0E0E10",
-    lightBg: "#FAFAFA",
-    primary: "#5B3DF5",
-    primaryDark: "#4127D6",
-    primaryLight: "#8A73FF",
-    accent: "#C6F432",
-    stablecoin: "#26A17B",
+    white: "#FFFFFF",
+    darkBg: "#0B0B0C",
+    ink: "#0A0A0A", // primary text / buttons
+    card: "#000000", // balance card
+    cardTile: "#111111", // faint tiles on the card
+    cardButton: "#262626", // Deposit / Transfer on the card
+    muted: "#6E6E73",
+    hairline: "#E9E9EB",
+    navy: "#1B3A5E", // selected tabs
+    navyTint: "#EBF4FD", // info boxes
+    navyBorder: "#BCD6EE",
+    moneyIn: "#5DA82A", // "+ ₦1,338.48"
+    success: "#1FC877", // "Transfer sent" ring
     danger: "#E5484D",
     chatGray: "#E9E9EB",
-    textDark: "#1F1F1F",
-    textMid: "#333333",
-    textMuted: "#8A8A8E",
-    hairline: "#ECECEF",
-    naira: "#1E8E3E",
+    studio: "#F4F4F6",
+    tether: "#26A17B",
   },
-  gradient: "linear-gradient(135deg, #8A73FF 0%, #5B3DF5 50%, #3B21C7 100%)",
-  gradientStops: ["#8A73FF", "#5B3DF5", "#3B21C7"] as const,
+  quickActions: {
+    airtime: { bg: "#E6F6FD", border: "#9ED6EF", icon: "#0B5E8E" },
+    data: { bg: "#FDF1E7", border: "#F5C9A4", icon: "#7A3A0A" },
+    bills: { bg: "#EFF6EA", border: "#C6DDB7", icon: "#2F4A1E" },
+    rewards: { bg: "#EEF4FB", border: "#C3D8EE", icon: "#1B3A5E" },
+  },
 
   userName: "Breeze",
-  bankName: "Partner Bank MFB",
-  accountNumber: "0123456789",
   vendorName: "P2P Vendor 🔥",
+  userId: "10293847",
 
-  rate: 1357, // ₦ per 1 USDT
-  depositAmount: 50000, // ₦
-  stableSymbol: "USDT",
+  // crypto → Naira
+  coin: "USDT",
+  network: "TRC20",
+  walletAddress: "TQ7xR2mVb8Lk4Nn5pWc9Ys3Hd6Jf1Ze9fK2",
+  sendAmount: 50, // USDT
+  rate: 1357, // ₦ per $1
+  feePct: 0.9, // %
+
+  // spend it
+  transferAmount: 45000,
+  recipient: "Chidi Okafor",
+  recipientBank: "GTBank",
+  recipientAccount: "0123456789",
 
   tagline: "Bye bye P2P wahala 👋",
-  hashtag: "#MySpenda",
-  handle: "@myspenda",
 };
 
-export const toAmount = brand.depositAmount / brand.rate; // ≈ 36.85 USDT
+export const feeUsd = (brand.sendAmount * brand.feePct) / 100; // $0.45
+export const receiveNaira = (brand.sendAmount - feeUsd) * brand.rate; // ₦67,239.35
 
-export const fmtNaira = (n: number, decimals = 0) =>
-  n.toLocaleString("en-US", {
-    minimumFractionDigits: decimals,
-    maximumFractionDigits: decimals,
-  });
+export const fmt = (n: number, decimals = 2) =>
+  n.toLocaleString("en-US", { minimumFractionDigits: decimals, maximumFractionDigits: decimals });

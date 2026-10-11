@@ -24,7 +24,7 @@ export const Particles: React.FC<{ seed?: number }> = ({ seed = 42 }) => {
         glyph: glyph ? (r() < 0.5 ? "₦" : "$") : null,
         size: glyph ? 10 + r() * 4 : 1 + r() * 3,
         opacity: 0.15 + r() * 0.35,
-        tint: r() < 0.35 ? brand.colors.primary : "#8C8C96",
+        tint: r() < 0.3 ? brand.colors.moneyIn : "#8C8C96",
       };
     });
   }, [seed, width, height]);

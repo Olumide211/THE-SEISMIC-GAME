@@ -10,15 +10,14 @@ import { S1Dear } from "./scenes/S1Dear";
 import { S2Chat } from "./scenes/S2Chat";
 import { S3Waiting } from "./scenes/S3Waiting";
 import { S4Shatter } from "./scenes/S4Shatter";
-import { S5Meet } from "./scenes/S5Meet";
-import { S6Open } from "./scenes/S6Open";
+import { S5Reveal } from "./scenes/S5Reveal";
+import { S6Rates } from "./scenes/S6Rates";
 import { S7Deposit } from "./scenes/S7Deposit";
-import { S8Send } from "./scenes/S8Send";
-import { S9Convert } from "./scenes/S9Convert";
-import { S10Press } from "./scenes/S10Press";
-import { S11Instant } from "./scenes/S11Instant";
-import { S12Done } from "./scenes/S12Done";
-import { S13EndCard } from "./scenes/S13EndCard";
+import { S8Credited } from "./scenes/S8Credited";
+import { S9Transfer } from "./scenes/S9Transfer";
+import { S10Versus } from "./scenes/S10Versus";
+import { S11NoWahala } from "./scenes/S11NoWahala";
+import { S12EndCard } from "./scenes/S12EndCard";
 
 const has = (name: string) => {
   try {
@@ -36,7 +35,7 @@ const Soundtrack: React.FC = () => {
       {has("music.mp3") ? (
         <Audio
           src={staticFile("music.mp3")}
-          volume={(f) => interpolate(f, [durationInFrames - fadeFrames, durationInFrames], [1, 0], { extrapolateLeft: "clamp", extrapolateRight: "clamp" })}
+          volume={(f) => interpolate(f, [durationInFrames - fadeFrames, durationInFrames], [0.66, 0], { extrapolateLeft: "clamp", extrapolateRight: "clamp" })}
         />
       ) : null}
       {sfx
@@ -62,21 +61,20 @@ export const SpendaP2P: React.FC = () => (
     {scene(scenes.s2, S2Chat, "S2 Chat")}
     {scene(scenes.s3, S3Waiting, "S3 It's the waiting")}
     {scene(scenes.s4, S4Shatter, "S4 Shatter")}
-    {scene(scenes.s5, S5Meet, "S5 Meet Spenda 2.0")}
     <Sequence from={studio.from} durationInFrames={dur(studio)} name="Studio bg">
       <Studio />
     </Sequence>
     <Sequence from={particles.from} durationInFrames={dur(particles)} name="Particles">
       <Particles />
     </Sequence>
-    {scene(scenes.s6, S6Open, "S6 Open")}
-    {scene(scenes.s7, S7Deposit, "S7 Tap Deposit")}
-    {scene(scenes.s8, S8Send, "S8 Send Naira")}
-    {scene(scenes.s9, S9Convert, "S9 Convert")}
-    {scene(scenes.s10, S10Press, "S10 Press")}
-    {scene(scenes.s11, S11Instant, "S11 Instant")}
-    {scene(scenes.s12, S12Done, "S12 Done")}
-    {scene(scenes.s13, S13EndCard, "S13 End card")}
+    {scene(scenes.s5, S5Reveal, "S5 App launch reveal")}
+    {scene(scenes.s6, S6Rates, "S6 Check the rate")}
+    {scene(scenes.s7, S7Deposit, "S7 Send USDT")}
+    {scene(scenes.s8, S8Credited, "S8 Naira lands")}
+    {scene(scenes.s9, S9Transfer, "S9 Spend it")}
+    {scene(scenes.s10, S10Versus, "S10 P2P vs Spenda")}
+    {scene(scenes.s11, S11NoWahala, "S11 No wahala")}
+    {scene(scenes.s12, S12EndCard, "S12 End card")}
     <Soundtrack />
   </AbsoluteFill>
 );

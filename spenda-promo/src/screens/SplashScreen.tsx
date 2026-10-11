@@ -45,7 +45,7 @@ export const Wordmark: React.FC<{
   );
 };
 
-export const SplashScreen: React.FC<{ t: number }> = ({ t }) => {
+export const SplashScreen: React.FC<{ t: number; k?: number }> = ({ t, k = 1 }) => {
   const markIn = sp(t, 0, { damping: 16, stiffness: 200 });
   const markOut = prog(t, SPLASH_LETTER_START - 2, SPLASH_LETTER_START + 1);
   return (
@@ -57,9 +57,9 @@ export const SplashScreen: React.FC<{ t: number }> = ({ t }) => {
           transform: `scale(${(0.85 + 0.15 * markIn) * (1 - markOut * 0.4)})`,
         }}
       >
-        <SpendaMark size={64} />
+        <SpendaMark size={64 * k} />
       </div>
-      <Wordmark t={t} size={46} />
+      <Wordmark t={t} size={46 * k} />
     </div>
   );
 };

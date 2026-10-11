@@ -8,7 +8,7 @@ const STAGGER = 2; // 80ms at 25fps
 const EXIT_FRAMES = 8;
 
 /**
- * Two-line step label. line1 regular #333, line2 bold brand primary, 56px.
+ * Two-line step label. line1 regular gray, line2 semibold ink, 56px.
  * Words stagger in (rise + fade + unblur); exit slides 40px sideways + fades.
  * `start` and `exit` are frames relative to the enclosing Sequence.
  */
@@ -64,8 +64,8 @@ export const StepLabel: React.FC<{
         zIndex: 20,
       }}
     >
-      {renderLine(words1, 0, { color: "#333", fontWeight: 400 })}
-      {renderLine(words2, words1.length, { color: brand.colors.primary, fontWeight: 700 })}
+      {renderLine(words1, 0, { color: brand.colors.muted, fontWeight: 400 })}
+      {renderLine(words2, words1.length, { color: brand.colors.ink, fontWeight: 600 })}
     </div>
   );
 };

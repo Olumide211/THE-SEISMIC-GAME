@@ -5,8 +5,8 @@ import { FONT } from "../font";
 export type CoinKind = "NGN" | "USDT" | "USDC" | "USD";
 
 const coinStyle: Record<CoinKind, { bg: string; glyph: string }> = {
-  NGN: { bg: brand.colors.naira, glyph: "₦" },
-  USDT: { bg: brand.colors.stablecoin, glyph: "₮" },
+  NGN: { bg: brand.colors.moneyIn, glyph: "₦" },
+  USDT: { bg: brand.colors.tether, glyph: "₮" },
   USDC: { bg: "#2775CA", glyph: "$" },
   USD: { bg: "#E7B416", glyph: "$" },
 };

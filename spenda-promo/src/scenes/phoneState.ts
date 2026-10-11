@@ -1,65 +1,79 @@
-// Shared, frame-driven state of the in-phone UI for S6–S11 (absolute frames),
-// so every scene renders the same app state at a given moment.
+// Shared, frame-driven state of the in-app UI (absolute frames), so every scene
+// renders the same app state at a given moment.
 import { interpolate } from "remotion";
-import { brand, toAmount } from "../brand";
+import { brand, receiveNaira } from "../brand";
 import { EASE, prog, sp, mix } from "../anim";
-import { HomeAnim } from "../screens/SpendaHome";
+import { HomeAnim, Txn } from "../screens/HomeScreen";
 import { t } from "../timeline";
 
-const bump = (abs: number, at: number, inF = 3, outF = 5) =>
-  prog(abs, at - inF, at) - prog(abs, at + 1, at + 1 + outF);
+export const depositTxn: Txn = {
+  kind: "coin",
+  title: `${brand.sendAmount} ${brand.coin}`,
+  sub: "Deposit • now",
+  amount: `+ ₦${receiveNaira.toLocaleString("en-US", { minimumFractionDigits: 2 })}`,
+  inflow: true,
+};
 
 export const homeState = (abs: number): HomeAnim => {
   const h = t.homeIn;
   return {
-    greeting: prog(abs, h, h + 9),
-    card: prog(abs, h + 1, h + 12),
-    buttons: [0, 1, 2, 3].map((i) => sp(abs, h + 5 + i * 1.5, { damping: 9, stiffness: 260, mass: 0.6 })),
-    rows: [0, 1, 2].map((i) => prog(abs, h + 8 + i * 2, h + 18 + i * 2)),
-    tabs: prog(abs, h + 3, h + 13),
-    depositPress: bump(abs, t.tapDeposit),
-    balance: interpolate(abs, [t.balanceRoll[0], t.balanceRoll[1]], [0, brand.depositAmount], {
+    card: prog(abs, h, h + 10),
+    actions: [0, 1, 2, 3].map((i) => sp(abs, h + 4 + i * 1.5, { damping: 9, stiffness: 260, mass: 0.6 })),
+    rows: [0, 1, 2, 3].map((i) => prog(abs, h + 7 + i * 2, h + 17 + i * 2)),
+    balance: interpolate(abs, [t.balanceRoll[0], t.balanceRoll[1]], [0, receiveNaira], {
       easing: EASE,
       extrapolateLeft: "clamp",
       extrapolateRight: "clamp",
     }),
-    cardGlow: prog(abs, t.balanceRoll[0], t.balanceRoll[0] + 4) * (1 - prog(abs, t.balanceRoll[1], t.balanceRoll[1] + 10)),
+    newTxn: prog(abs, t.balanceRoll[0] + 2, t.balanceRoll[0] + 12),
+    newTxnData: depositTxn,
+    cardGlow: prog(abs, t.balanceRoll[0], t.balanceRoll[0] + 5) * (1 - prog(abs, t.balanceRoll[1], t.balanceRoll[1] + 10)),
   };
 };
 
-export const sheetState = (abs: number) => {
-  const up = sp(abs, t.sheetUp, { damping: 16, stiffness: 170 });
-  const down = prog(abs, t.tapDismiss + 1, t.tapDismiss + 8);
+/** Typed digits with a USDT→NGN figure that counts live between keystrokes. */
+const typed = (abs: number, start: number, digits: string, perDigit: number) => {
+  const step = (abs - start) / perDigit;
+  const n = Math.max(0, Math.min(digits.length, Math.floor(step) + 1));
+  const within = Math.max(0, Math.min(1, n >= digits.length ? (step - (n - 1)) / 3 : step - Math.floor(step)));
+  return { n, text: digits.slice(0, n), within };
+};
+
+export const ratesState = (abs: number) => {
+  const send = String(brand.sendAmount);
+  const tp = typed(abs, t.typeSend, send, 4);
+  const val = (s: string) => (s ? Number(s) * (1 - brand.feePct / 100) * brand.rate : 0);
+  const prev = val(send.slice(0, tp.n - 1));
+  const cur = val(tp.text);
+  const receive = tp.n === 0 ? 0 : mix(prev, cur, EASE(tp.within));
   return {
-    progress: Math.max(0, up - down * up),
-    highlight: prog(abs, t.highlight, t.highlight + 6),
-    copyTap: prog(abs, t.tapCopy, t.tapCopy + 12, (x) => x),
-    toast: sp(abs, t.tapCopy + 2, { damping: 11, stiffness: 260 }) * (1 - prog(abs, t.tapCopy + 13, t.tapCopy + 17)),
-    banner:
-      sp(abs, t.cashBanner, { damping: 15, stiffness: 190 }) * (1 - prog(abs, t.wipe - 3, t.wipe + 2)),
+    send: tp.text,
+    receive,
+    countdown: 6 * 60 + 53 - Math.floor((abs - t.toRates) / 25),
+    caret: abs >= t.toRates + 6 && Math.floor(abs / 7) % 2 === 0,
   };
 };
 
-const DIGITS = String(brand.depositAmount); // "50000"
+export const depositState = (abs: number) => ({
+  qr: prog(abs, t.toDeposit + 4, t.toDeposit + 18),
+  highlight: prog(abs, t.tapCopy - 6, t.tapCopy),
+  copyTap: prog(abs, t.tapCopy, t.tapCopy + 12, (x) => x),
+  toast: sp(abs, t.tapCopy + 2, { damping: 11, stiffness: 260 }) * (1 - prog(abs, t.toHome - 4, t.toHome)),
+});
 
-export const convertState = (abs: number) => {
-  const step = (abs - t.typeStart) / t.framesPerDigit;
-  const n = Math.max(0, Math.min(DIGITS.length, Math.floor(step) + 1));
-  const typed = DIGITS.slice(0, n);
-  // live count: between keystrokes the USDT figure eases from the old to the new value
-  const prevVal = n > 1 ? Number(DIGITS.slice(0, n - 1)) / brand.rate : 0;
-  const curVal = n > 0 ? Number(typed) / brand.rate : 0;
-  const within = n >= DIGITS.length ? Math.min(1, (step - (n - 1)) / 3) : step - Math.floor(step);
-  const to = n === 0 ? 0 : mix(prevVal, curVal, EASE(Math.max(0, Math.min(1, within))));
-  const doneTyping = n >= DIGITS.length;
-  const caret = !doneTyping || Math.floor(abs / 7) % 2 === 0;
+export const bannerState = (abs: number) =>
+  sp(abs, t.banner, { damping: 15, stiffness: 190 }) * (1 - prog(abs, t.toTransfer - 6, t.toTransfer));
+
+export const transferState = (abs: number) => {
+  const tp = typed(abs, t.typeAmount, String(brand.transferAmount), 2);
+  const pressed = prog(abs, t.tapSend - 2, t.tapSend + 1) - prog(abs, t.tapSend + 3, t.tapSend + 7);
   return {
-    fromAmount: typed,
-    toAmount: n >= DIGITS.length && within >= 1 ? toAmount : to,
-    caret: abs >= t.wipe + 6 && caret && abs < t.pressConvert - 2,
-    swapRotation: 180 * prog(abs, t.swapSpin, t.swapSpin + 12),
-    pressed: prog(abs, t.pressConvert - 2, t.pressConvert + 1) - 0.6 * prog(abs, t.pressConvert + 3, t.pressConvert + 7),
-    loading: abs >= t.spinner[0] && abs < t.spinner[0] + Math.round(0.5 * 25),
-    converted: abs >= t.spinner[0] + Math.round(0.5 * 25),
+    amount: tp.text,
+    caret: abs < t.tapSend && Math.floor(abs / 7) % 2 === 0,
+    pressed: Math.max(0, pressed),
+    loading: abs >= t.tapSend + 1,
+    sheet: sp(abs, t.sentSheet, { damping: 16, stiffness: 170 }),
+    pop: Math.max(0, sp(abs, t.sentSheet + 4, { damping: 9, stiffness: 220, mass: 0.6 })),
+    draw: prog(abs, t.sentSheet + 7, t.sentSheet + 16),
   };
 };
