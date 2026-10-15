@@ -1,0 +1,9 @@
+node_modules/
+.hyperframes/
+renders/*.tmp*
+# Cloned-voice audio stays local (regenerate with build/gen_vo.py + build/assemble_audio.py)
+build/vo_takes/
+build/vo_trim/
+build/*.wav
+build/*.npy
+assets/audio/vo.wav

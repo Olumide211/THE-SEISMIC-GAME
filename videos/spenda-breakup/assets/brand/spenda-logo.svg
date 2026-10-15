@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="60 43 119 119" width="512" height="512">
+  <!-- Spenda folded-ribbon S: two leaf tiles, rebuilt from the supplied 240px mark -->
+  <path id="leaf-top" fill="#FFFFFF" d="M140 58 H157.5 A6 6 0 0 1 163.5 64 V111.5 A6 6 0 0 1 157.5 117.5 H111 A6 6 0 0 1 105 111.5 V93 A35 35 0 0 1 140 58 Z"/>
+  <path id="leaf-bottom" fill="#FFFFFF" d="M81 122 H128.5 A6 6 0 0 1 134.5 128 V150.5 A30 30 0 0 1 104.5 180.5 H81 A6 6 0 0 1 75 174.5 V128 A6 6 0 0 1 81 122 Z"/>
+</svg>

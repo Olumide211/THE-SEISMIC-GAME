@@ -1,0 +1,142 @@
+{
+ "s1a": {
+  "take": "t0",
+  "text": "Dear P2P, we need to talk.",
+  "start": 1.5,
+  "dur": 2.5542708333333333,
+  "tempo": 1.0
+ },
+ "s2a": {
+  "take": "t1",
+  "text": "40 minutes.",
+  "start": 5.1,
+  "dur": 0.7219791666666666,
+  "tempo": 1.0
+ },
+ "s2b": {
+  "take": "t0",
+  "text": "3 screenshots.",
+  "start": 6.8,
+  "dur": 1.2277291666666668,
+  "tempo": 1.0
+ },
+ "s2c": {
+  "take": "t1",
+  "text": "zero peace of mind.",
+  "start": 8.45,
+  "dur": 1.4110625,
+  "tempo": 1.0
+ },
+ "s3a": {
+  "take": "t0",
+  "text": "It's not me.",
+  "start": 11.2,
+  "dur": 0.8567083333333333,
+  "tempo": 1.0
+ },
+ "s3b": {
+  "take": "t1",
+  "text": "It's you.",
+  "start": 12.75,
+  "dur": 0.6587916666666667,
+  "tempo": 1.0
+ },
+ "s4a": {
+  "take": "t1",
+  "text": "Meet Spender 2.0",
+  "start": 17.3,
+  "dur": 2.6428541666666665,
+  "tempo": 1.071
+ },
+ "s5a": {
+  "take": "t0",
+  "text": "Send Naira.",
+  "start": 20.8,
+  "dur": 1.1877291666666667,
+  "tempo": 1.0
+ },
+ "s5b": {
+  "take": "t0",
+  "text": "get stablecoins.",
+  "start": 22.75,
+  "dur": 1.3862083333333333,
+  "tempo": 1.0
+ },
+ "s5c": {
+  "take": "t0",
+  "text": "Instantly.",
+  "start": 24.25,
+  "dur": 0.9586041666666667,
+  "tempo": 1.0
+ },
+ "s5d": {
+  "take": "t0",
+  "text": "V zero",
+  "start": 26.3,
+  "dur": 0.9992291666666666,
+  "tempo": 1.0
+ },
+ "s6a": {
+  "take": "t0",
+  "text": "statements in one top.",
+  "start": 30.15,
+  "dur": 2.0103541666666667,
+  "tempo": 1.15
+ },
+ "s6b": {
+  "take": "t1",
+  "text": "Dark mode.",
+  "start": 32.35,
+  "dur": 0.9858125,
+  "tempo": 1.0
+ },
+ "s6c": {
+  "take": "t1",
+  "text": "um to factor",
+  "start": 34.0,
+  "dur": 2.2507083333333333,
+  "tempo": 1.15
+ },
+ "s6d": {
+  "take": "t0",
+  "text": "that locked in.",
+  "start": 35.1,
+  "dur": 0.9303541666666667,
+  "tempo": 1.0
+ },
+ "s7a": {
+  "take": "t1",
+  "text": "No vendor.",
+  "start": 36.924285714285716,
+  "dur": 1.0652708333333334,
+  "tempo": 1.0
+ },
+ "s7b": {
+  "take": "t0",
+  "text": "No waiting.",
+  "start": 37.995714285714286,
+  "dur": 0.9561666666666667,
+  "tempo": 1.0
+ },
+ "s7c": {
+  "take": "t0",
+  "text": "No Allah.",
+  "start": 39.067142857142855,
+  "dur": 0.9021875,
+  "tempo": 1.0
+ },
+ "s8a": {
+  "take": "t1",
+  "text": "Spender.",
+  "start": 41.35,
+  "dur": 0.8839166666666667,
+  "tempo": 1.0
+ },
+ "s8b": {
+  "take": "t0",
+  "text": "Bye-bye P2P.",
+  "start": 42.45,
+  "dur": 1.2261458333333333,
+  "tempo": 1.0
+ }
+}

@@ -1,0 +1,335 @@
+[
+ {
+  "id": "s1a",
+  "t0": 1.41,
+  "t1": 4.36,
+  "words": [
+   {
+    "w": "Dear",
+    "start": 1.45,
+    "end": 1.87,
+    "key": false
+   },
+   {
+    "w": "P2P…",
+    "start": 1.87,
+    "end": 2.73,
+    "key": true
+   },
+   {
+    "w": "we",
+    "start": 3.15,
+    "end": 3.33,
+    "key": false
+   },
+   {
+    "w": "need",
+    "start": 3.33,
+    "end": 3.47,
+    "key": false
+   },
+   {
+    "w": "to",
+    "start": 3.47,
+    "end": 3.63,
+    "key": false
+   },
+   {
+    "w": "talk.",
+    "start": 3.63,
+    "end": 3.91,
+    "key": false
+   }
+  ]
+ },
+ {
+  "id": "s2a",
+  "t0": 5.01,
+  "t1": 5.92,
+  "words": [
+   {
+    "w": "Forty",
+    "start": 5.05,
+    "end": 5.25,
+    "key": true
+   },
+   {
+    "w": "minutes.",
+    "start": 5.25,
+    "end": 5.47,
+    "key": false
+   }
+  ]
+ },
+ {
+  "id": "s2b",
+  "t0": 6.71,
+  "t1": 7.92,
+  "words": [
+   {
+    "w": "Three",
+    "start": 6.75,
+    "end": 6.97,
+    "key": true
+   },
+   {
+    "w": "screenshots.",
+    "start": 6.97,
+    "end": 7.47,
+    "key": false
+   }
+  ]
+ },
+ {
+  "id": "s2c",
+  "t0": 8.36,
+  "t1": 9.97,
+  "words": [
+   {
+    "w": "Zero",
+    "start": 8.4,
+    "end": 8.74,
+    "key": true
+   },
+   {
+    "w": "peace",
+    "start": 8.74,
+    "end": 9.0,
+    "key": false
+   },
+   {
+    "w": "of",
+    "start": 9.0,
+    "end": 9.24,
+    "key": false
+   },
+   {
+    "w": "mind.",
+    "start": 9.24,
+    "end": 9.52,
+    "key": false
+   }
+  ]
+ },
+ {
+  "id": "s3a",
+  "t0": 11.11,
+  "t1": 12.26,
+  "words": [
+   {
+    "w": "It's",
+    "start": 11.15,
+    "end": 11.35,
+    "key": false
+   },
+   {
+    "w": "not",
+    "start": 11.35,
+    "end": 11.53,
+    "key": false
+   },
+   {
+    "w": "me.",
+    "start": 11.53,
+    "end": 11.81,
+    "key": false
+   }
+  ]
+ },
+ {
+  "id": "s3b",
+  "t0": 12.66,
+  "t1": 13.59,
+  "words": [
+   {
+    "w": "It's",
+    "start": 12.7,
+    "end": 12.98,
+    "key": false
+   },
+   {
+    "w": "you.",
+    "start": 12.98,
+    "end": 13.14,
+    "key": true
+   }
+  ]
+ },
+ {
+  "id": "s4a",
+  "t0": 17.21,
+  "t1": 19.137,
+  "words": [
+   {
+    "w": "Meet",
+    "start": 17.25,
+    "end": 17.717,
+    "key": false
+   },
+   {
+    "w": "Spenda",
+    "start": 17.717,
+    "end": 18.351,
+    "key": true
+   },
+   {
+    "w": "2.0.",
+    "start": 18.351,
+    "end": 18.687,
+    "key": true
+   }
+  ]
+ },
+ {
+  "id": "s5a",
+  "t0": 20.71,
+  "t1": 22.3,
+  "words": [
+   {
+    "w": "Send",
+    "start": 20.75,
+    "end": 21.25,
+    "key": false
+   },
+   {
+    "w": "Naira.",
+    "start": 21.25,
+    "end": 21.85,
+    "key": true
+   }
+  ]
+ },
+ {
+  "id": "s5b",
+  "t0": 22.66,
+  "t1": 24.12,
+  "words": [
+   {
+    "w": "Get",
+    "start": 22.7,
+    "end": 22.98,
+    "key": false
+   },
+   {
+    "w": "stablecoins.",
+    "start": 22.98,
+    "end": 23.74,
+    "key": true
+   }
+  ]
+ },
+ {
+  "id": "s5c",
+  "t0": 24.16,
+  "t1": 25.33,
+  "words": [
+   {
+    "w": "Instantly.",
+    "start": 24.2,
+    "end": 24.88,
+    "key": true
+   }
+  ]
+ },
+ {
+  "id": "s5d",
+  "t0": 26.49,
+  "t1": 27.36,
+  "words": [
+   {
+    "w": "Fee?",
+    "start": 26.53,
+    "end": 26.58,
+    "key": false
+   },
+   {
+    "w": "Zero.",
+    "start": 26.53,
+    "end": 26.91,
+    "key": true
+   }
+  ]
+ },
+ {
+  "id": "s6a",
+  "t0": 30.06,
+  "t1": 31.9,
+  "words": [
+   {
+    "w": "Statements",
+    "start": 30.1,
+    "end": 30.883,
+    "key": true
+   },
+   {
+    "w": "in",
+    "start": 30.883,
+    "end": 31.474,
+    "key": false
+   },
+   {
+    "w": "one",
+    "start": 31.474,
+    "end": 31.665,
+    "key": false
+   },
+   {
+    "w": "tap.",
+    "start": 31.665,
+    "end": 31.709,
+    "key": false
+   }
+  ]
+ },
+ {
+  "id": "s6b",
+  "t0": 32.26,
+  "t1": 33.47,
+  "words": [
+   {
+    "w": "Dark",
+    "start": 32.3,
+    "end": 32.7,
+    "key": true
+   },
+   {
+    "w": "mode.",
+    "start": 32.7,
+    "end": 33.02,
+    "key": false
+   }
+  ]
+ },
+ {
+  "id": "s6c",
+  "t0": 35.388,
+  "t1": 35.15,
+  "words": [
+   {
+    "w": "Two-factor.",
+    "start": 35.428,
+    "end": 35.88,
+    "key": true
+   }
+  ]
+ },
+ {
+  "id": "s6d",
+  "t0": 35.19,
+  "t1": 36.26,
+  "words": [
+   {
+    "w": "Locked",
+    "start": 35.23,
+    "end": 35.53,
+    "key": true
+   },
+   {
+    "w": "in.",
+    "start": 35.53,
+    "end": 35.81,
+    "key": false
+   }
+  ]
+ }
+]

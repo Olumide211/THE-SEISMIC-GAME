@@ -1,0 +1,416 @@
+[
+ {
+  "src": "assets/sfx/drop_002.wav",
+  "t": 0.36,
+  "dur": 0.191,
+  "vol": 0.8
+ },
+ {
+  "src": "assets/sfx/pluck_001.wav",
+  "t": 1.08,
+  "dur": 0.102,
+  "vol": 0.7
+ },
+ {
+  "src": "assets/sfx/drop_003.wav",
+  "t": 2.14,
+  "dur": 0.191,
+  "vol": 0.8
+ },
+ {
+  "src": "assets/sfx/glitch_001.wav",
+  "t": 0.36,
+  "dur": 0.02,
+  "vol": 0.7
+ },
+ {
+  "src": "assets/sfx/glitch_003.wav",
+  "t": 2.14,
+  "dur": 0.01,
+  "vol": 0.7
+ },
+ {
+  "src": "assets/sfx/glitch_002.wav",
+  "t": 3.3,
+  "dur": 0.03,
+  "vol": 0.6
+ },
+ {
+  "src": "assets/sfx/glitch_004.wav",
+  "t": 4.18,
+  "dur": 0.023,
+  "vol": 0.8
+ },
+ {
+  "src": "assets/sfx/zapTwoTone.wav",
+  "t": 4.45,
+  "dur": 1.306,
+  "vol": 0.35
+ },
+ {
+  "src": "assets/sfx/tick_002.wav",
+  "t": 0.536,
+  "dur": 0.023,
+  "vol": 0.45
+ },
+ {
+  "src": "assets/sfx/tick_002.wav",
+  "t": 1.607,
+  "dur": 0.023,
+  "vol": 0.45
+ },
+ {
+  "src": "assets/sfx/tick_002.wav",
+  "t": 2.679,
+  "dur": 0.023,
+  "vol": 0.45
+ },
+ {
+  "src": "assets/sfx/tick_002.wav",
+  "t": 3.75,
+  "dur": 0.023,
+  "vol": 0.5
+ },
+ {
+  "src": "assets/sfx/impactPunch_heavy_002.wav",
+  "t": 5.0,
+  "dur": 0.458,
+  "vol": 0.75
+ },
+ {
+  "src": "assets/sfx/glitch_001.wav",
+  "t": 5.0,
+  "dur": 0.02,
+  "vol": 0.7
+ },
+ {
+  "src": "assets/sfx/impactPunch_heavy_000.wav",
+  "t": 6.7,
+  "dur": 0.649,
+  "vol": 0.75
+ },
+ {
+  "src": "assets/sfx/glitch_003.wav",
+  "t": 6.7,
+  "dur": 0.01,
+  "vol": 0.7
+ },
+ {
+  "src": "assets/sfx/impactPunch_heavy_003.wav",
+  "t": 8.3,
+  "dur": 0.474,
+  "vol": 0.75
+ },
+ {
+  "src": "assets/sfx/glitch_002.wav",
+  "t": 8.3,
+  "dur": 0.03,
+  "vol": 0.7
+ },
+ {
+  "src": "assets/sfx/impactGlass_light_000.wav",
+  "t": 6.48,
+  "dur": 0.21,
+  "vol": 0.8
+ },
+ {
+  "src": "assets/sfx/impactGlass_light_002.wav",
+  "t": 8.08,
+  "dur": 0.21,
+  "vol": 0.8
+ },
+ {
+  "src": "assets/sfx/impactGlass_medium_001.wav",
+  "t": 10.02,
+  "dur": 0.543,
+  "vol": 0.8
+ },
+ {
+  "src": "assets/sfx/phaseJump1.wav",
+  "t": 10.48,
+  "dur": 0.47,
+  "vol": 0.35
+ },
+ {
+  "src": "assets/sfx/impactGlass_heavy_000.wav",
+  "t": 13.45,
+  "dur": 0.241,
+  "vol": 1.0
+ },
+ {
+  "src": "assets/sfx/glass_004.wav",
+  "t": 13.47,
+  "dur": 0.692,
+  "vol": 0.6
+ },
+ {
+  "src": "assets/sfx/explosionCrunch_000.wav",
+  "t": 13.75,
+  "dur": 0.777,
+  "vol": 0.7
+ },
+ {
+  "src": "assets/sfx/impactGlass_heavy_002.wav",
+  "t": 13.76,
+  "dur": 0.247,
+  "vol": 0.9
+ },
+ {
+  "src": "assets/sfx/maximize_001.wav",
+  "t": 14.35,
+  "dur": 0.258,
+  "vol": 0.55
+ },
+ {
+  "src": "assets/sfx/lowFrequency_explosion_001.wav",
+  "t": 17.143,
+  "dur": 1.0,
+  "vol": 0.9
+ },
+ {
+  "src": "assets/sfx/impactPunch_heavy_002.wav",
+  "t": 17.143,
+  "dur": 0.458,
+  "vol": 0.5
+ },
+ {
+  "src": "assets/sfx/maximize_003.wav",
+  "t": 17.25,
+  "dur": 0.212,
+  "vol": 0.5
+ },
+ {
+  "src": "assets/sfx/maximize_002.wav",
+  "t": 19.75,
+  "dur": 0.258,
+  "vol": 0.5
+ },
+ {
+  "src": "assets/sfx/click_002.wav",
+  "t": 20.92,
+  "dur": 0.01,
+  "vol": 0.8
+ },
+ {
+  "src": "assets/sfx/switch12.wav",
+  "t": 21.12,
+  "dur": 0.054,
+  "vol": 0.6
+ },
+ {
+  "src": "assets/sfx/pluck_002.wav",
+  "t": 22.42,
+  "dur": 0.165,
+  "vol": 0.6
+ },
+ {
+  "src": "assets/sfx/switch13.wav",
+  "t": 22.72,
+  "dur": 0.028,
+  "vol": 0.6
+ },
+ {
+  "src": "assets/sfx/impactBell_heavy_003.wav",
+  "t": 23.3,
+  "dur": 0.654,
+  "vol": 0.55
+ },
+ {
+  "src": "assets/sfx/pluck_001.wav",
+  "t": 23.45,
+  "dur": 0.102,
+  "vol": 0.6
+ },
+ {
+  "src": "assets/sfx/impactBell_heavy_002.wav",
+  "t": 23.62,
+  "dur": 0.697,
+  "vol": 0.4
+ },
+ {
+  "src": "assets/sfx/click_003.wav",
+  "t": 24.16,
+  "dur": 0.01,
+  "vol": 0.8
+ },
+ {
+  "src": "assets/sfx/phaserUp2.wav",
+  "t": 24.2,
+  "dur": 0.418,
+  "vol": 0.35
+ },
+ {
+  "src": "assets/sfx/drop_004.wav",
+  "t": 26.95,
+  "dur": 0.287,
+  "vol": 0.8
+ },
+ {
+  "src": "assets/sfx/confirmation_002.wav",
+  "t": 28.12,
+  "dur": 0.539,
+  "vol": 0.9
+ },
+ {
+  "src": "assets/sfx/pluck_002.wav",
+  "t": 28.22,
+  "dur": 0.165,
+  "vol": 0.5
+ },
+ {
+  "src": "assets/sfx/maximize_002.wav",
+  "t": 29.55,
+  "dur": 0.258,
+  "vol": 0.6
+ },
+ {
+  "src": "assets/sfx/click_001.wav",
+  "t": 30.86,
+  "dur": 0.1,
+  "vol": 0.8
+ },
+ {
+  "src": "assets/sfx/pluck_001.wav",
+  "t": 31.4,
+  "dur": 0.102,
+  "vol": 0.6
+ },
+ {
+  "src": "assets/sfx/maximize_002.wav",
+  "t": 31.75,
+  "dur": 0.258,
+  "vol": 0.6
+ },
+ {
+  "src": "assets/sfx/toggle_002.wav",
+  "t": 32.64,
+  "dur": 0.139,
+  "vol": 0.9
+ },
+ {
+  "src": "assets/sfx/switch_003.wav",
+  "t": 32.7,
+  "dur": 0.5,
+  "vol": 0.5
+ },
+ {
+  "src": "assets/sfx/maximize_002.wav",
+  "t": 33.55,
+  "dur": 0.258,
+  "vol": 0.6
+ },
+ {
+  "src": "assets/sfx/click4.wav",
+  "t": 34.18,
+  "dur": 0.037,
+  "vol": 0.35
+ },
+ {
+  "src": "assets/sfx/click4.wav",
+  "t": 34.38,
+  "dur": 0.037,
+  "vol": 0.35
+ },
+ {
+  "src": "assets/sfx/click4.wav",
+  "t": 34.58,
+  "dur": 0.037,
+  "vol": 0.35
+ },
+ {
+  "src": "assets/sfx/doorClose_001.wav",
+  "t": 34.8,
+  "dur": 0.529,
+  "vol": 0.6
+ },
+ {
+  "src": "assets/sfx/click_004.wav",
+  "t": 35.33,
+  "dur": 0.01,
+  "vol": 0.9
+ },
+ {
+  "src": "assets/sfx/impactMetal_heavy_000.wav",
+  "t": 35.33,
+  "dur": 0.168,
+  "vol": 0.6
+ },
+ {
+  "src": "assets/sfx/maximize_001.wav",
+  "t": 36.5,
+  "dur": 0.258,
+  "vol": 0.5
+ },
+ {
+  "src": "assets/sfx/impactPunch_heavy_000.wav",
+  "t": 36.964,
+  "dur": 0.649,
+  "vol": 1.0
+ },
+ {
+  "src": "assets/sfx/lowFrequency_explosion_000.wav",
+  "t": 36.964,
+  "dur": 2.0,
+  "vol": 0.55
+ },
+ {
+  "src": "assets/sfx/impactPunch_heavy_002.wav",
+  "t": 38.036,
+  "dur": 0.458,
+  "vol": 1.0
+ },
+ {
+  "src": "assets/sfx/impactMetal_heavy_001.wav",
+  "t": 38.036,
+  "dur": 0.359,
+  "vol": 0.5
+ },
+ {
+  "src": "assets/sfx/impactPunch_heavy_003.wav",
+  "t": 39.107,
+  "dur": 0.474,
+  "vol": 1.0
+ },
+ {
+  "src": "assets/sfx/lowFrequency_explosion_001.wav",
+  "t": 39.107,
+  "dur": 1.0,
+  "vol": 0.55
+ },
+ {
+  "src": "assets/sfx/glitch_001.wav",
+  "t": 39.227,
+  "dur": 0.02,
+  "vol": 0.8
+ },
+ {
+  "src": "assets/sfx/glitch_003.wav",
+  "t": 39.307,
+  "dur": 0.01,
+  "vol": 0.8
+ },
+ {
+  "src": "assets/sfx/glitch_002.wav",
+  "t": 39.827,
+  "dur": 0.03,
+  "vol": 0.7
+ },
+ {
+  "src": "assets/sfx/impactBell_heavy_001_rev.wav",
+  "t": 39.209,
+  "dur": 1.741,
+  "vol": 0.5
+ },
+ {
+  "src": "assets/sfx/glass_004.wav",
+  "t": 42.0,
+  "dur": 0.692,
+  "vol": 0.35
+ },
+ {
+  "src": "assets/sfx/tick_001.wav",
+  "t": 43.15,
+  "dur": 0.023,
+  "vol": 0.35
+ }
+]

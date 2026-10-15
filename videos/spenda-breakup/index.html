@@ -1,0 +1,807 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=1080, height=1920" />
+    <title>Spenda 2.0: The Breakup Letter</title>
+    <script src="vendor/gsap.min.js"></script>
+    <script src="vendor/shader-transitions.js"></script>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div id="root" data-composition-id="main" data-start="0" data-width="1080" data-height="1920" data-duration="45">
+
+      <!-- 1 HOOK: glitchy vendor chat, spinning clock, red timer, camera shake -->
+      <div id="s1" class="scene clip" data-start="0" data-duration="45" data-track-index="0">
+        <div class="vignette"></div>
+        <div class="cam" id="s1-cam">
+          <div class="timer" id="s1-timer-row">
+            <svg class="clock" viewBox="0 0 64 64" aria-hidden="true"><circle cx="32" cy="32" r="27" fill="none" stroke="#FF3B30" stroke-width="5"/><line id="s1-hand-m" x1="32" y1="32" x2="32" y2="12" stroke="#FF3B30" stroke-width="5" stroke-linecap="round"/><line id="s1-hand-h" x1="32" y1="32" x2="45" y2="32" stroke="#FF3B30" stroke-width="5" stroke-linecap="round"/></svg>
+            <div class="timer-num"><span id="s1-timer">00:39:47</span></div>
+            <div class="timer-lbl">waiting</div>
+          </div>
+          <div class="glitch-stack" id="s1-stack">
+            <div class="ghost warm" aria-hidden="true">
+      <div class="chat" id="s1-gw">
+        <div class="chat-head"><div class="ch-av">PV</div><div><b>P2P Vendor</b><span id="s1-gw-status">online</span></div></div>
+        <div class="chat-body"><div class="msg in" id="s1-gw-m0"><span>Send screenshot</span><em>12:02</em></div><div class="msg out" id="s1-gw-m1"><span>Sent. Check am.</span><em>12:03 ✓✓</em></div><div class="msg in" id="s1-gw-m2"><span>Send screenshot</span><em>12:41</em></div><div class="msg in typing" id="s1-gw-typing"><i></i><i></i><i></i></div></div>
+        <div class="chat-input"><span>Message</span><i></i></div>
+      </div></div>
+            <div class="ghost cool" aria-hidden="true">
+      <div class="chat" id="s1-gc">
+        <div class="chat-head"><div class="ch-av">PV</div><div><b>P2P Vendor</b><span id="s1-gc-status">online</span></div></div>
+        <div class="chat-body"><div class="msg in" id="s1-gc-m0"><span>Send screenshot</span><em>12:02</em></div><div class="msg out" id="s1-gc-m1"><span>Sent. Check am.</span><em>12:03 ✓✓</em></div><div class="msg in" id="s1-gc-m2"><span>Send screenshot</span><em>12:41</em></div><div class="msg in typing" id="s1-gc-typing"><i></i><i></i><i></i></div></div>
+        <div class="chat-input"><span>Message</span><i></i></div>
+      </div></div>
+            <div class="base">
+      <div class="chat" id="s1-chat">
+        <div class="chat-head"><div class="ch-av">PV</div><div><b>P2P Vendor</b><span id="s1-chat-status">online</span></div></div>
+        <div class="chat-body"><div class="msg in" id="s1-chat-m0"><span>Send screenshot</span><em>12:02</em></div><div class="msg out" id="s1-chat-m1"><span>Sent. Check am.</span><em>12:03 ✓✓</em></div><div class="msg in" id="s1-chat-m2"><span>Send screenshot</span><em>12:41</em></div><div class="msg in typing" id="s1-chat-typing"><i></i><i></i><i></i></div></div>
+        <div class="chat-input"><span>Message</span><i></i></div>
+      </div></div>
+          </div>
+        </div>
+        <div class="scan" id="s1-scan"></div>
+        <div class="grain" id="s1-grain"></div>
+      </div>
+
+      <!-- 2 THE PAIN: kinetic slams that shatter into particles -->
+      <div id="s2" class="scene clip" data-start="0" data-duration="45" data-track-index="1">
+        <div class="ghost-type" id="s2-ghost">P2P</div>
+        <div class="pain-chip" id="s2-chip"><i></i>Pending <span id="s2-timer">00:40:16</span></div>
+        <div class="slam" id="s2-w0"><span class="sl-a">SEND</span><span class="sl-b">SCREENSHOT.</span></div>
+        <div class="slam" id="s2-w1"><span class="sl-a">STILL</span><span class="sl-b">PENDING.</span></div>
+        <div class="slam" id="s2-w2"><span class="sl-a">SEEN.</span><span class="sl-b">NO REPLY.</span></div>
+        <div class="rgb" id="s2-rgb-r"></div><div class="rgb" id="s2-rgb-c"></div>
+        <canvas id="s2-particles" class="fx-canvas" width="1080" height="1920"></canvas>
+        <div class="flash" id="s2-flash"></div>
+        <div class="grain" id="s2-grain"></div>
+      </div>
+
+      <!-- 3 THE BREAK: freeze frame, chromatic aberration, crack, GPU particle explosion -->
+      <div id="s3" class="scene clip" data-start="0" data-duration="45" data-track-index="2">
+        <div class="freeze-wrap" id="s3-wrap">
+          <div class="ab ab-r" aria-hidden="true">
+      <div class="chat" id="s3-ar">
+        <div class="chat-head"><div class="ch-av">PV</div><div><b>P2P Vendor</b><span id="s3-ar-status">online</span></div></div>
+        <div class="chat-body"><div class="msg in" id="s3-ar-m0"><span>Send screenshot</span><em>12:02</em></div><div class="msg out" id="s3-ar-m1"><span>Sent. Check am.</span><em>12:03 ✓✓</em></div><div class="msg in" id="s3-ar-m2"><span>Send screenshot</span><em>12:41</em></div><div class="msg in typing" id="s3-ar-typing"><i></i><i></i><i></i></div></div>
+        <div class="chat-input"><span>Message</span><i></i></div>
+      </div></div>
+          <div class="ab ab-c" aria-hidden="true">
+      <div class="chat" id="s3-ac">
+        <div class="chat-head"><div class="ch-av">PV</div><div><b>P2P Vendor</b><span id="s3-ac-status">online</span></div></div>
+        <div class="chat-body"><div class="msg in" id="s3-ac-m0"><span>Send screenshot</span><em>12:02</em></div><div class="msg out" id="s3-ac-m1"><span>Sent. Check am.</span><em>12:03 ✓✓</em></div><div class="msg in" id="s3-ac-m2"><span>Send screenshot</span><em>12:41</em></div><div class="msg in typing" id="s3-ac-typing"><i></i><i></i><i></i></div></div>
+        <div class="chat-input"><span>Message</span><i></i></div>
+      </div></div>
+          <div class="ab-base" id="s3-base">
+      <div class="chat" id="s3-chat">
+        <div class="chat-head"><div class="ch-av">PV</div><div><b>P2P Vendor</b><span id="s3-chat-status">online</span></div></div>
+        <div class="chat-body"><div class="msg in" id="s3-chat-m0"><span>Send screenshot</span><em>12:02</em></div><div class="msg out" id="s3-chat-m1"><span>Sent. Check am.</span><em>12:03 ✓✓</em></div><div class="msg in" id="s3-chat-m2"><span>Send screenshot</span><em>12:41</em></div><div class="msg in typing" id="s3-chat-typing"><i></i><i></i><i></i></div></div>
+        <div class="chat-input"><span>Message</span><i></i></div>
+      </div></div>
+          <svg class="cracks" id="s3-cracks" viewBox="0 0 1080 1920" aria-hidden="true">
+            <g fill="none" stroke="#FFFFFF" stroke-width="3" stroke-linecap="round">
+              <path class="crk" pathLength="1" d="M540 760 L455 640 L430 520 L360 455"/>
+              <path class="crk" pathLength="1" d="M540 760 L650 690 L760 700 L860 610"/>
+              <path class="crk" pathLength="1" d="M540 760 L600 880 L585 1010 L660 1110"/>
+              <path class="crk" pathLength="1" d="M540 760 L420 830 L300 820 L215 905"/>
+              <path class="crk" pathLength="1" d="M540 760 L560 600 L620 470"/>
+              <path class="crk" pathLength="1" d="M540 760 L470 960 L380 1060"/>
+              <path class="crk" pathLength="1" d="M455 640 L520 610 M650 690 L640 600 M600 880 L700 900 M420 830 L440 930"/>
+            </g>
+          </svg>
+        </div>
+        <div class="freeze-tag" id="s3-tag">PAUSED</div>
+        <canvas id="s3-gl" class="fx-canvas" width="1080" height="1920"></canvas>
+        <div class="vignette strong"></div>
+        <div class="grain" id="s3-grain"></div>
+      </div>
+
+      <!-- 4 THE REVEAL: light leak, particles gather into the 3D S, wordmark -->
+      <div id="s4" class="scene clip" data-start="0" data-duration="45" data-track-index="3">
+        <div class="leak leak-warm" id="s4-leak"></div>
+        <div class="leak leak-green" id="s4-leak2"></div>
+        <div class="bloom" id="s4-bloom"></div>
+        <canvas id="s4-gl" class="fx-canvas" width="1080" height="1920"></canvas>
+        <div class="wordmark" id="s4-wm"><span class="wm-name">Spenda</span><span class="wm-ver" id="s4-ver">2.0</span></div>
+        <div class="flash" id="s4-flash"></div>
+        <div class="grain" id="s4-grain"></div>
+      </div>
+
+      <!-- 5 THE FLOW: 3D phone, deposit → convert (coin) → transfer sent -->
+      <div id="s5" class="scene clip" data-start="0" data-duration="45" data-track-index="4">
+        <div class="bokeh" id="s5-bokeh"></div>
+        <div class="leak leak-green soft" id="s5-leak"></div>
+        <div class="stage3d">
+      <div class="phone-rig" id="p5-rig">
+        <div class="phone-floor" id="p5-floor"></div>
+        <div class="phone" id="p5">
+          <div class="ph-side ph-left"></div><div class="ph-side ph-right"></div>
+          <div class="ph-cap ph-top"></div><div class="ph-cap ph-bottom"></div>
+          <div class="ph-face ph-back">
+            <div class="ph-cam"><i></i><i></i><i></i></div>
+            <svg class="ph-back-logo" viewBox="60 43 119 119" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path fill="currentColor" d="M140 58 H157.5 A6 6 0 0 1 163.5 64 V111.5 A6 6 0 0 1 157.5 117.5 H111 A6 6 0 0 1 105 111.5 V93 A35 35 0 0 1 140 58 Z"/><path fill="currentColor" d="M81 122 H128.5 A6 6 0 0 1 134.5 128 V150.5 A30 30 0 0 1 104.5 180.5 H81 A6 6 0 0 1 75 174.5 V128 A6 6 0 0 1 81 122 Z"/></svg>
+          </div>
+          <div class="ph-face ph-front">
+            <div class="ph-screen ph-light" id="p5-screen">
+<div class="scr" id="p5-home">
+  <div class="sb"><span>9:41</span><span class="sb-r"><svg viewBox="0 0 24 24"><path d="M3 18h2v-3H3zm4 0h2v-6H7zm4 0h2V9h-2zm4 0h2V6h-2z" fill="currentColor"/></svg><i class="batt"></i></span></div>
+  <div class="home-card">
+    <div class="hc-top"><div class="hc-avatar"><svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="4" fill="currentColor"/><path d="M4 21a8 8 0 0 1 16 0z" fill="currentColor"/></svg></div><div class="hc-hi">Hi, Breeze</div><div class="hc-bell"><svg viewBox="0 0 24 24"><path d="M6 17V11a6 6 0 1 1 12 0v6l2 2H4zM10 21h4" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg></div></div>
+    <div class="hc-label">Total Balance <span class="ic"><svg viewBox="0 0 24 24"><path d="M3 4l17 16M10.6 6.2A9.8 9.8 0 0 1 12 6c5 0 9 6 9 6a15 15 0 0 1-3.2 3.6M6.4 7.9A15 15 0 0 0 3 12s4 6 9 6a9 9 0 0 0 3.4-.7" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span></div>
+    <div class="hc-bal">₦ ••••••</div>
+    <div class="hc-btns"><div class="hc-btn" id="p5-dep-btn"><span class="ic"><svg viewBox="0 0 24 24"><path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/></svg></span>Deposit</div><div class="hc-btn"><span>Transfer</span><span class="ic"><svg viewBox="0 0 24 24"><path d="M12 19V5M6 11l6-6 6 6" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span></div></div>
+  </div>
+  <div class="qa">
+    <div class="qa-i"><div class="qa-c" style="background:#F2F2F2"><svg viewBox="0 0 24 24"><path d="M6.6 10.8a15 15 0 0 0 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1A17 17 0 0 1 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1z" fill="currentColor"/></svg></div>Airtime</div>
+    <div class="qa-i"><div class="qa-c" style="background:#F2F2F2"><svg viewBox="0 0 24 24"><path d="M2 9a15 15 0 0 1 20 0M5.5 12.5a10 10 0 0 1 13 0M9 16a5 5 0 0 1 6 0" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/><circle cx="12" cy="19.5" r="1.6" fill="currentColor"/></svg></div>Data</div>
+    <div class="qa-i"><div class="qa-c" style="background:#F2F2F2"><svg viewBox="0 0 24 24"><path d="M5 3h14v18l-2.3-1.6L14.4 21 12 19.4 9.6 21l-2.3-1.6L5 21z" fill="currentColor"/><path d="M8 8h8M8 12h8M8 16h5" stroke="#fff" stroke-width="1.6"/></svg></div>Bills</div>
+    <div class="qa-i"><div class="qa-c" style="background:#F2F2F2"><svg viewBox="0 0 24 24"><path d="M4 11h16v9H4zM3 7h18v4H3zM12 7v13" fill="none" stroke="currentColor" stroke-width="2"/><path d="M12 7c-2-4-6-3-5 0M12 7c2-4 6-3 5 0" fill="none" stroke="currentColor" stroke-width="2"/></svg></div>Rewards</div>
+  </div>
+  <div class="tx-head">Recent</div>
+  <div class="tx"><div class="tx-ic"><svg viewBox="0 0 24 24"><path d="M3 9l9-5 9 5zM5 10h2v7H5zm4 0h2v7H9zm4 0h2v7h-2zm4 0h2v7h-2zM3 18h18v2H3z" fill="currentColor"/></svg></div><div class="tx-m"><b>Deposit</b><span>Bank • Today</span></div><div class="tx-amt">₦ ••••</div></div>
+  <div class="tx"><div class="tx-ic"><svg viewBox="0 0 24 24"><path d="M7 4v14M3 14l4 4 4-4M17 20V6M13 10l4-4 4 4" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div class="tx-m"><b>Convert</b><span>USDT • Today</span></div><div class="tx-amt">•••</div></div>
+  <div class="tabbar"><b>Home</b><span>Rates</span><span>Cards</span><span>Account</span></div>
+</div>
+<div class="scr" id="p5-deposit">
+  <div class="sb"><span>9:41</span><span class="sb-r"><svg viewBox="0 0 24 24"><path d="M3 18h2v-3H3zm4 0h2v-6H7zm4 0h2V9h-2zm4 0h2V6h-2z" fill="currentColor"/></svg><i class="batt"></i></span></div>
+  <div class="nav"><span class="ic"><svg viewBox="0 0 24 24"><path d="M15 5l-7 7 7 7" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span><b>Deposit Naira</b><i></i></div>
+  <div class="dep-label">Amount received</div>
+  <div class="dep-amt"><span class="cur">₦</span><span id="p5-dep-num">0</span></div>
+  <div class="dep-sub">From your bank account • Fee ₦0</div>
+  <div class="dep-row"><span>Account name</span><b>Breeze</b></div>
+  <div class="dep-row"><span>Bank</span><b>Your bank</b></div>
+  <div class="dep-ok" id="p5-dep-ok"><span class="dot-ok"></span>Deposit received</div>
+</div>
+<div class="scr" id="p5-convert">
+  <div class="sb"><span>9:41</span><span class="sb-r"><svg viewBox="0 0 24 24"><path d="M3 18h2v-3H3zm4 0h2v-6H7zm4 0h2V9h-2zm4 0h2V6h-2z" fill="currentColor"/></svg><i class="batt"></i></span></div>
+  <div class="seg"><span>Rates</span><b>Calculator</b></div>
+  <div class="cv-box">
+    <div class="cv-lbl">You Send</div>
+    <div class="cv-row"><div class="cv-num">50,000</div><div class="cv-pill"><i class="tok"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="12" fill="#111"/><path d="M8 17V7l8 10V7M6 10.5h12M6 13.5h12" fill="none" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></i>NGN</div></div>
+    <div class="cv-mid">
+      <div class="cv-line"><span class="ic"><svg viewBox="0 0 24 24"><path d="M7 4v14M3 14l4 4 4-4M17 20V6M13 10l4-4 4 4" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>Exchange Rate<b>$1 = ₦1,357</b></div>
+      <div class="cv-line" id="p5-fee-line"><span class="ic"><svg viewBox="0 0 24 24"><path d="M7 4v14M3 14l4 4 4-4M17 20V6M13 10l4-4 4 4" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>Fee<b id="p5-fee">₦0</b></div>
+    </div>
+    <div class="cv-recv">
+      <div class="cv-lbl">You Receive</div>
+      <div class="cv-row"><div class="cv-num" id="p5-usdt">36.85</div><div class="cv-pill"><i class="tok"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="12" fill="#22C55E"/><path d="M6.5 6.8h11v2.6h-4.2v1.3c2.7.2 4.6.8 4.6 1.5s-1.9 1.3-4.6 1.5v4.6h-2.6v-4.6C8 13.5 6.1 12.9 6.1 12.2s1.9-1.3 4.6-1.5V9.4H6.5z" fill="#fff"/><ellipse cx="12" cy="12.2" rx="4.6" ry="0.9" fill="#22C55E"/></svg></i>USDT</div></div>
+    </div>
+  </div>
+  <div class="cv-btn" id="p5-cv-btn"><span id="p5-cv-txt">Convert now</span><i id="p5-cv-bar"></i></div>
+</div>
+<div class="scr" id="p5-success">
+  <div class="sx-dim"></div>
+  <div class="sx-sheet" id="p5-sheet">
+    <div class="sx-grab"></div>
+    <svg class="sx-check" viewBox="0 0 120 120" aria-hidden="true">
+      <circle cx="60" cy="60" r="52" fill="none" stroke="#22C55E" stroke-width="10" id="p5-ring" pathLength="1"/>
+      <circle cx="60" cy="60" r="38" fill="#22C55E" id="p5-disc"/>
+      <path d="M43 61 l12 11 l23 -25" fill="none" stroke="#FFFFFF" stroke-width="9" stroke-linecap="square" id="p5-tick" pathLength="1"/>
+    </svg>
+    <div class="sx-title">Transfer sent</div>
+    <div class="sx-sub">36.85 USDT • Fee ₦0</div>
+    <div class="sx-btns"><div class="sx-b1">View Receipt</div><div class="sx-b2">Done</div></div>
+  </div>
+  <div class="burst" id="p5-burst"></div>
+</div></div>
+            <div class="ph-island"></div>
+            <div class="ph-glare" id="p5-glare"></div>
+          </div>
+        </div>
+      </div></div>
+        <div class="chip3d" id="s5-chip-fee"><span>Fee</span><b>₦0</b></div>
+        <div class="chip3d green" id="s5-chip-usdt"><i class="tok"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="12" fill="#22C55E"/><path d="M6.5 6.8h11v2.6h-4.2v1.3c2.7.2 4.6.8 4.6 1.5s-1.9 1.3-4.6 1.5v4.6h-2.6v-4.6C8 13.5 6.1 12.9 6.1 12.2s1.9-1.3 4.6-1.5V9.4H6.5z" fill="#fff"/><ellipse cx="12" cy="12.2" rx="4.6" ry="0.9" fill="#22C55E"/></svg></i><b>36.85 USDT</b></div>
+        <canvas id="s5-gl" class="fx-canvas" width="1080" height="1920"></canvas>
+        <div class="grain" id="s5-grain"></div>
+      </div>
+
+      <!-- 6a EXTRAS: statement download (light) -->
+      <div id="s6a" class="scene clip light" data-start="0" data-duration="45" data-track-index="5">
+        <div class="ghost-type dark" id="s6a-ghost">PDF</div>
+        <div class="stage3d">
+      <div class="phone-rig" id="p6a-rig">
+        <div class="phone-floor" id="p6a-floor"></div>
+        <div class="phone" id="p6a">
+          <div class="ph-side ph-left"></div><div class="ph-side ph-right"></div>
+          <div class="ph-cap ph-top"></div><div class="ph-cap ph-bottom"></div>
+          <div class="ph-face ph-back">
+            <div class="ph-cam"><i></i><i></i><i></i></div>
+            <svg class="ph-back-logo" viewBox="60 43 119 119" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path fill="currentColor" d="M140 58 H157.5 A6 6 0 0 1 163.5 64 V111.5 A6 6 0 0 1 157.5 117.5 H111 A6 6 0 0 1 105 111.5 V93 A35 35 0 0 1 140 58 Z"/><path fill="currentColor" d="M81 122 H128.5 A6 6 0 0 1 134.5 128 V150.5 A30 30 0 0 1 104.5 180.5 H81 A6 6 0 0 1 75 174.5 V128 A6 6 0 0 1 81 122 Z"/></svg>
+          </div>
+          <div class="ph-face ph-front">
+            <div class="ph-screen ph-light" id="p6a-screen">
+<div class="scr" id="p6a-st">
+  <div class="sb"><span>9:41</span><span class="sb-r"><svg viewBox="0 0 24 24"><path d="M3 18h2v-3H3zm4 0h2v-6H7zm4 0h2V9h-2zm4 0h2V6h-2z" fill="currentColor"/></svg><i class="batt"></i></span></div>
+  <div class="nav"><span class="ic"><svg viewBox="0 0 24 24"><path d="M15 5l-7 7 7 7" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span><b>Statements</b><i></i></div>
+  <div class="st-card"><div class="st-ic"><svg viewBox="0 0 24 24"><path d="M6 2h8l5 5v15H6z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><path d="M14 2v5h5M9 13h7M9 17h7" fill="none" stroke="currentColor" stroke-width="2"/></svg></div><div><b>Account statement</b><span>PDF • All transactions</span></div></div>
+  <div class="st-row"><span>September 2026</span><span class="ic"><svg viewBox="0 0 24 24"><path d="M9 5l7 7-7 7" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span></div>
+  <div class="st-row"><span>August 2026</span><span class="ic"><svg viewBox="0 0 24 24"><path d="M9 5l7 7-7 7" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span></div>
+  <div class="st-row"><span>July 2026</span><span class="ic"><svg viewBox="0 0 24 24"><path d="M9 5l7 7-7 7" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span></div>
+  <div class="st-btn" id="p6a-btn"><span class="ic"><svg viewBox="0 0 24 24"><path d="M12 5v14M6 13l6 6 6-6" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span id="p6a-btn-txt">Download statement</span><i id="p6a-bar"></i></div>
+  <div class="st-ok" id="p6a-ok"><span class="dot-ok"></span>Statement_Sep.pdf saved</div>
+</div></div>
+            <div class="ph-island"></div>
+            <div class="ph-glare" id="p6a-glare"></div>
+          </div>
+        </div>
+      </div></div>
+        <div class="grain" id="s6a-grain"></div>
+      </div>
+
+      <!-- 6b EXTRAS: dark mode toggle inverts the whole frame -->
+      <div id="s6b" class="scene clip light" data-start="0" data-duration="45" data-track-index="6">
+        <div class="dark-flood" id="s6b-flood"></div>
+        <div class="ghost-type dark" id="s6b-ghost">DARK</div>
+        <div class="stage3d">
+      <div class="phone-rig" id="p6b-rig">
+        <div class="phone-floor" id="p6b-floor"></div>
+        <div class="phone" id="p6b">
+          <div class="ph-side ph-left"></div><div class="ph-side ph-right"></div>
+          <div class="ph-cap ph-top"></div><div class="ph-cap ph-bottom"></div>
+          <div class="ph-face ph-back">
+            <div class="ph-cam"><i></i><i></i><i></i></div>
+            <svg class="ph-back-logo" viewBox="60 43 119 119" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path fill="currentColor" d="M140 58 H157.5 A6 6 0 0 1 163.5 64 V111.5 A6 6 0 0 1 157.5 117.5 H111 A6 6 0 0 1 105 111.5 V93 A35 35 0 0 1 140 58 Z"/><path fill="currentColor" d="M81 122 H128.5 A6 6 0 0 1 134.5 128 V150.5 A30 30 0 0 1 104.5 180.5 H81 A6 6 0 0 1 75 174.5 V128 A6 6 0 0 1 81 122 Z"/></svg>
+          </div>
+          <div class="ph-face ph-front">
+            <div class="ph-screen ph-light" id="p6b-screen">
+<div class="scr" id="p6b-set">
+  <div class="sb"><span>9:41</span><span class="sb-r"><svg viewBox="0 0 24 24"><path d="M3 18h2v-3H3zm4 0h2v-6H7zm4 0h2V9h-2zm4 0h2V6h-2z" fill="currentColor"/></svg><i class="batt"></i></span></div>
+  <div class="nav"><span class="ic"><svg viewBox="0 0 24 24"><path d="M15 5l-7 7 7 7" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span><b>Settings</b><i></i></div>
+  <div class="set-row"><span class="set-ic"><svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="4" fill="currentColor"/><path d="M4 21a8 8 0 0 1 16 0z" fill="currentColor"/></svg></span>Profile<span class="ic"><svg viewBox="0 0 24 24"><path d="M9 5l7 7-7 7" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span></div>
+  <div class="set-row"><span class="set-ic"><svg viewBox="0 0 24 24"><path d="M6 17V11a6 6 0 1 1 12 0v6l2 2H4zM10 21h4" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg></span>Notifications<span class="ic"><svg viewBox="0 0 24 24"><path d="M9 5l7 7-7 7" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span></div>
+  <div class="set-row"><span class="set-ic"><svg viewBox="0 0 24 24"><path d="M20 14.5A8 8 0 0 1 9.5 4a8 8 0 1 0 10.5 10.5z" fill="currentColor"/></svg></span>Dark mode<span class="tgl" id="p6b-tgl"><i id="p6b-knob"></i></span></div>
+  <div class="set-row"><span class="set-ic"><svg viewBox="0 0 24 24"><path d="M12 2l8 3v6c0 5-3.4 9.4-8 11-4.6-1.6-8-6-8-11V5z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg></span>Security<span class="ic"><svg viewBox="0 0 24 24"><path d="M9 5l7 7-7 7" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span></div>
+  <div class="set-row"><span class="set-ic"><svg viewBox="0 0 24 24"><path d="M6 2h8l5 5v15H6z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><path d="M14 2v5h5M9 13h7M9 17h7" fill="none" stroke="currentColor" stroke-width="2"/></svg></span>Statements<span class="ic"><svg viewBox="0 0 24 24"><path d="M9 5l7 7-7 7" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span></div>
+</div>
+<div class="scr dark" id="p6b-darkscr">
+  <div class="sb"><span>9:41</span><span class="sb-r"><svg viewBox="0 0 24 24"><path d="M3 18h2v-3H3zm4 0h2v-6H7zm4 0h2V9h-2zm4 0h2V6h-2z" fill="currentColor"/></svg><i class="batt"></i></span></div>
+  <div class="nav"><span class="ic"><svg viewBox="0 0 24 24"><path d="M15 5l-7 7 7 7" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span><b>Settings</b><i></i></div>
+  <div class="set-row"><span class="set-ic"><svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="4" fill="currentColor"/><path d="M4 21a8 8 0 0 1 16 0z" fill="currentColor"/></svg></span>Profile<span class="ic"><svg viewBox="0 0 24 24"><path d="M9 5l7 7-7 7" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span></div>
+  <div class="set-row"><span class="set-ic"><svg viewBox="0 0 24 24"><path d="M6 17V11a6 6 0 1 1 12 0v6l2 2H4zM10 21h4" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg></span>Notifications<span class="ic"><svg viewBox="0 0 24 24"><path d="M9 5l7 7-7 7" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span></div>
+  <div class="set-row"><span class="set-ic"><svg viewBox="0 0 24 24"><path d="M20 14.5A8 8 0 0 1 9.5 4a8 8 0 1 0 10.5 10.5z" fill="currentColor"/></svg></span>Dark mode<span class="tgl" id="p6b-tgl-d"><i id="p6b-knob-d"></i></span></div>
+  <div class="set-row"><span class="set-ic"><svg viewBox="0 0 24 24"><path d="M12 2l8 3v6c0 5-3.4 9.4-8 11-4.6-1.6-8-6-8-11V5z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg></span>Security<span class="ic"><svg viewBox="0 0 24 24"><path d="M9 5l7 7-7 7" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span></div>
+  <div class="set-row"><span class="set-ic"><svg viewBox="0 0 24 24"><path d="M6 2h8l5 5v15H6z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><path d="M14 2v5h5M9 13h7M9 17h7" fill="none" stroke="currentColor" stroke-width="2"/></svg></span>Statements<span class="ic"><svg viewBox="0 0 24 24"><path d="M9 5l7 7-7 7" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span></div>
+</div></div>
+            <div class="ph-island"></div>
+            <div class="ph-glare" id="p6b-glare"></div>
+          </div>
+        </div>
+      </div></div>
+        <div class="grain" id="s6b-grain"></div>
+      </div>
+
+      <!-- 6c EXTRAS: 2FA lock snaps shut -->
+      <div id="s6c" class="scene clip" data-start="0" data-duration="45" data-track-index="7">
+        <div class="ghost-type" id="s6c-ghost">2FA</div>
+        <div class="stage3d">
+      <div class="phone-rig" id="p6c-rig">
+        <div class="phone-floor" id="p6c-floor"></div>
+        <div class="phone" id="p6c">
+          <div class="ph-side ph-left"></div><div class="ph-side ph-right"></div>
+          <div class="ph-cap ph-top"></div><div class="ph-cap ph-bottom"></div>
+          <div class="ph-face ph-back">
+            <div class="ph-cam"><i></i><i></i><i></i></div>
+            <svg class="ph-back-logo" viewBox="60 43 119 119" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path fill="currentColor" d="M140 58 H157.5 A6 6 0 0 1 163.5 64 V111.5 A6 6 0 0 1 157.5 117.5 H111 A6 6 0 0 1 105 111.5 V93 A35 35 0 0 1 140 58 Z"/><path fill="currentColor" d="M81 122 H128.5 A6 6 0 0 1 134.5 128 V150.5 A30 30 0 0 1 104.5 180.5 H81 A6 6 0 0 1 75 174.5 V128 A6 6 0 0 1 81 122 Z"/></svg>
+          </div>
+          <div class="ph-face ph-front">
+            <div class="ph-screen ph-dark" id="p6c-screen">
+<div class="scr" id="p6c-2fa">
+  <div class="sb"><span>9:41</span><span class="sb-r"><svg viewBox="0 0 24 24"><path d="M3 18h2v-3H3zm4 0h2v-6H7zm4 0h2V9h-2zm4 0h2V6h-2z" fill="currentColor"/></svg><i class="batt"></i></span></div>
+  <div class="nav"><span class="ic"><svg viewBox="0 0 24 24"><path d="M15 5l-7 7 7 7" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span><b>Security</b><i></i></div>
+  <svg class="lock" viewBox="0 0 120 150" aria-hidden="true">
+    <path id="p6c-shackle" d="M30 66 V44 a30 30 0 0 1 60 0 V66" fill="none" stroke="#FFFFFF" stroke-width="13" stroke-linecap="round"/>
+    <rect x="14" y="62" width="92" height="80" rx="18" fill="#FFFFFF"/>
+    <circle cx="60" cy="96" r="9" fill="#000"/><rect x="56" y="98" width="8" height="20" rx="3" fill="#000"/>
+  </svg>
+  <div class="tfa-title">Two-factor authentication</div>
+  <div class="tfa-codes"><i class="tfa-d" id="p6c-d0"><b>4</b></i><i class="tfa-d" id="p6c-d1"><b>8</b></i><i class="tfa-d" id="p6c-d2"><b>1</b></i><i class="tfa-d" id="p6c-d3"><b>2</b></i><i class="tfa-d" id="p6c-d4"><b>0</b></i><i class="tfa-d" id="p6c-d5"><b>7</b></i></div>
+  <div class="tfa-ok" id="p6c-ok"><span class="dot-ok"></span>2FA on • Account locked in</div>
+</div></div>
+            <div class="ph-island"></div>
+            <div class="ph-glare" id="p6c-glare"></div>
+          </div>
+        </div>
+      </div></div>
+        <div class="grain" id="s6c-grain"></div>
+      </div>
+
+      <!-- 7 THE PUNCHLINE: No vendor. No waiting. No wahala. -->
+      <div id="s7" class="scene clip" data-start="0" data-duration="45" data-track-index="8">
+        <div class="pl-bg" id="s7-bg"></div>
+        <div class="pl" id="s7-p0"><span>NO</span><span>VENDOR.</span></div>
+        <div class="pl" id="s7-p1"><span>NO</span><span>WAITING.</span></div>
+        <div class="pl" id="s7-p2">
+          <span>NO</span>
+          <span class="pl-glitch" id="s7-g">
+            <span class="g-copy g-a" aria-hidden="true">WAHALA.</span>
+            <span class="g-copy g-b" aria-hidden="true">WAHALA.</span>
+            <span class="g-base">WAHALA.</span>
+            <i class="pl-under" id="s7-under"></i>
+          </span>
+        </div>
+        <div class="grain" id="s7-grain"></div>
+      </div>
+
+      <!-- 8 OUTRO: logo + wordmark glint, tagline, end credit -->
+      <div id="s8" class="scene clip" data-start="0" data-duration="45" data-track-index="9">
+        <div class="leak leak-green outro" id="s8-leak"></div>
+        <div class="leak leak-warm outro" id="s8-leak2"></div>
+        <div class="lockup" id="s8-lockup">
+          <div class="lk-mark"><svg class="lk-svg" viewBox="60 43 119 119" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path fill="currentColor" d="M140 58 H157.5 A6 6 0 0 1 163.5 64 V111.5 A6 6 0 0 1 157.5 117.5 H111 A6 6 0 0 1 105 111.5 V93 A35 35 0 0 1 140 58 Z"/><path fill="currentColor" d="M81 122 H128.5 A6 6 0 0 1 134.5 128 V150.5 A30 30 0 0 1 104.5 180.5 H81 A6 6 0 0 1 75 174.5 V128 A6 6 0 0 1 81 122 Z"/></svg><div class="glint-layer"><svg class="lk-svg" viewBox="60 43 119 119" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path fill="currentColor" d="M140 58 H157.5 A6 6 0 0 1 163.5 64 V111.5 A6 6 0 0 1 157.5 117.5 H111 A6 6 0 0 1 105 111.5 V93 A35 35 0 0 1 140 58 Z"/><path fill="currentColor" d="M81 122 H128.5 A6 6 0 0 1 134.5 128 V150.5 A30 30 0 0 1 104.5 180.5 H81 A6 6 0 0 1 75 174.5 V128 A6 6 0 0 1 81 122 Z"/></svg></div></div>
+          <div class="lk-word"><span>Spenda</span><span class="glint-text" aria-hidden="true">Spenda</span></div>
+        </div>
+        <div class="tagline" id="s8-tag">Bye bye, P2P.</div>
+        <div class="credit" id="s8-credit">
+          <i class="cr-line" id="s8-line"></i>
+          <div class="cr-by">Edited by</div>
+          <div class="cr-name">BreezeOg</div>
+        </div>
+        <div class="grain" id="s8-grain"></div>
+      </div>
+
+      <!-- Captions: word-by-word from Whisper timings (never on screen during a shader transition) -->
+      <div id="captions" class="clip" data-start="0" data-duration="45" data-track-index="20">
+        <div class="cap-line" id="cap-0"><span class="cw" id="cw-0-0">Dear</span><span class="cw key" id="cw-0-1">P2P…<u></u></span><span class="cw" id="cw-0-2">we</span><span class="cw" id="cw-0-3">need</span><span class="cw" id="cw-0-4">to</span><span class="cw" id="cw-0-5">talk.</span></div>
+        <div class="cap-line" id="cap-1"><span class="cw key" id="cw-1-0">Forty<u></u></span><span class="cw" id="cw-1-1">minutes.</span></div>
+        <div class="cap-line" id="cap-2"><span class="cw key" id="cw-2-0">Three<u></u></span><span class="cw" id="cw-2-1">screenshots.</span></div>
+        <div class="cap-line" id="cap-3"><span class="cw key" id="cw-3-0">Zero<u></u></span><span class="cw" id="cw-3-1">peace</span><span class="cw" id="cw-3-2">of</span><span class="cw" id="cw-3-3">mind.</span></div>
+        <div class="cap-line" id="cap-4"><span class="cw" id="cw-4-0">It&#x27;s</span><span class="cw" id="cw-4-1">not</span><span class="cw" id="cw-4-2">me.</span></div>
+        <div class="cap-line" id="cap-5"><span class="cw" id="cw-5-0">It&#x27;s</span><span class="cw key" id="cw-5-1">you.<u></u></span></div>
+        <div class="cap-line" id="cap-6"><span class="cw" id="cw-6-0">Meet</span><span class="cw key" id="cw-6-1">Spenda<u></u></span><span class="cw key" id="cw-6-2">2.0.<u></u></span></div>
+        <div class="cap-line" id="cap-7"><span class="cw" id="cw-7-0">Send</span><span class="cw key" id="cw-7-1">Naira.<u></u></span></div>
+        <div class="cap-line" id="cap-8"><span class="cw" id="cw-8-0">Get</span><span class="cw key" id="cw-8-1">stablecoins.<u></u></span></div>
+        <div class="cap-line" id="cap-9"><span class="cw key" id="cw-9-0">Instantly.<u></u></span></div>
+        <div class="cap-line" id="cap-10"><span class="cw" id="cw-10-0">Fee?</span><span class="cw key" id="cw-10-1">Zero.<u></u></span></div>
+        <div class="cap-line" id="cap-11"><span class="cw key" id="cw-11-0">Statements<u></u></span><span class="cw" id="cw-11-1">in</span><span class="cw" id="cw-11-2">one</span><span class="cw" id="cw-11-3">tap.</span></div>
+        <div class="cap-line" id="cap-12"><span class="cw key" id="cw-12-0">Dark<u></u></span><span class="cw" id="cw-12-1">mode.</span></div>
+        <div class="cap-line" id="cap-13"><span class="cw key" id="cw-13-0">Two-factor.<u></u></span></div>
+        <div class="cap-line" id="cap-14"><span class="cw key" id="cw-14-0">Locked<u></u></span><span class="cw" id="cw-14-1">in.</span></div>
+      </div>
+
+    </div>
+
+    <!-- Audio: cloned-voice VO, code-composed score (carved + ducked), Kenney SFX on the beats -->
+    <audio id="vo" src="assets/audio/vo.wav" data-start="0" data-duration="45" data-track-index="10" data-volume="1"></audio>
+    <audio id="music" src="assets/audio/music.wav" data-start="0" data-duration="45" data-track-index="11" data-volume="1"></audio>
+    <audio id="sfx-00" src="assets/sfx/drop_002.wav" data-start="0.360" data-duration="0.191" data-track-index="30" data-volume="0.8"></audio>
+    <audio id="sfx-01" src="assets/sfx/glitch_001.wav" data-start="0.360" data-duration="0.020" data-track-index="31" data-volume="0.7"></audio>
+    <audio id="sfx-02" src="assets/sfx/tick_002.wav" data-start="0.536" data-duration="0.023" data-track-index="31" data-volume="0.45"></audio>
+    <audio id="sfx-03" src="assets/sfx/pluck_001.wav" data-start="1.080" data-duration="0.102" data-track-index="30" data-volume="0.7"></audio>
+    <audio id="sfx-04" src="assets/sfx/tick_002.wav" data-start="1.607" data-duration="0.023" data-track-index="30" data-volume="0.45"></audio>
+    <audio id="sfx-05" src="assets/sfx/drop_003.wav" data-start="2.140" data-duration="0.191" data-track-index="30" data-volume="0.8"></audio>
+    <audio id="sfx-06" src="assets/sfx/glitch_003.wav" data-start="2.140" data-duration="0.010" data-track-index="31" data-volume="0.7"></audio>
+    <audio id="sfx-07" src="assets/sfx/tick_002.wav" data-start="2.679" data-duration="0.023" data-track-index="30" data-volume="0.45"></audio>
+    <audio id="sfx-08" src="assets/sfx/glitch_002.wav" data-start="3.300" data-duration="0.030" data-track-index="30" data-volume="0.6"></audio>
+    <audio id="sfx-09" src="assets/sfx/tick_002.wav" data-start="3.750" data-duration="0.023" data-track-index="30" data-volume="0.5"></audio>
+    <audio id="sfx-10" src="assets/sfx/glitch_004.wav" data-start="4.180" data-duration="0.023" data-track-index="30" data-volume="0.8"></audio>
+    <audio id="sfx-11" src="assets/sfx/zapTwoTone.wav" data-start="4.450" data-duration="1.306" data-track-index="30" data-volume="0.35"></audio>
+    <audio id="sfx-12" src="assets/sfx/impactPunch_heavy_002.wav" data-start="5.000" data-duration="0.458" data-track-index="31" data-volume="0.75"></audio>
+    <audio id="sfx-13" src="assets/sfx/glitch_001.wav" data-start="5.000" data-duration="0.020" data-track-index="32" data-volume="0.7"></audio>
+    <audio id="sfx-14" src="assets/sfx/impactGlass_light_000.wav" data-start="6.480" data-duration="0.210" data-track-index="30" data-volume="0.8"></audio>
+    <audio id="sfx-15" src="assets/sfx/impactPunch_heavy_000.wav" data-start="6.700" data-duration="0.649" data-track-index="30" data-volume="0.75"></audio>
+    <audio id="sfx-16" src="assets/sfx/glitch_003.wav" data-start="6.700" data-duration="0.010" data-track-index="31" data-volume="0.7"></audio>
+    <audio id="sfx-17" src="assets/sfx/impactGlass_light_002.wav" data-start="8.080" data-duration="0.210" data-track-index="30" data-volume="0.8"></audio>
+    <audio id="sfx-18" src="assets/sfx/impactPunch_heavy_003.wav" data-start="8.300" data-duration="0.474" data-track-index="30" data-volume="0.75"></audio>
+    <audio id="sfx-19" src="assets/sfx/glitch_002.wav" data-start="8.300" data-duration="0.030" data-track-index="31" data-volume="0.7"></audio>
+    <audio id="sfx-20" src="assets/sfx/impactGlass_medium_001.wav" data-start="10.020" data-duration="0.543" data-track-index="30" data-volume="0.8"></audio>
+    <audio id="sfx-21" src="assets/sfx/phaseJump1.wav" data-start="10.480" data-duration="0.470" data-track-index="31" data-volume="0.35"></audio>
+    <audio id="sfx-22" src="assets/sfx/impactGlass_heavy_000.wav" data-start="13.450" data-duration="0.241" data-track-index="30" data-volume="1.0"></audio>
+    <audio id="sfx-23" src="assets/sfx/glass_004.wav" data-start="13.470" data-duration="0.692" data-track-index="31" data-volume="0.6"></audio>
+    <audio id="sfx-24" src="assets/sfx/explosionCrunch_000.wav" data-start="13.750" data-duration="0.777" data-track-index="30" data-volume="0.7"></audio>
+    <audio id="sfx-25" src="assets/sfx/impactGlass_heavy_002.wav" data-start="13.760" data-duration="0.247" data-track-index="32" data-volume="0.9"></audio>
+    <audio id="sfx-26" src="assets/sfx/maximize_001.wav" data-start="14.350" data-duration="0.258" data-track-index="31" data-volume="0.55"></audio>
+    <audio id="sfx-27" src="assets/sfx/lowFrequency_explosion_001.wav" data-start="17.143" data-duration="1.000" data-track-index="30" data-volume="0.9"></audio>
+    <audio id="sfx-28" src="assets/sfx/impactPunch_heavy_002.wav" data-start="17.143" data-duration="0.458" data-track-index="31" data-volume="0.5"></audio>
+    <audio id="sfx-29" src="assets/sfx/maximize_003.wav" data-start="17.250" data-duration="0.212" data-track-index="32" data-volume="0.5"></audio>
+    <audio id="sfx-30" src="assets/sfx/maximize_002.wav" data-start="19.750" data-duration="0.258" data-track-index="30" data-volume="0.5"></audio>
+    <audio id="sfx-31" src="assets/sfx/click_002.wav" data-start="20.920" data-duration="0.010" data-track-index="30" data-volume="0.8"></audio>
+    <audio id="sfx-32" src="assets/sfx/switch12.wav" data-start="21.120" data-duration="0.054" data-track-index="30" data-volume="0.6"></audio>
+    <audio id="sfx-33" src="assets/sfx/pluck_002.wav" data-start="22.420" data-duration="0.165" data-track-index="30" data-volume="0.6"></audio>
+    <audio id="sfx-34" src="assets/sfx/switch13.wav" data-start="22.720" data-duration="0.028" data-track-index="30" data-volume="0.6"></audio>
+    <audio id="sfx-35" src="assets/sfx/impactBell_heavy_003.wav" data-start="23.300" data-duration="0.654" data-track-index="30" data-volume="0.55"></audio>
+    <audio id="sfx-36" src="assets/sfx/pluck_001.wav" data-start="23.450" data-duration="0.102" data-track-index="31" data-volume="0.6"></audio>
+    <audio id="sfx-37" src="assets/sfx/impactBell_heavy_002.wav" data-start="23.620" data-duration="0.697" data-track-index="31" data-volume="0.4"></audio>
+    <audio id="sfx-38" src="assets/sfx/click_003.wav" data-start="24.160" data-duration="0.010" data-track-index="30" data-volume="0.8"></audio>
+    <audio id="sfx-39" src="assets/sfx/phaserUp2.wav" data-start="24.200" data-duration="0.418" data-track-index="30" data-volume="0.35"></audio>
+    <audio id="sfx-40" src="assets/sfx/drop_004.wav" data-start="26.950" data-duration="0.287" data-track-index="30" data-volume="0.8"></audio>
+    <audio id="sfx-41" src="assets/sfx/confirmation_002.wav" data-start="28.120" data-duration="0.539" data-track-index="30" data-volume="0.9"></audio>
+    <audio id="sfx-42" src="assets/sfx/pluck_002.wav" data-start="28.220" data-duration="0.165" data-track-index="31" data-volume="0.5"></audio>
+    <audio id="sfx-43" src="assets/sfx/maximize_002.wav" data-start="29.550" data-duration="0.258" data-track-index="30" data-volume="0.6"></audio>
+    <audio id="sfx-44" src="assets/sfx/click_001.wav" data-start="30.860" data-duration="0.100" data-track-index="30" data-volume="0.8"></audio>
+    <audio id="sfx-45" src="assets/sfx/pluck_001.wav" data-start="31.400" data-duration="0.102" data-track-index="30" data-volume="0.6"></audio>
+    <audio id="sfx-46" src="assets/sfx/maximize_002.wav" data-start="31.750" data-duration="0.258" data-track-index="30" data-volume="0.6"></audio>
+    <audio id="sfx-47" src="assets/sfx/toggle_002.wav" data-start="32.640" data-duration="0.139" data-track-index="30" data-volume="0.9"></audio>
+    <audio id="sfx-48" src="assets/sfx/switch_003.wav" data-start="32.700" data-duration="0.500" data-track-index="31" data-volume="0.5"></audio>
+    <audio id="sfx-49" src="assets/sfx/maximize_002.wav" data-start="33.550" data-duration="0.258" data-track-index="30" data-volume="0.6"></audio>
+    <audio id="sfx-50" src="assets/sfx/click4.wav" data-start="34.180" data-duration="0.037" data-track-index="30" data-volume="0.35"></audio>
+    <audio id="sfx-51" src="assets/sfx/click4.wav" data-start="34.380" data-duration="0.037" data-track-index="30" data-volume="0.35"></audio>
+    <audio id="sfx-52" src="assets/sfx/click4.wav" data-start="34.580" data-duration="0.037" data-track-index="30" data-volume="0.35"></audio>
+    <audio id="sfx-53" src="assets/sfx/doorClose_001.wav" data-start="34.800" data-duration="0.529" data-track-index="30" data-volume="0.6"></audio>
+    <audio id="sfx-54" src="assets/sfx/click_004.wav" data-start="35.330" data-duration="0.010" data-track-index="31" data-volume="0.9"></audio>
+    <audio id="sfx-55" src="assets/sfx/impactMetal_heavy_000.wav" data-start="35.330" data-duration="0.168" data-track-index="32" data-volume="0.6"></audio>
+    <audio id="sfx-56" src="assets/sfx/maximize_001.wav" data-start="36.500" data-duration="0.258" data-track-index="30" data-volume="0.5"></audio>
+    <audio id="sfx-57" src="assets/sfx/impactPunch_heavy_000.wav" data-start="36.964" data-duration="0.649" data-track-index="30" data-volume="1.0"></audio>
+    <audio id="sfx-58" src="assets/sfx/lowFrequency_explosion_000.wav" data-start="36.964" data-duration="2.000" data-track-index="31" data-volume="0.55"></audio>
+    <audio id="sfx-59" src="assets/sfx/impactPunch_heavy_002.wav" data-start="38.036" data-duration="0.458" data-track-index="30" data-volume="1.0"></audio>
+    <audio id="sfx-60" src="assets/sfx/impactMetal_heavy_001.wav" data-start="38.036" data-duration="0.359" data-track-index="32" data-volume="0.5"></audio>
+    <audio id="sfx-61" src="assets/sfx/impactPunch_heavy_003.wav" data-start="39.107" data-duration="0.474" data-track-index="30" data-volume="1.0"></audio>
+    <audio id="sfx-62" src="assets/sfx/lowFrequency_explosion_001.wav" data-start="39.107" data-duration="1.000" data-track-index="31" data-volume="0.55"></audio>
+    <audio id="sfx-63" src="assets/sfx/impactBell_heavy_001_rev.wav" data-start="39.209" data-duration="1.741" data-track-index="32" data-volume="0.5"></audio>
+    <audio id="sfx-64" src="assets/sfx/glitch_001.wav" data-start="39.227" data-duration="0.020" data-track-index="33" data-volume="0.8"></audio>
+    <audio id="sfx-65" src="assets/sfx/glitch_003.wav" data-start="39.307" data-duration="0.010" data-track-index="33" data-volume="0.8"></audio>
+    <audio id="sfx-66" src="assets/sfx/glitch_002.wav" data-start="39.827" data-duration="0.030" data-track-index="30" data-volume="0.7"></audio>
+    <audio id="sfx-67" src="assets/sfx/glass_004.wav" data-start="42.000" data-duration="0.692" data-track-index="30" data-volume="0.35"></audio>
+    <audio id="sfx-68" src="assets/sfx/tick_001.wav" data-start="43.150" data-duration="0.023" data-track-index="30" data-volume="0.35"></audio>
+
+    <script>window.CAPTIONS = [{"id":"s1a","t0":1.41,"t1":4.36,"words":[{"w":"Dear","start":1.45,"end":1.87,"key":false},{"w":"P2P\u2026","start":1.87,"end":2.73,"key":true},{"w":"we","start":3.15,"end":3.33,"key":false},{"w":"need","start":3.33,"end":3.47,"key":false},{"w":"to","start":3.47,"end":3.63,"key":false},{"w":"talk.","start":3.63,"end":3.91,"key":false}]},{"id":"s2a","t0":5.01,"t1":5.92,"words":[{"w":"Forty","start":5.05,"end":5.25,"key":true},{"w":"minutes.","start":5.25,"end":5.47,"key":false}]},{"id":"s2b","t0":6.71,"t1":7.92,"words":[{"w":"Three","start":6.75,"end":6.97,"key":true},{"w":"screenshots.","start":6.97,"end":7.47,"key":false}]},{"id":"s2c","t0":8.36,"t1":9.97,"words":[{"w":"Zero","start":8.4,"end":8.74,"key":true},{"w":"peace","start":8.74,"end":9.0,"key":false},{"w":"of","start":9.0,"end":9.24,"key":false},{"w":"mind.","start":9.24,"end":9.52,"key":false}]},{"id":"s3a","t0":11.11,"t1":12.26,"words":[{"w":"It's","start":11.15,"end":11.35,"key":false},{"w":"not","start":11.35,"end":11.53,"key":false},{"w":"me.","start":11.53,"end":11.81,"key":false}]},{"id":"s3b","t0":12.66,"t1":13.59,"words":[{"w":"It's","start":12.7,"end":12.98,"key":false},{"w":"you.","start":12.98,"end":13.14,"key":true}]},{"id":"s4a","t0":17.21,"t1":19.137,"words":[{"w":"Meet","start":17.25,"end":17.717,"key":false},{"w":"Spenda","start":17.717,"end":18.351,"key":true},{"w":"2.0.","start":18.351,"end":18.687,"key":true}]},{"id":"s5a","t0":20.71,"t1":22.3,"words":[{"w":"Send","start":20.75,"end":21.25,"key":false},{"w":"Naira.","start":21.25,"end":21.85,"key":true}]},{"id":"s5b","t0":22.66,"t1":24.12,"words":[{"w":"Get","start":22.7,"end":22.98,"key":false},{"w":"stablecoins.","start":22.98,"end":23.74,"key":true}]},{"id":"s5c","t0":24.16,"t1":25.33,"words":[{"w":"Instantly.","start":24.2,"end":24.88,"key":true}]},{"id":"s5d","t0":26.49,"t1":27.36,"words":[{"w":"Fee?","start":26.53,"end":26.58,"key":false},{"w":"Zero.","start":26.53,"end":26.91,"key":true}]},{"id":"s6a","t0":30.06,"t1":31.9,"words":[{"w":"Statements","start":30.1,"end":30.883,"key":true},{"w":"in","start":30.883,"end":31.474,"key":false},{"w":"one","start":31.474,"end":31.665,"key":false},{"w":"tap.","start":31.665,"end":31.709,"key":false}]},{"id":"s6b","t0":32.26,"t1":33.47,"words":[{"w":"Dark","start":32.3,"end":32.7,"key":true},{"w":"mode.","start":32.7,"end":33.02,"key":false}]},{"id":"s6c","t0":35.388,"t1":35.15,"words":[{"w":"Two-factor.","start":35.428,"end":35.88,"key":true}]},{"id":"s6d","t0":35.19,"t1":36.26,"words":[{"w":"Locked","start":35.23,"end":35.53,"key":true},{"w":"in.","start":35.53,"end":35.81,"key":false}]}];</script>
+    <script>
+/* Spenda 2.0: The Breakup Letter. Root choreography.
+   One timeline (created by HyperShader so shader transitions own scene visibility),
+   every beat placed at global seconds on the 112 BPM grid. Seek-safe: all per-frame
+   state is a pure function of tl.time(). */
+(function () {
+  const BEAT = 60 / 112;
+  const b = (n) => n * BEAT; // beat -> seconds
+
+  // Scene handoffs: every one sits in a VO gap, so no caption is on screen while a shader runs.
+  const X = {
+    s1s2: 4.62, s2s3: 10.52, s3s4: 14.55, s4s5: 19.95, s56a: 29.75,
+    s6ab: 31.95, s6bc: 33.75, s6c7: 36.7, s78: 40.95,
+  };
+
+  const tl = HyperShader.init({
+    bgColor: "#000000",
+    accentColor: "#FFF1DC", // warm-white glow on the shaders: never blue
+    scenes: ["s1", "s2", "s3", "s4", "s5", "s6a", "s6b", "s6c", "s7", "s8"],
+    transitions: [
+      { time: X.s1s2, shader: "glitch", duration: 0.36 },
+      { time: X.s2s3, shader: "chromatic-split", duration: 0.34 },
+      { time: X.s3s4, shader: "domain-warp", duration: 0.45 },
+      { time: X.s4s5, shader: "light-leak", duration: 0.6 },
+      { time: X.s56a, shader: "whip-pan", duration: 0.34 },
+      { time: X.s6ab, shader: "whip-pan", duration: 0.3 },
+      { time: X.s6bc, shader: "whip-pan", duration: 0.3 },
+      { time: X.s6c7, shader: "cinematic-zoom", duration: 0.26 },
+      { time: X.s78, shader: "cross-warp-morph", duration: 0.45 },
+    ],
+  });
+
+  const $ = (s) => document.querySelector(s);
+  const $$ = (s) => Array.from(document.querySelectorAll(s));
+  const hash = (n) => {
+    const x = Math.sin(n * 127.1 + 311.7) * 43758.5453;
+    return x - Math.floor(x);
+  };
+  const sh = (n) => hash(n) * 2 - 1; // -1..1
+  // A driver tween: onUpdate receives scene-agnostic global time.
+  const drive = (start, dur, fn) => {
+    const o = { p: 0 };
+    tl.fromTo(o, { p: 0 }, { p: 1, duration: dur, ease: "none", onUpdate: () => fn(tl.time(), o.p) }, start);
+  };
+  const fmtClock = (s) => {
+    const h = Math.floor(s / 3600), m = Math.floor((s % 3600) / 60), x = Math.floor(s % 60);
+    return [h, m, x].map((v) => String(v).padStart(2, "0")).join(":");
+  };
+
+  // ------------------------------------------------------------ ambient: film grain on every scene
+  const grains = $$(".grain");
+  drive(0, 45, (t) => {
+    const f = Math.floor(t * 30);
+    const x = Math.floor(hash(f * 3.1) * 256), y = Math.floor(hash(f * 7.7) * 256);
+    grains.forEach((g) => (g.style.backgroundPosition = `${x}px ${y}px`));
+  });
+
+  // ============================================================ S1 HOOK (0 → 4.62)
+  const chats = ["s1-chat", "s1-gw", "s1-gc"];
+  const all = (suffix) => chats.map((c) => `#${c}${suffix}`).join(",");
+  tl.fromTo("#s1-stack", { scale: 0.9, y: 60, opacity: 0 }, { scale: 1, y: 0, opacity: 1, duration: 0.45, ease: "power3.out" }, 0.04);
+  tl.fromTo("#s1-timer-row", { y: -30, opacity: 0 }, { y: 0, opacity: 1, duration: 0.35, ease: "power2.out" }, 0.12);
+  [0, 1, 2].forEach((i) => {
+    const at = [0.36, 1.08, 2.14][i];
+    tl.fromTo(all(`-m${i}`), { scale: 0.6, y: 30, opacity: 0, transformOrigin: i === 1 ? "100% 100%" : "0% 100%" },
+      { scale: 1, y: 0, opacity: 1, duration: 0.32, ease: "back.out(2.2)" }, at);
+  });
+  tl.fromTo(all("-typing"), { opacity: 0, scale: 0.7, transformOrigin: "0% 100%" }, { opacity: 1, scale: 1, duration: 0.25, ease: "back.out(2)" }, 3.0);
+  // typing dots bounce on the beat (finite)
+  $$("#s1-chat-typing i").forEach((d, i) => {
+    tl.to(d, { y: -10, duration: BEAT / 2, ease: "sine.inOut", yoyo: true, repeat: 2 }, 3.05 + i * 0.12);
+  });
+  tl.fromTo("#s1-hand-m", { rotation: 0, svgOrigin: "32 32" }, { rotation: 2160, svgOrigin: "32 32", duration: X.s1s2 + 0.4, ease: "power1.in" }, 0);
+  tl.fromTo("#s1-hand-h", { rotation: 0, svgOrigin: "32 32" }, { rotation: 200, svgOrigin: "32 32", duration: X.s1s2 + 0.4, ease: "power1.in" }, 0);
+  const timerEl = $("#s1-timer");
+  drive(0, X.s1s2 + 0.4, (t) => (timerEl.textContent = fmtClock(39 * 60 + 47 + t * 5.4)));
+  // camera shake + RGB-split bursts (chromatic-glitch, Form A on the whole chat)
+  const BURSTS = [[0.36, 0.24, 1], [2.14, 0.28, 1], [3.3, 0.18, 0.7], [4.18, 0.5, 1.4]];
+  const ghostW = $("#s1-stack .ghost.warm"), ghostC = $("#s1-stack .ghost.cool"), cam = $("#s1-cam"), scan = $("#s1-scan");
+  drive(0, X.s1s2 + 0.4, (t) => {
+    let amp = 0;
+    BURSTS.forEach(([s, d, k]) => { if (t >= s && t < s + d) amp = Math.max(amp, k * Math.pow(1 - (t - s) / d, 2)); });
+    const steady = 0.18 + 0.25 * (t / X.s1s2); // nervous hand-held drift that grows
+    const step = Math.floor(t * 20);
+    cam.style.transform = `translate(${(sh(step) * (4 + 22 * amp) + Math.sin(t * 9) * 3 * steady).toFixed(2)}px, ${(sh(step + 99) * (3 + 14 * amp)).toFixed(2)}px) rotate(${(sh(step + 7) * 0.5 * amp).toFixed(3)}deg)`;
+    const split = 18 * amp;
+    ghostW.style.opacity = amp > 0.02 ? 0.75 : 0;
+    ghostC.style.opacity = amp > 0.02 ? 0.75 : 0;
+    ghostW.style.transform = `translate(${(-split + sh(step + 3) * split * 0.5).toFixed(1)}px, ${(sh(step + 5) * split * 0.3).toFixed(1)}px)`;
+    ghostC.style.transform = `translate(${(split + sh(step + 4) * split * 0.5).toFixed(1)}px, ${(sh(step + 6) * split * 0.3).toFixed(1)}px)`;
+    scan.style.opacity = amp > 0.02 ? 0.9 : 0.25;
+  });
+
+  // ============================================================ S2 THE PAIN (4.62 → 10.52)
+  const SL = [
+    { el: "#s2-w0", in: 5.0, out: 6.48 },
+    { el: "#s2-w1", in: 6.7, out: 8.08 },
+    { el: "#s2-w2", in: 8.3, out: 10.02 },
+  ];
+  tl.fromTo("#s2-chip", { y: -24, opacity: 0 }, { y: 0, opacity: 1, duration: 0.3, ease: "power2.out" }, 4.85);
+  const s2timer = $("#s2-timer");
+  drive(4.62, 6.2, (t) => (s2timer.textContent = fmtClock(40 * 60 + 16 + (t - 4.62) * 8.5)));
+  tl.fromTo("#s2-chip i", { opacity: 1 }, { opacity: 0.2, duration: BEAT / 2, ease: "steps(1)", yoyo: true, repeat: 9 }, 4.9);
+  tl.fromTo("#s2-ghost", { x: -90, opacity: 0.0 }, { x: 90, opacity: 1, duration: 5.9, ease: "none" }, 4.62);
+  // three distinct entrances (kinetic-beat-slam)
+  tl.fromTo(SL[0].el, { scale: 1.7, filter: "blur(18px)", opacity: 0 }, { scale: 1, filter: "blur(0px)", opacity: 1, duration: 0.38, ease: "power4.out" }, SL[0].in);
+  tl.fromTo(SL[1].el, { x: -760, skewX: -18, opacity: 0 }, { x: 0, skewX: 0, opacity: 1, duration: 0.34, ease: "expo.out" }, SL[1].in);
+  tl.fromTo(SL[2].el, { y: 190, rotation: 7, opacity: 0 }, { y: 0, rotation: 0, opacity: 1, duration: 0.42, ease: "circ.out" }, SL[2].in);
+  SL.forEach((s, i) => {
+    tl.to(s.el, { scale: 1.035, duration: s.out - s.in - 0.45, ease: "sine.inOut" }, s.in + 0.45);
+    tl.set(s.el, { opacity: 0 }, s.out); // the word becomes particles here (canvas below)
+    tl.fromTo("#s2-flash", { opacity: 0.32 }, { opacity: 0, duration: 0.14, ease: "power2.out" }, s.out);
+  });
+  // RGB-split on entrance and right before the shatter: quantized jitter on text-shadow
+  const slamEls = SL.map((s) => $(s.el));
+  drive(4.62, 6.0, (t) => {
+    const step = Math.floor(t * 24);
+    slamEls.forEach((el, i) => {
+      const s = SL[i];
+      let amp = 0;
+      if (t >= s.in && t < s.in + 0.3) amp = 1 - (t - s.in) / 0.3;
+      if (t >= s.out - 0.22 && t < s.out) amp = Math.max(amp, (t - (s.out - 0.22)) / 0.22);
+      const d = (10 * amp * (0.6 + 0.4 * hash(step + i))).toFixed(1);
+      el.style.textShadow = amp > 0.01 ? `${d}px 0 rgba(255,59,48,0.85), ${-d}px ${(sh(step) * 3).toFixed(1)}px rgba(0,229,255,0.75)` : "none";
+    });
+  });
+
+  // Word → particles (canvas 2D, seeded). Points sampled from the word's own glyphs.
+  const pc = $("#s2-particles"), pctx = pc.getContext("2d");
+  let wordParts = null;
+  function sampleWords() {
+    const root = $("#root").getBoundingClientRect();
+    const k = 1080 / root.width;
+    const off = document.createElement("canvas");
+    off.width = 1080; off.height = 1920;
+    const o = off.getContext("2d");
+    return SL.map((s, wi) => {
+      o.clearRect(0, 0, 1080, 1920);
+      o.fillStyle = "#fff";
+      o.textBaseline = "middle";
+      o.textAlign = "center";
+      o.font = '900 108px "Montserrat"';
+      $$(`${s.el} span`).forEach((sp) => {
+        const r = sp.getBoundingClientRect();
+        o.fillText(sp.textContent, 540, ((r.top + r.bottom) / 2 - root.top) * k + 4);
+      });
+      const img = o.getImageData(0, 0, 1080, 1920).data;
+      const pts = [];
+      let n = 0;
+      for (let y = 560; y < 1000; y += 4) for (let x = 40; x < 1040; x += 4) {
+        if (img[(y * 1080 + x) * 4 + 3] > 128) {
+          n++;
+          const a = Math.atan2(y - 780, x - 540) + sh(n * 1.3 + wi) * 0.9;
+          const sp = 160 + 900 * Math.pow(hash(n * 2.7 + wi * 13), 2);
+          pts.push({ x, y, vx: Math.cos(a) * sp, vy: Math.sin(a) * sp - 120, r: 2.2 + hash(n * 5.1) * 2.6, red: hash(n * 9.3 + wi) > 0.9 });
+        }
+      }
+      return pts;
+    });
+  }
+  drive(4.62, 6.0, (t) => {
+    if (!wordParts) {
+      if (!document.fonts || document.fonts.status !== "loaded") return;
+      wordParts = sampleWords();
+    }
+    pctx.clearRect(0, 0, 1080, 1920);
+    SL.forEach((s, i) => {
+      const dt = t - s.out;
+      if (dt < 0 || dt > 1.25) return;
+      const drag = (1 - Math.exp(-2.2 * dt)) / 2.2; // integrated velocity with drag
+      const a = Math.max(0, 1 - dt / 1.25);
+      wordParts[i].forEach((p) => {
+        pctx.globalAlpha = a;
+        pctx.fillStyle = p.red ? "#FF3B30" : "#FFFFFF";
+        pctx.fillRect(p.x + p.vx * drag, p.y + p.vy * drag + 140 * dt * dt, p.r, p.r);
+      });
+    });
+    pctx.globalAlpha = 1;
+  });
+
+  // ============================================================ S3 THE BREAK (10.52 → 14.55)
+  tl.fromTo("#s3-wrap", { scale: 1.0 }, { scale: 1.05, duration: 2.2, ease: "sine.out" }, 10.52);
+  tl.to("#s3-wrap", { scale: 1.1, duration: 0.18, ease: "power3.out" }, 12.75);
+  tl.fromTo("#s3-tag", { opacity: 0 }, { opacity: 1, duration: BEAT / 4, ease: "steps(1)", yoyo: true, repeat: 7 }, 10.75);
+  const abR = $("#s3-wrap .ab-r"), abC = $("#s3-wrap .ab-c");
+  drive(10.52, 4.1, (t) => {
+    const step = Math.floor(t * 12);
+    const base = 6 + 4 * Math.sin(t * 3.2) + (t > 12.75 && t < 13.0 ? 14 : 0) + (t > 13.45 ? 10 : 0);
+    abR.style.transform = `translate(${(-base + sh(step) * 2).toFixed(1)}px, ${(sh(step + 1) * 2).toFixed(1)}px)`;
+    abC.style.transform = `translate(${(base + sh(step + 2) * 2).toFixed(1)}px, ${(sh(step + 3) * 2).toFixed(1)}px)`;
+  });
+  $$("#s3-cracks .crk").forEach((c, i) => {
+    tl.fromTo(c, { strokeDashoffset: 1 }, { strokeDashoffset: 0, duration: 0.16 + hash(i) * 0.1, ease: "power2.out" }, 13.45 + hash(i + 4) * 0.12);
+  });
+  tl.fromTo("#s3-wrap", { x: 0 }, { x: 10, duration: 0.04, ease: "none", yoyo: true, repeat: 5 }, 13.45);
+  tl.set("#s3-wrap", { opacity: 0 }, 13.75); // the GPU particle field (gl.js) takes over from this frame
+  tl.set("#s3-tag", { opacity: 0 }, 13.75);
+
+  // ============================================================ S4 THE REVEAL (14.55 → 19.95)
+  tl.fromTo("#s4-leak", { x: 0, opacity: 0 }, { x: 2300, opacity: 1, duration: 1.7, ease: "power1.inOut" }, 15.0);
+  tl.to("#s4-leak", { opacity: 0, duration: 0.5, ease: "power1.out" }, 16.3);
+  tl.fromTo("#s4-leak2", { opacity: 0, x: -200 }, { opacity: 0.55, x: 120, duration: 3.0, ease: "sine.inOut" }, 16.9);
+  tl.fromTo("#s4-bloom", { opacity: 0, scale: 0.6 }, { opacity: 1, scale: 1.15, duration: 0.14, ease: "power2.out" }, b(32));
+  tl.to("#s4-bloom", { opacity: 0.22, scale: 1, duration: 0.9, ease: "power2.out" }, b(32) + 0.14);
+  tl.fromTo("#s4-flash", { opacity: 0.35 }, { opacity: 0, duration: 0.3, ease: "power2.out" }, b(32));
+  tl.fromTo("#s4-wm", { clipPath: "inset(0% 100% 0% 0%)" }, { clipPath: "inset(0% 0% 0% 0%)", duration: 0.55, ease: "power3.inOut" }, 17.4);
+  tl.fromTo("#s4-ver", { scale: 0.4, opacity: 0, transformOrigin: "0% 80%" }, { scale: 1, opacity: 1, duration: 0.4, ease: "back.out(2.5)" }, 17.78);
+  tl.to("#s4-wm", { y: -10, duration: 1.8, ease: "sine.inOut" }, 18.0);
+
+  // ============================================================ S5 THE FLOW (19.95 → 29.75)
+  // bokeh (depth-of-field backdrop), seeded
+  const bk = $("#s5-bokeh");
+  for (let i = 0; i < 12; i++) {
+    const d = document.createElement("i");
+    const r = 60 + hash(i * 3.3) * 170;
+    d.style.cssText = `left:${(hash(i * 1.7) * 1080 - r).toFixed(0)}px;top:${(200 + hash(i * 2.9) * 1500 - r).toFixed(0)}px;width:${(2 * r).toFixed(0)}px;height:${(2 * r).toFixed(0)}px;background:${i % 4 === 0 ? "rgba(34,197,94,0.28)" : "rgba(255,244,230,0.13)"}`;
+    bk.appendChild(d);
+  }
+  tl.fromTo("#s5-bokeh", { y: 40 }, { y: -60, duration: 9.8, ease: "none" }, 19.95);
+  tl.fromTo("#s5-leak", { opacity: 0, x: 0 }, { opacity: 0.7, x: 260, duration: 4, ease: "sine.inOut" }, 20.2);
+  tl.fromTo("#p5-rig", { y: 520, rotationX: 22, rotationY: -40, rotationZ: 6, opacity: 0 },
+    { y: 0, rotationX: 8, rotationY: -16, rotationZ: 0, opacity: 1, duration: 1.0, ease: "power3.out" }, 20.0);
+  tl.to("#p5-rig", { rotationY: -5, rotationX: 4, duration: 8.6, ease: "sine.inOut" }, 21.0);
+  tl.to("#p5", { y: -14, duration: 1.6, ease: "sine.inOut", yoyo: true, repeat: 4 }, 21.0);
+  tl.fromTo("#p5-glare", { backgroundPosition: "95% 0%" }, { backgroundPosition: "10% 0%", duration: 9.6, ease: "sine.inOut" }, 20.0);
+  // home → tap Deposit → deposit sheet
+  tl.to("#p5-dep-btn", { scale: 0.93, duration: 0.08, ease: "power2.in", yoyo: true, repeat: 1 }, 20.92);
+  tl.fromTo("#p5-deposit", { x: 452 }, { x: 0, duration: 0.36, ease: "power3.out" }, 21.12);
+  tl.to("#p5-home", { x: -140, opacity: 0.4, duration: 0.36, ease: "power3.out" }, 21.12);
+  const depNum = $("#p5-dep-num");
+  const depObj = { v: 0 };
+  tl.fromTo(depObj, { v: 0 }, { v: 50000, duration: 1.1, ease: "power2.out", onUpdate: () => (depNum.textContent = Math.round(depObj.v).toLocaleString("en-US")) }, 21.32);
+  tl.fromTo("#p5-dep-ok", { y: 20, opacity: 0, scale: 0.8 }, { y: 0, opacity: 1, scale: 1, duration: 0.3, ease: "back.out(2)" }, 22.42);
+  // convert
+  tl.fromTo("#p5-convert", { x: 452 }, { x: 0, duration: 0.36, ease: "power3.out" }, 22.72);
+  tl.to("#p5-deposit", { x: -140, opacity: 0.4, duration: 0.36, ease: "power3.out" }, 22.72);
+  tl.fromTo("#s5-chip-usdt", { x: 120, y: 180, scale: 0.4, rotation: -8, opacity: 0 }, { x: 0, y: 0, scale: 1, rotation: -4, opacity: 1, duration: 0.45, ease: "back.out(1.8)" }, 23.62);
+  tl.to("#s5-chip-usdt", { y: -18, duration: 1.2, ease: "sine.inOut", yoyo: true, repeat: 1 }, 24.1);
+  tl.to("#p5-cv-btn", { scale: 0.94, duration: 0.08, ease: "power2.in", yoyo: true, repeat: 1 }, 24.16);
+  tl.fromTo("#p5-cv-bar", { scaleX: 0 }, { scaleX: 1, duration: 0.24, ease: "power3.in" }, 24.22);
+  tl.fromTo("#p5-usdt", { scale: 1 }, { scale: 1.12, duration: 0.14, ease: "power2.out", yoyo: true, repeat: 1, transformOrigin: "0% 50%" }, 24.46);
+  // Fee? Zero.
+  tl.fromTo("#p5-fee-line", { backgroundColor: "rgba(34,197,94,0)" }, { backgroundColor: "rgba(34,197,94,0.18)", duration: 0.2, ease: "power2.out" }, 26.5);
+  tl.fromTo("#s5-chip-fee", { x: -160, y: 60, scale: 0.3, rotation: 10, opacity: 0 }, { x: 0, y: 0, scale: 1, rotation: 5, opacity: 1, duration: 0.42, ease: "back.out(2.2)" }, 26.95);
+  tl.to(["#s5-chip-fee", "#s5-chip-usdt"], { opacity: 0, scale: 0.8, duration: 0.25, ease: "power2.in" }, 27.3);
+  // Transfer sent
+  tl.fromTo("#p5-success .sx-dim", { opacity: 0 }, { opacity: 0.85, duration: 0.3, ease: "power1.out" }, 27.45);
+  tl.fromTo("#p5-sheet", { y: 660 }, { y: 0, duration: 0.4, ease: "power3.out" }, 27.45);
+  tl.fromTo("#p5-ring", { strokeDashoffset: 1 }, { strokeDashoffset: 0, duration: 0.38, ease: "power2.inOut" }, 27.78);
+  tl.fromTo("#p5-disc", { scale: 0, transformOrigin: "60px 60px" }, { scale: 1, transformOrigin: "60px 60px", duration: 0.32, ease: "back.out(2.4)" }, 27.98);
+  tl.fromTo("#p5-tick", { strokeDashoffset: 1 }, { strokeDashoffset: 0, duration: 0.24, ease: "power2.out" }, 28.12);
+  // green particle burst (particle-burst rule, seeded ballistic)
+  const burst = $("#p5-burst"), parts = [];
+  for (let i = 0; i < 46; i++) {
+    const el = document.createElement("i");
+    const s = 6 + hash(i * 3.7) * 12;
+    el.style.width = el.style.height = `${s.toFixed(1)}px`;
+    if (i % 5 === 0) el.style.background = "#FFFFFF";
+    burst.appendChild(el);
+    const a = hash(i * 5.3) * Math.PI * 2;
+    const sp = 260 + hash(i * 7.9) * 520;
+    parts.push({ el, vx: Math.cos(a) * sp, vy: Math.sin(a) * sp - 120 });
+  }
+  drive(28.2, 1.4, (t) => {
+    const d = t - 28.2;
+    parts.forEach((p) => {
+      const k = (1 - Math.exp(-3 * d)) / 3;
+      p.el.style.transform = `translate(${(p.vx * k).toFixed(1)}px, ${(p.vy * k + 260 * d * d).toFixed(1)}px)`;
+      p.el.style.opacity = d <= 0 ? 0 : Math.max(0, 1 - d / 1.3).toFixed(3);
+    });
+  });
+  tl.to("#p5-rig", { scale: 1.05, duration: 1.8, ease: "power1.inOut" }, 27.9);
+
+  // ============================================================ S6a STATEMENTS (light)
+  const flipIn = (rig, at, from) => {
+    tl.fromTo(rig, { rotationY: from, rotationX: 6, scale: 0.92, filter: "blur(10px)" },
+      { rotationY: -10, rotationX: 4, scale: 1, filter: "blur(0px)", duration: 0.46, ease: "expo.out" }, at);
+    tl.to(rig, { rotationY: 6, duration: 1.6, ease: "sine.inOut" }, at + 0.46);
+  };
+  flipIn("#p6a-rig", X.s56a + 0.05, -190);
+  tl.fromTo("#s6a-ghost", { x: 80 }, { x: -80, duration: 2.6, ease: "none" }, X.s56a);
+  tl.to("#p6a-btn", { scale: 0.94, duration: 0.08, ease: "power2.in", yoyo: true, repeat: 1 }, 30.86);
+  tl.fromTo("#p6a-bar", { scaleX: 0 }, { scaleX: 1, duration: 0.45, ease: "power2.inOut" }, 30.92);
+  tl.fromTo("#p6a-ok", { y: 16, opacity: 0, scale: 0.85 }, { y: 0, opacity: 1, scale: 1, duration: 0.3, ease: "back.out(2)" }, 31.4);
+
+  // ============================================================ S6b DARK MODE (light → dark)
+  flipIn("#p6b-rig", X.s6ab + 0.05, 190);
+  tl.fromTo("#s6b-ghost", { x: -80 }, { x: 80, duration: 2.2, ease: "none" }, X.s6ab);
+  tl.to("#p6b-knob", { x: 36, duration: 0.18, ease: "power3.out" }, 32.64);
+  tl.to("#p6b-tgl", { backgroundColor: "#000000", duration: 0.18 }, 32.64);
+  tl.fromTo("#p6b-darkscr", { clipPath: "circle(0px at 384px 412px)" }, { clipPath: "circle(1200px at 384px 412px)", duration: 0.5, ease: "power2.inOut" }, 32.68);
+  tl.fromTo("#s6b-flood", { clipPath: "circle(0px at 695px 660px)" }, { clipPath: "circle(2300px at 695px 660px)", duration: 0.55, ease: "power2.inOut" }, 32.7);
+  tl.set("#p6b-rig .ph-front", { borderColor: "#2c2c2c" }, 32.9);
+
+  // ============================================================ S6c 2FA (dark)
+  flipIn("#p6c-rig", X.s6bc + 0.05, -190);
+  tl.fromTo("#s6c-ghost", { x: 80 }, { x: -80, duration: 3.0, ease: "none" }, X.s6bc);
+  for (let i = 0; i < 6; i++) {
+    tl.fromTo(`#p6c-d${i} b`, { y: 18, opacity: 0 }, { y: 0, opacity: 1, duration: 0.16, ease: "back.out(2.5)" }, 34.18 + i * 0.1);
+    tl.to(`#p6c-d${i}`, { borderColor: "#FFFFFF", duration: 0.1 }, 34.18 + i * 0.1);
+  }
+  tl.fromTo("#p6c-shackle", { y: -20 }, { y: 0, duration: 0.16, ease: "back.in(3)" }, 35.18);
+  tl.fromTo("#p6c-rig .lock", { scale: 1 }, { scale: 0.92, duration: 0.07, yoyo: true, repeat: 1, ease: "power2.out", transformOrigin: "50% 60%" }, 35.33);
+  tl.fromTo("#p6c-ok", { y: 16, opacity: 0, scale: 0.85 }, { y: 0, opacity: 1, scale: 1, duration: 0.3, ease: "back.out(2)" }, 35.5);
+  tl.to("#p6c-rig", { scale: 1.16, z: 200, duration: 0.95, ease: "power2.in" }, 35.85);
+
+  // ============================================================ S7 PUNCHLINE (36.70 → 40.95)
+  const HIT = [b(69), b(71), b(73)]; // 36.96 / 38.04 / 39.11
+  tl.set("#s7-bg", { backgroundColor: "#FFFFFF" }, HIT[0]);
+  tl.set("#s7-p0", { color: "#000000" }, HIT[0]);
+  tl.fromTo("#s7-p0", { scale: 1.9, filter: "blur(20px)", opacity: 0 }, { scale: 1, filter: "blur(0px)", opacity: 1, duration: 0.3, ease: "power4.out" }, HIT[0]);
+  tl.set("#s7-p0", { opacity: 0 }, HIT[1]);
+  tl.set("#s7-bg", { backgroundColor: "#000000" }, HIT[1]);
+  tl.set("#s7-p1", { color: "#FFFFFF" }, HIT[1]);
+  tl.fromTo("#s7-p1", { x: 900, skewX: -16, opacity: 0 }, { x: 0, skewX: 0, opacity: 1, duration: 0.28, ease: "expo.out" }, HIT[1]);
+  tl.set("#s7-p1", { opacity: 0 }, HIT[2]);
+  tl.set("#s7-bg", { backgroundColor: "#FFFFFF" }, HIT[2]);
+  tl.set("#s7-p2", { color: "#000000" }, HIT[2]);
+  tl.fromTo("#s7-p2", { y: 220, rotation: -6, opacity: 0 }, { y: 0, rotation: 0, opacity: 1, duration: 0.34, ease: "circ.out" }, HIT[2]);
+  // slam shake on every hit
+  HIT.forEach((h, i) => tl.fromTo(`#s7-p${i}`, { yPercent: 0 }, { yPercent: 2.5, duration: 0.04, yoyo: true, repeat: 3, ease: "none" }, h + 0.3));
+  // last word glitches and settles (mono RGB split, then clean)
+  const gA = $("#s7-g .g-a"), gB = $("#s7-g .g-b");
+  drive(HIT[2], 1.0, (t) => {
+    const d = t - HIT[2];
+    let amp = 0;
+    if (d >= 0.12 && d < 0.55) amp = Math.pow(1 - (d - 0.12) / 0.43, 1.5);
+    if (d >= 0.7 && d < 0.84) amp = Math.max(amp, 0.6 * (1 - (d - 0.7) / 0.14));
+    const step = Math.floor(t * 24);
+    gA.style.opacity = gB.style.opacity = amp > 0.01 ? 0.9 : 0;
+    gA.style.transform = `translate(${(-16 * amp + sh(step) * 8 * amp).toFixed(1)}px, ${(sh(step + 2) * 6 * amp).toFixed(1)}px)`;
+    gB.style.transform = `translate(${(16 * amp + sh(step + 1) * 8 * amp).toFixed(1)}px, ${(sh(step + 3) * 6 * amp).toFixed(1)}px)`;
+  });
+  tl.fromTo("#s7-under", { scaleX: 0 }, { scaleX: 1, duration: 0.32, ease: "power3.out" }, HIT[2] + 0.9);
+  tl.to("#s7-p2", { scale: 1.03, duration: 0.9, ease: "sine.inOut" }, HIT[2] + 1.0);
+
+  // ============================================================ S8 OUTRO (40.95 → 45)
+  tl.fromTo("#s8-leak", { opacity: 0, x: -80, y: 40 }, { opacity: 0.75, x: 120, y: -40, duration: 4.0, ease: "sine.inOut" }, 41.0);
+  tl.fromTo("#s8-leak2", { opacity: 0, x: 60 }, { opacity: 0.35, x: -60, duration: 3.6, ease: "sine.inOut" }, 41.2);
+  tl.fromTo("#s8-lockup", { opacity: 0, scale: 0.9, filter: "blur(12px)" }, { opacity: 1, scale: 1, filter: "blur(0px)", duration: 0.7, ease: "power3.out" }, 41.15);
+  tl.to("#s8-lockup", { scale: 1.03, duration: 3.2, ease: "sine.inOut" }, 41.85);
+  tl.fromTo("#s8-lockup .glint-layer, #s8-lockup .glint-text", { "--g": "-40%" }, { "--g": "140%", duration: 1.1, ease: "power2.inOut" }, 41.95);
+  tl.fromTo("#s8-tag", { y: 30, opacity: 0, filter: "blur(8px)" }, { y: 0, opacity: 1, filter: "blur(0px)", duration: 0.55, ease: "power2.out" }, 42.45);
+  tl.fromTo("#s8-line", { scaleX: 0 }, { scaleX: 1, duration: 0.5, ease: "power3.inOut" }, 43.15);
+  tl.fromTo("#s8-credit .cr-by", { y: 14, opacity: 0, filter: "blur(10px)" }, { y: 0, opacity: 1, filter: "blur(0px)", duration: 0.6, ease: "power2.out" }, 43.35);
+  tl.fromTo("#s8-credit .cr-name", { y: 14, opacity: 0, filter: "blur(10px)" }, { y: 0, opacity: 1, filter: "blur(0px)", duration: 0.6, ease: "power2.out" }, 43.45);
+
+  // ============================================================ captions (word-by-word, Whisper timings)
+  (window.CAPTIONS || []).forEach((line, li) => {
+    const lineSel = `#cap-${li}`;
+    tl.set(lineSel, { opacity: 1 }, Math.max(0, line.t0 - 0.02));
+    line.words.forEach((w, wi) => {
+      tl.fromTo(`#cw-${li}-${wi}`, { y: 34, scale: 0.7, opacity: 0 }, { y: 0, scale: 1, opacity: 1, duration: 0.2, ease: "back.out(3)" }, w.start);
+      if (w.key) tl.fromTo(`#cw-${li}-${wi} u`, { scaleX: 0 }, { scaleX: 1, duration: 0.24, ease: "power3.out" }, w.start + 0.06);
+    });
+    tl.to(lineSel, { opacity: 0, y: -16, duration: 0.12, ease: "power2.in" }, line.t1);
+  });
+  // light scenes flip the caption ink
+  tl.set("#captions", { color: "#000000" }, 29.9);
+  tl.set(".cap-line", { textShadow: "none" }, 29.9);
+  tl.set("#captions", { color: "#FFFFFF" }, 32.86);
+  tl.set(".cap-line", { textShadow: "0 4px 22px rgba(0,0,0,0.6)" }, 32.86);
+
+  window.__timelines["main"] = tl;
+})();
+
+    </script>
+    <script type="module" src="gl.js"></script>
+  </body>
+</html>

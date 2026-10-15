@@ -1,0 +1,102 @@
+[
+ {
+  "id": "s1a",
+  "say": "Dear P-two-P... we need to talk.",
+  "show": "Dear P2P… we need to talk."
+ },
+ {
+  "id": "s2a",
+  "say": "Forty minutes.",
+  "show": "Forty minutes."
+ },
+ {
+  "id": "s2b",
+  "say": "Three screenshots.",
+  "show": "Three screenshots."
+ },
+ {
+  "id": "s2c",
+  "say": "Zero peace of mind.",
+  "show": "Zero peace of mind."
+ },
+ {
+  "id": "s3a",
+  "say": "It's not me.",
+  "show": "It's not me."
+ },
+ {
+  "id": "s3b",
+  "say": "It's you.",
+  "show": "It's you."
+ },
+ {
+  "id": "s4a",
+  "say": "Meet Spenda two point oh.",
+  "show": "Meet Spenda 2.0."
+ },
+ {
+  "id": "s5a",
+  "say": "Send Naira.",
+  "show": "Send Naira."
+ },
+ {
+  "id": "s5b",
+  "say": "Get stablecoins.",
+  "show": "Get stablecoins."
+ },
+ {
+  "id": "s5c",
+  "say": "Instantly.",
+  "show": "Instantly."
+ },
+ {
+  "id": "s5d",
+  "say": "Fee? ... Zero.",
+  "show": "Fee? Zero."
+ },
+ {
+  "id": "s6a",
+  "say": "Statements, in one tap.",
+  "show": "Statements in one tap."
+ },
+ {
+  "id": "s6b",
+  "say": "Dark mode.",
+  "show": "Dark mode."
+ },
+ {
+  "id": "s6c",
+  "say": "Two factor.",
+  "show": "Two-factor."
+ },
+ {
+  "id": "s6d",
+  "say": "Locked in.",
+  "show": "Locked in."
+ },
+ {
+  "id": "s7a",
+  "say": "No vendor.",
+  "show": "No vendor."
+ },
+ {
+  "id": "s7b",
+  "say": "No waiting.",
+  "show": "No waiting."
+ },
+ {
+  "id": "s7c",
+  "say": "No wahala!",
+  "show": "No wahala."
+ },
+ {
+  "id": "s8a",
+  "say": "Spenda.",
+  "show": "Spenda."
+ },
+ {
+  "id": "s8b",
+  "say": "Bye bye, P-two-P.",
+  "show": "Bye bye, P2P."
+ }
+]
