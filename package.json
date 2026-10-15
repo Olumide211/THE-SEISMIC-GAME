@@ -1,0 +1,28 @@
+{
+  "name": "the-seismic-game",
+  "version": "1.0.0",
+  "description": "Motion-video toolkit: HyperFrames + GSAP + Three.js",
+  "scripts": {
+    "doctor": "hyperframes doctor",
+    "new-video": "bash scripts/new-video.sh",
+    "skills": "hyperframes skills update"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Olumide211/THE-SEISMIC-GAME.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Olumide211/THE-SEISMIC-GAME/issues"
+  },
+  "homepage": "https://github.com/Olumide211/THE-SEISMIC-GAME#readme",
+  "dependencies": {
+    "@hyperframes/shader-transitions": "^0.8.160",
+    "gsap": "^3.15.0",
+    "hyperframes": "^0.8.160",
+    "three": "^0.186.1"
+  },
+  "private": true
+}

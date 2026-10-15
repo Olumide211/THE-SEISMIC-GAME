@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=1920, height=1080" />
+    <title>Toolkit Smoke Test</title>
+    <script src="vendor/gsap.min.js"></script>
+    <style>
+      @font-face { font-family: "Anton"; font-weight: 400; src: url("assets/fonts/anton-400-normal.woff2") format("woff2"); }
+      @font-face { font-family: "Instrument Serif"; font-style: italic; font-weight: 400; src: url("assets/fonts/instrument-serif-400-italic.woff2") format("woff2"); }
+      @font-face { font-family: "JetBrains Mono"; font-weight: 500; src: url("assets/fonts/jetbrains-mono-500-normal.woff2") format("woff2"); }
+      body { margin: 0; background: #0c0a09; color: #fafaf9; }
+      #root { position: relative; width: 100%; height: 100%; overflow: hidden; }
+      .clip { position: absolute; left: 0; width: 100%; text-align: center; }
+      #bar { position: absolute; left: 0; bottom: 0; width: 100%; height: 14px; background: #f97316; transform-origin: left center; }
+      #title { top: 330px; margin: 0; font-family: "Anton"; font-size: 220px; line-height: 1; letter-spacing: 0.02em; text-transform: uppercase; }
+      #sub { top: 600px; margin: 0; font-family: "Instrument Serif"; font-style: italic; font-size: 72px; color: #fdba74; }
+      #tag { top: 730px; margin: 0; font-family: "JetBrains Mono"; font-weight: 500; font-size: 30px; color: #a8a29e; letter-spacing: 0.08em; }
+    </style>
+  </head>
+  <body>
+    <div id="root" data-composition-id="main" data-start="0" data-width="1920" data-height="1080" data-duration="3">
+      <h1 id="title" class="clip" data-start="0" data-duration="3" data-track-index="0">Seismic</h1>
+      <p id="sub" class="clip" data-start="0" data-duration="3" data-track-index="1">the toolkit is alive</p>
+      <p id="tag" class="clip" data-start="0" data-duration="3" data-track-index="2">HYPERFRAMES · GSAP · 3S TEST</p>
+      <div id="bar" class="clip" data-start="0" data-duration="3" data-track-index="3"></div>
+    </div>
+    <script>
+      const tl = gsap.timeline({ paused: true });
+      tl.fromTo("#title", { y: 80, opacity: 0 }, { y: 0, opacity: 1, duration: 0.7, ease: "power3.out" }, 0.1)
+        .fromTo("#sub", { y: 30, opacity: 0 }, { y: 0, opacity: 1, duration: 0.6, ease: "power2.out" }, 0.5)
+        .fromTo("#tag", { opacity: 0 }, { opacity: 1, duration: 0.5 }, 0.9)
+        .fromTo("#bar", { scaleX: 0 }, { scaleX: 1, duration: 2.8, ease: "none" }, 0)
+        .to("#title", { x: 6, duration: 0.05, repeat: 7, yoyo: true, ease: "none" }, 1.6);
+      window.__timelines["main"] = tl;
+    </script>
+  </body>
+</html>
