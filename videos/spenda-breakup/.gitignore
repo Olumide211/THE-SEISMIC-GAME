@@ -7,3 +7,4 @@ build/vo_trim/
 build/*.wav
 build/*.npy
 assets/audio/vo.wav
+build/*.log
