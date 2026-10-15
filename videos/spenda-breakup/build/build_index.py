@@ -21,7 +21,7 @@ LOGO_BOT = "M81 122 H128.5 A6 6 0 0 1 134.5 128 V150.5 A30 30 0 0 1 104.5 180.5 
 def logo_svg(cls="", ident=""):
     idattr = f' id="{ident}"' if ident else ""
     return (
-        f'<svg{idattr} class="{cls}" viewBox="60 43 119 119" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">'
+        f'<svg{idattr} class="{cls}" viewBox="58 58 122.5 122.5" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">'
         f'<path fill="currentColor" d="{LOGO_TOP}"/><path fill="currentColor" d="{LOGO_BOT}"/></svg>'
     )
 
