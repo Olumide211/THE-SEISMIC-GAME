@@ -136,8 +136,8 @@ CONVERT = f"""
 
 SUCCESS = f"""
 <div class="scr" id="p5-success">
-  <div class="sx-dim"></div>
-  <div class="sx-sheet" id="p5-sheet">
+  <div class="sx-dim" data-layout-allow-occlusion></div>
+  <div class="sx-sheet" id="p5-sheet" data-layout-allow-occlusion>
     <div class="sx-grab"></div>
     <svg class="sx-check" viewBox="0 0 120 120" aria-hidden="true">
       <circle cx="60" cy="60" r="52" fill="none" stroke="#22C55E" stroke-width="10" id="p5-ring" pathLength="1"/>
@@ -267,8 +267,8 @@ DOC = f"""<!doctype html>
             <div class="timer-lbl">waiting</div>
           </div>
           <div class="glitch-stack" id="s1-stack">
-            <div class="ghost warm" aria-hidden="true">{chat("s1-gw")}</div>
-            <div class="ghost cool" aria-hidden="true">{chat("s1-gc")}</div>
+            <div class="ghost warm" aria-hidden="true" data-layout-ignore>{chat("s1-gw")}</div>
+            <div class="ghost cool" aria-hidden="true" data-layout-ignore>{chat("s1-gc")}</div>
             <div class="base">{chat("s1-chat")}</div>
           </div>
         </div>
@@ -278,13 +278,13 @@ DOC = f"""<!doctype html>
 
       <!-- 2 THE PAIN: kinetic slams that shatter into particles -->
       <div id="s2" class="scene clip" data-start="0" data-duration="45" data-track-index="1">
-        <div class="ghost-type" id="s2-ghost">P2P</div>
+        <div class="ghost-type" id="s2-ghost" aria-hidden="true" data-layout-ignore>P2P</div>
         <div class="pain-chip" id="s2-chip"><i></i>Pending <span id="s2-timer">00:40:16</span></div>
         <div class="slam" id="s2-w0"><span class="sl-a">SEND</span><span class="sl-b">SCREENSHOT.</span></div>
         <div class="slam" id="s2-w1"><span class="sl-a">STILL</span><span class="sl-b">PENDING.</span></div>
         <div class="slam" id="s2-w2"><span class="sl-a">SEEN.</span><span class="sl-b">NO REPLY.</span></div>
         <div class="rgb" id="s2-rgb-r"></div><div class="rgb" id="s2-rgb-c"></div>
-        <canvas id="s2-particles" class="fx-canvas" width="1080" height="1920"></canvas>
+        <canvas id="s2-particles" class="fx-canvas" data-layout-allow-occlusion width="1080" height="1920"></canvas>
         <div class="flash" id="s2-flash"></div>
         {grain("s2")}
       </div>
@@ -292,8 +292,8 @@ DOC = f"""<!doctype html>
       <!-- 3 THE BREAK: freeze frame, chromatic aberration, crack, GPU particle explosion -->
       <div id="s3" class="scene clip" data-start="0" data-duration="45" data-track-index="2">
         <div class="freeze-wrap" id="s3-wrap">
-          <div class="ab ab-r" aria-hidden="true">{chat("s3-ar", True)}</div>
-          <div class="ab ab-c" aria-hidden="true">{chat("s3-ac", True)}</div>
+          <div class="ab ab-r" aria-hidden="true" data-layout-ignore>{chat("s3-ar", True)}</div>
+          <div class="ab ab-c" aria-hidden="true" data-layout-ignore>{chat("s3-ac", True)}</div>
           <div class="ab-base" id="s3-base">{chat("s3-chat", True)}</div>
           <svg class="cracks" id="s3-cracks" viewBox="0 0 1080 1920" aria-hidden="true">
             <g fill="none" stroke="#FFFFFF" stroke-width="3" stroke-linecap="round">
@@ -308,7 +308,7 @@ DOC = f"""<!doctype html>
           </svg>
         </div>
         <div class="freeze-tag" id="s3-tag">PAUSED</div>
-        <canvas id="s3-gl" class="fx-canvas" width="1080" height="1920"></canvas>
+        <canvas id="s3-gl" class="fx-canvas" data-layout-allow-occlusion width="1080" height="1920"></canvas>
         <div class="vignette strong"></div>
         {grain("s3")}
       </div>
@@ -318,7 +318,7 @@ DOC = f"""<!doctype html>
         <div class="leak leak-warm" id="s4-leak"></div>
         <div class="leak leak-green" id="s4-leak2"></div>
         <div class="bloom" id="s4-bloom"></div>
-        <canvas id="s4-gl" class="fx-canvas" width="1080" height="1920"></canvas>
+        <canvas id="s4-gl" class="fx-canvas" data-layout-allow-occlusion width="1080" height="1920"></canvas>
         <div class="wordmark" id="s4-wm"><span class="wm-name">Spenda</span><span class="wm-ver" id="s4-ver">2.0</span></div>
         <div class="flash" id="s4-flash"></div>
         {grain("s4")}
@@ -331,20 +331,20 @@ DOC = f"""<!doctype html>
         <div class="stage3d">{phone("p5", HOME + DEPOSIT + CONVERT + SUCCESS)}</div>
         <div class="chip3d" id="s5-chip-fee"><span>Fee</span><b>₦0</b></div>
         <div class="chip3d green" id="s5-chip-usdt"><i class="tok">{TETHER}</i><b>36.85 USDT</b></div>
-        <canvas id="s5-gl" class="fx-canvas" width="1080" height="1920"></canvas>
+        <canvas id="s5-gl" class="fx-canvas" data-layout-allow-occlusion width="1080" height="1920"></canvas>
         {grain("s5")}
       </div>
 
       <!-- 6a EXTRAS: statement download (light) -->
       <div id="s6a" class="scene clip light" data-start="0" data-duration="45" data-track-index="5">
-        <div class="ghost-type dark" id="s6a-ghost">PDF</div>
+        <div class="ghost-type dark" id="s6a-ghost" aria-hidden="true" data-layout-ignore>PDF</div>
         <div class="stage3d">{phone("p6a", STATEMENT)}</div>
         {grain("s6a")}
       </div>
 
       <!-- 6b EXTRAS: dark mode toggle inverts the whole frame -->
       <div id="s6b" class="scene clip light" data-start="0" data-duration="45" data-track-index="6">
-        <div class="ghost-type dark" id="s6b-ghost">DARK</div>
+        <div class="ghost-type dark" id="s6b-ghost" aria-hidden="true" data-layout-ignore>DARK</div>
         <div class="dark-flood" id="s6b-flood"></div>
         <div class="stage3d">{phone("p6b", SETTINGS)}</div>
         {grain("s6b")}
@@ -352,7 +352,7 @@ DOC = f"""<!doctype html>
 
       <!-- 6c EXTRAS: 2FA lock snaps shut -->
       <div id="s6c" class="scene clip" data-start="0" data-duration="45" data-track-index="7">
-        <div class="ghost-type" id="s6c-ghost">2FA</div>
+        <div class="ghost-type" id="s6c-ghost" aria-hidden="true" data-layout-ignore>2FA</div>
         <div class="stage3d">{phone("p6c", TWOFA, "dark")}</div>
         {grain("s6c")}
       </div>
@@ -365,8 +365,8 @@ DOC = f"""<!doctype html>
         <div class="pl" id="s7-p2">
           <span>NO</span>
           <span class="pl-glitch" id="s7-g">
-            <span class="g-copy g-a" aria-hidden="true">WAHALA.</span>
-            <span class="g-copy g-b" aria-hidden="true">WAHALA.</span>
+            <span class="g-copy g-a" aria-hidden="true" data-layout-ignore>WAHALA.</span>
+            <span class="g-copy g-b" aria-hidden="true" data-layout-ignore>WAHALA.</span>
             <span class="g-base">WAHALA.</span>
             <i class="pl-under" id="s7-under"></i>
           </span>
@@ -379,8 +379,8 @@ DOC = f"""<!doctype html>
         <div class="leak leak-green outro" id="s8-leak"></div>
         <div class="leak leak-warm outro" id="s8-leak2"></div>
         <div class="lockup" id="s8-lockup">
-          <div class="lk-mark">{logo_svg("lk-svg")}<div class="glint-layer">{logo_svg("lk-svg")}</div></div>
-          <div class="lk-word"><span>Spenda</span><span class="glint-text" aria-hidden="true">Spenda</span></div>
+          <div class="lk-mark">{logo_svg("lk-svg")}<div class="glint-layer" aria-hidden="true" data-layout-ignore>{logo_svg("lk-svg")}</div></div>
+          <div class="lk-word"><span>Spenda</span><span class="glint-text" aria-hidden="true" data-layout-ignore>Spenda</span></div>
         </div>
         <div class="tagline" id="s8-tag">Bye bye, P2P.</div>
         <div class="credit" id="s8-credit">

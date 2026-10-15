@@ -33,7 +33,7 @@ takes = json.loads((HERE / "takes_scored.json").read_text())
 PLAN = {
     "s1a": (1.50, 4.55), "s2a": (5.10, 6.75), "s2b": (6.80, 8.40), "s2c": (8.45, 10.45),
     "s3a": (11.20, 12.70), "s3b": (12.75, 14.40), "s4a": (17.30, 19.90),
-    "s5a": (20.80, 22.70), "s5b": (22.75, 24.20), "s5c": (24.25, 26.25), "s5d": (26.30, 27.40),
+    "s5a": (20.80, 22.70), "s5b": (22.75, 24.20), "s5c": (24.25, 26.25), "s5d": (26.00, 27.40),
     "s6a": (30.15, 31.90), "s6b": (32.35, 33.70), "s6c": (34.00, 35.05), "s6d": (35.10, 36.65),
     "s7a": (HIT[0] - 0.04, HIT[1] - 0.06), "s7b": (HIT[1] - 0.04, HIT[2] - 0.06), "s7c": (HIT[2] - 0.04, 40.90),
     "s8a": (41.35, 42.40), "s8b": (42.45, 44.80),
@@ -42,7 +42,7 @@ NO_CAPTION = {"s7a", "s7b", "s7c", "s8a", "s8b"}  # the on-screen type IS the li
 KEY = {"p2p", "forty", "three", "zero", "you", "spenda", "naira", "stablecoins", "instantly", "statements", "dark", "two", "factor", "locked"}
 OVERRIDE = json.loads((HERE / "take_override.json").read_text()) if (HERE / "take_override.json").exists() else {}
 
-NUM = {"40": "forty", "3": "three", "0": "zero", "2": "two"}
+NUM = {"40": "forty", "3": "three", "0": "zero", "2": "two", "phi": "fee", "v0": "fee", "nuhwahala": "wahala"}
 
 
 def norm(text):
@@ -86,6 +86,14 @@ hp = butter(2, 90, "high", fs=SR, output="sos")
 for lid, (start, end) in PLAN.items():
     t = pick(lid)
     x = sosfilt(hp, load(HERE / t["file"]))
+    # crop stray syllables ("um", "dot") outside the scripted words, using Whisper word times
+    exp_tok = set(norm(lines[lid]["say"])) | set(norm(lines[lid]["show"]))
+    hits = [w for w in t["words"] if any(tk in exp_tok for tk in norm(w["w"]))]
+    c0 = max(0.0, hits[0]["start"] - 0.06) if hits else 0.0
+    c1 = min(len(x) / SR, hits[-1]["end"] + 0.12) if hits else len(x) / SR
+    x = x[int(c0 * SR) : int(c1 * SR)]
+    f = int(0.008 * SR); x[:f] *= np.linspace(0, 1, f); x[-f:] *= np.linspace(1, 0, f)
+    t = dict(t, dur=len(x) / SR, words=[dict(w, start=max(0.0, w["start"] - c0), end=max(0.0, w["end"] - c0)) for w in t["words"] if w["end"] > c0 + 0.02])
     speech = x[np.abs(x) > 0.02]
     x *= 10 ** ((-17.5 - rms_db(speech)) / 20)  # level-match every fragment
     tempo = 1.0
@@ -96,7 +104,7 @@ for lid, (start, end) in PLAN.items():
         subprocess.run(["ffmpeg", "-v", "error", "-y", "-i", str(tmp_in), "-filter:a", f"atempo={tempo:.4f}", str(tmp_out)], check=True)
         x = load(tmp_out)
         tmp_in.unlink(); tmp_out.unlink()
-    i0 = int(round((start - 0.05) * SR))
+    i0 = int(round((start - 0.06) * SR))
     seg = x[: max(0, N - i0)]
     vo[i0 : i0 + len(seg)] += seg
     chosen[lid] = {"take": t["take"], "text": t["text"], "start": start, "dur": len(x) / SR, "tempo": round(tempo, 3)}
@@ -131,7 +139,7 @@ for lid, (start, end) in PLAN.items():
             prev_end = next((words[j]["end"] for j in range(wi - 1, -1, -1) if words[j]["end"] is not None), first)
             nxt = next((words[j]["start"] for j in range(wi + 1, len(words)) if words[j]["start"] is not None), last)
             w["start"], w["end"] = prev_end, max(prev_end + 0.05, nxt)
-    off = start - 0.05
+    off = start - 0.06
     for w in words:
         w["start"] = round(off + w["start"] / tempo, 3)
         w["end"] = round(off + w["end"] / tempo, 3)
@@ -195,7 +203,7 @@ CUES = [
     ("interface-sounds/click_002", 20.92, 0.8), ("ui-audio/switch12", 21.12, 0.6), ("interface-sounds/pluck_002", 22.42, 0.6),
     ("ui-audio/switch13", 22.72, 0.6), ("impact-sounds/impactBell_heavy_003", 23.30, 0.55), ("interface-sounds/pluck_001", 23.45, 0.6),
     ("impact-sounds/impactBell_heavy_002", 23.62, 0.4), ("interface-sounds/click_003", 24.16, 0.8), ("digital-audio/phaserUp2", 24.20, 0.35),
-    ("interface-sounds/drop_004", 26.95, 0.8), ("interface-sounds/confirmation_002", 28.12, 0.9), ("interface-sounds/pluck_002", 28.22, 0.5),
+    ("interface-sounds/drop_004", 26.40, 0.8), ("interface-sounds/confirmation_002", 28.12, 0.9), ("interface-sounds/pluck_002", 28.22, 0.5),
     # S6 extras: whoosh per flip, clicks on taps and toggles, lock snap
     ("interface-sounds/maximize_002", 29.75 - 0.2, 0.6), ("interface-sounds/click_001", 30.86, 0.8), ("interface-sounds/pluck_001", 31.40, 0.6),
     ("interface-sounds/maximize_002", 31.95 - 0.2, 0.6), ("interface-sounds/toggle_002", 32.64, 0.9), ("interface-sounds/switch_003", 32.70, 0.5),

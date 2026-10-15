@@ -224,26 +224,32 @@
   tl.fromTo("#p5-glare", { backgroundPosition: "95% 0%" }, { backgroundPosition: "10% 0%", duration: 9.6, ease: "sine.inOut" }, 20.0);
   // home → tap Deposit → deposit sheet
   tl.to("#p5-dep-btn", { scale: 0.93, duration: 0.08, ease: "power2.in", yoyo: true, repeat: 1 }, 20.92);
+  tl.set("#p5-deposit", { opacity: 1 }, 21.12);
   tl.fromTo("#p5-deposit", { x: 452 }, { x: 0, duration: 0.36, ease: "power3.out" }, 21.12);
   tl.to("#p5-home", { x: -140, opacity: 0.4, duration: 0.36, ease: "power3.out" }, 21.12);
+  tl.set("#p5-home", { opacity: 0 }, 21.5); // fully covered from here on
   const depNum = $("#p5-dep-num");
   const depObj = { v: 0 };
   tl.fromTo(depObj, { v: 0 }, { v: 50000, duration: 1.1, ease: "power2.out", onUpdate: () => (depNum.textContent = Math.round(depObj.v).toLocaleString("en-US")) }, 21.32);
   tl.fromTo("#p5-dep-ok", { y: 20, opacity: 0, scale: 0.8 }, { y: 0, opacity: 1, scale: 1, duration: 0.3, ease: "back.out(2)" }, 22.42);
   // convert
+  tl.set("#p5-convert", { opacity: 1 }, 22.72);
   tl.fromTo("#p5-convert", { x: 452 }, { x: 0, duration: 0.36, ease: "power3.out" }, 22.72);
   tl.to("#p5-deposit", { x: -140, opacity: 0.4, duration: 0.36, ease: "power3.out" }, 22.72);
+  tl.set("#p5-deposit", { opacity: 0 }, 23.1);
   tl.fromTo("#s5-chip-usdt", { x: 120, y: 180, scale: 0.4, rotation: -8, opacity: 0 }, { x: 0, y: 0, scale: 1, rotation: -4, opacity: 1, duration: 0.45, ease: "back.out(1.8)" }, 23.62);
-  tl.to("#s5-chip-usdt", { y: -18, duration: 1.2, ease: "sine.inOut", yoyo: true, repeat: 1 }, 24.1);
+  tl.to("#s5-chip-usdt", { y: -18, duration: 0.6, ease: "sine.inOut", yoyo: true, repeat: 1 }, 24.1);
+  tl.to("#s5-chip-usdt", { opacity: 0, x: -60, scale: 0.85, duration: 0.25, ease: "power2.in" }, 25.4);
   tl.to("#p5-cv-btn", { scale: 0.94, duration: 0.08, ease: "power2.in", yoyo: true, repeat: 1 }, 24.16);
   tl.fromTo("#p5-cv-bar", { scaleX: 0 }, { scaleX: 1, duration: 0.24, ease: "power3.in" }, 24.22);
   tl.fromTo("#p5-usdt", { scale: 1 }, { scale: 1.12, duration: 0.14, ease: "power2.out", yoyo: true, repeat: 1, transformOrigin: "0% 50%" }, 24.46);
   // Fee? Zero.
-  tl.fromTo("#p5-fee-line", { backgroundColor: "rgba(34,197,94,0)" }, { backgroundColor: "rgba(34,197,94,0.18)", duration: 0.2, ease: "power2.out" }, 26.5);
-  tl.fromTo("#s5-chip-fee", { x: -160, y: 60, scale: 0.3, rotation: 10, opacity: 0 }, { x: 0, y: 0, scale: 1, rotation: 5, opacity: 1, duration: 0.42, ease: "back.out(2.2)" }, 26.95);
-  tl.to(["#s5-chip-fee", "#s5-chip-usdt"], { opacity: 0, scale: 0.8, duration: 0.25, ease: "power2.in" }, 27.3);
+  tl.fromTo("#p5-fee-line", { backgroundColor: "rgba(34,197,94,0)" }, { backgroundColor: "rgba(34,197,94,0.18)", duration: 0.2, ease: "power2.out" }, 25.95);
+  tl.fromTo("#s5-chip-fee", { x: -160, y: 60, scale: 0.3, rotation: 10, opacity: 0 }, { x: 0, y: 0, scale: 1, rotation: 5, opacity: 1, duration: 0.42, ease: "back.out(2.2)" }, 26.4);
+  tl.to("#s5-chip-fee", { opacity: 0, scale: 0.8, duration: 0.25, ease: "power2.in" }, 27.3);
   // Transfer sent
-  tl.fromTo("#p5-success .sx-dim", { opacity: 0 }, { opacity: 0.85, duration: 0.3, ease: "power1.out" }, 27.45);
+  tl.fromTo("#p5-success .sx-dim", { opacity: 0 }, { opacity: 1, duration: 0.3, ease: "power1.out" }, 27.45);
+  tl.set("#p5-convert", { opacity: 0 }, 27.76);
   tl.fromTo("#p5-sheet", { y: 660 }, { y: 0, duration: 0.4, ease: "power3.out" }, 27.45);
   tl.fromTo("#p5-ring", { strokeDashoffset: 1 }, { strokeDashoffset: 0, duration: 0.38, ease: "power2.inOut" }, 27.78);
   tl.fromTo("#p5-disc", { scale: 0, transformOrigin: "60px 60px" }, { scale: 1, transformOrigin: "60px 60px", duration: 0.32, ease: "back.out(2.4)" }, 27.98);
@@ -287,6 +293,8 @@
   tl.fromTo("#s6b-ghost", { x: -80 }, { x: 80, duration: 2.2, ease: "none" }, X.s6ab);
   tl.to("#p6b-knob", { x: 36, duration: 0.18, ease: "power3.out" }, 32.64);
   tl.to("#p6b-tgl", { backgroundColor: "#000000", duration: 0.18 }, 32.64);
+  tl.set("#p6b-darkscr", { opacity: 1 }, 32.68);
+  tl.set("#p6b-set", { opacity: 0 }, 33.2);
   tl.fromTo("#p6b-darkscr", { clipPath: "circle(0px at 384px 412px)" }, { clipPath: "circle(1200px at 384px 412px)", duration: 0.5, ease: "power2.inOut" }, 32.68);
   tl.fromTo("#s6b-flood", { clipPath: "circle(0px at 695px 660px)" }, { clipPath: "circle(2300px at 695px 660px)", duration: 0.55, ease: "power2.inOut" }, 32.7);
   tl.set("#p6b-rig .ph-front", { borderColor: "#2c2c2c" }, 32.9);
@@ -359,6 +367,12 @@
   tl.set(".cap-line", { textShadow: "none" }, 29.9);
   tl.set("#captions", { color: "#FFFFFF" }, 32.86);
   tl.set(".cap-line", { textShadow: "0 4px 22px rgba(0,0,0,0.6)" }, 32.86);
+
+  // 3D / particle canvases are only present while their effect runs (they are transparent otherwise)
+  [["#s2-particles", 6.4, 11.3], ["#s3-gl", 13.7, 15.1], ["#s4-gl", 14.95, 20.6], ["#s5-gl", 23.2, 24.62]].forEach(([sel, a, z]) => {
+    tl.set(sel, { opacity: 1 }, a);
+    tl.set(sel, { opacity: 0 }, z);
+  });
 
   window.__timelines["main"] = tl;
 })();

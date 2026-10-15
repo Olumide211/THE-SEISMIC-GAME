@@ -21,9 +21,10 @@ lines = {l["id"]: l for l in json.loads((HERE / "vo_lines.json").read_text())}
 
 def norm_tokens(text):
     t = text.lower().replace("…", " ").replace("p-two-p", "p2p").replace("p to p", "p2p").replace("p two p", "p2p")
-    t = t.replace("2.0", "two point oh").replace("two point o ", "two point oh ").replace("2fa", "two factor")
+    t = t.replace("2.0", " two point oh ").replace("spender", "spenda").replace("stable coins", "stablecoins").replace("two point o ", "two point oh ").replace("2fa", "two factor")
     t = re.sub(r"[^a-z0-9' ]+", " ", t.replace("-", " "))
-    return t.split()
+    num = {"40": "forty", "3": "three", "0": "zero", "2": "two"}
+    return [num.get(w, w) for w in t.split()]
 
 
 def trim(x, sr, thr_db=-42.0, pad=0.05):

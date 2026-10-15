@@ -1,333 +1,333 @@
 [
  {
   "id": "s1a",
-  "t0": 1.41,
-  "t1": 4.36,
+  "t0": 1.4,
+  "t1": 4.35,
   "words": [
    {
     "w": "Dear",
-    "start": 1.45,
-    "end": 1.87,
+    "start": 1.44,
+    "end": 1.86,
     "key": false
    },
    {
     "w": "P2P…",
-    "start": 1.87,
-    "end": 2.73,
+    "start": 1.86,
+    "end": 2.72,
     "key": true
    },
    {
     "w": "we",
-    "start": 3.15,
-    "end": 3.33,
+    "start": 3.14,
+    "end": 3.32,
     "key": false
    },
    {
     "w": "need",
-    "start": 3.33,
-    "end": 3.47,
+    "start": 3.32,
+    "end": 3.46,
     "key": false
    },
    {
     "w": "to",
-    "start": 3.47,
-    "end": 3.63,
+    "start": 3.46,
+    "end": 3.62,
     "key": false
    },
    {
     "w": "talk.",
-    "start": 3.63,
-    "end": 3.91,
+    "start": 3.62,
+    "end": 3.9,
     "key": false
    }
   ]
  },
  {
   "id": "s2a",
-  "t0": 5.01,
-  "t1": 5.92,
+  "t0": 5.0,
+  "t1": 5.91,
   "words": [
    {
     "w": "Forty",
-    "start": 5.05,
-    "end": 5.25,
+    "start": 5.04,
+    "end": 5.24,
     "key": true
    },
    {
     "w": "minutes.",
-    "start": 5.25,
-    "end": 5.47,
+    "start": 5.24,
+    "end": 5.46,
     "key": false
    }
   ]
  },
  {
   "id": "s2b",
-  "t0": 6.71,
-  "t1": 7.92,
+  "t0": 6.7,
+  "t1": 7.91,
   "words": [
    {
     "w": "Three",
-    "start": 6.75,
-    "end": 6.97,
+    "start": 6.74,
+    "end": 6.96,
     "key": true
    },
    {
     "w": "screenshots.",
-    "start": 6.97,
-    "end": 7.47,
+    "start": 6.96,
+    "end": 7.46,
     "key": false
    }
   ]
  },
  {
   "id": "s2c",
-  "t0": 8.36,
-  "t1": 9.97,
+  "t0": 8.35,
+  "t1": 9.96,
   "words": [
    {
     "w": "Zero",
-    "start": 8.4,
-    "end": 8.74,
+    "start": 8.39,
+    "end": 8.73,
     "key": true
    },
    {
     "w": "peace",
-    "start": 8.74,
-    "end": 9.0,
+    "start": 8.73,
+    "end": 8.99,
     "key": false
    },
    {
     "w": "of",
-    "start": 9.0,
-    "end": 9.24,
+    "start": 8.99,
+    "end": 9.23,
     "key": false
    },
    {
     "w": "mind.",
-    "start": 9.24,
-    "end": 9.52,
+    "start": 9.23,
+    "end": 9.51,
     "key": false
    }
   ]
  },
  {
   "id": "s3a",
-  "t0": 11.11,
-  "t1": 12.26,
+  "t0": 11.1,
+  "t1": 12.25,
   "words": [
    {
     "w": "It's",
-    "start": 11.15,
-    "end": 11.35,
+    "start": 11.14,
+    "end": 11.34,
     "key": false
    },
    {
     "w": "not",
-    "start": 11.35,
-    "end": 11.53,
+    "start": 11.34,
+    "end": 11.52,
     "key": false
    },
    {
     "w": "me.",
-    "start": 11.53,
-    "end": 11.81,
+    "start": 11.52,
+    "end": 11.8,
     "key": false
    }
   ]
  },
  {
   "id": "s3b",
-  "t0": 12.66,
-  "t1": 13.59,
+  "t0": 12.65,
+  "t1": 13.58,
   "words": [
    {
     "w": "It's",
-    "start": 12.7,
-    "end": 12.98,
+    "start": 12.69,
+    "end": 12.97,
     "key": false
    },
    {
     "w": "you.",
-    "start": 12.98,
-    "end": 13.14,
+    "start": 12.97,
+    "end": 13.13,
     "key": true
    }
   ]
  },
  {
   "id": "s4a",
-  "t0": 17.21,
-  "t1": 19.137,
+  "t0": 17.2,
+  "t1": 19.23,
   "words": [
    {
     "w": "Meet",
-    "start": 17.25,
-    "end": 17.717,
+    "start": 17.24,
+    "end": 17.74,
     "key": false
    },
    {
     "w": "Spenda",
-    "start": 17.717,
-    "end": 18.351,
+    "start": 17.74,
+    "end": 18.4,
     "key": true
    },
    {
     "w": "2.0.",
-    "start": 18.351,
-    "end": 18.687,
+    "start": 18.4,
+    "end": 18.78,
     "key": true
    }
   ]
  },
  {
   "id": "s5a",
-  "t0": 20.71,
-  "t1": 22.3,
+  "t0": 20.7,
+  "t1": 22.51,
   "words": [
    {
     "w": "Send",
-    "start": 20.75,
-    "end": 21.25,
+    "start": 20.74,
+    "end": 21.26,
     "key": false
    },
    {
     "w": "Naira.",
-    "start": 21.25,
-    "end": 21.85,
+    "start": 21.44,
+    "end": 22.06,
     "key": true
    }
   ]
  },
  {
   "id": "s5b",
-  "t0": 22.66,
-  "t1": 24.12,
+  "t0": 22.65,
+  "t1": 24.11,
   "words": [
    {
     "w": "Get",
-    "start": 22.7,
-    "end": 22.98,
+    "start": 22.69,
+    "end": 22.99,
     "key": false
    },
    {
     "w": "stablecoins.",
-    "start": 22.98,
-    "end": 23.74,
+    "start": 22.99,
+    "end": 23.73,
     "key": true
    }
   ]
  },
  {
   "id": "s5c",
-  "t0": 24.16,
-  "t1": 25.33,
+  "t0": 24.15,
+  "t1": 25.32,
   "words": [
    {
     "w": "Instantly.",
-    "start": 24.2,
-    "end": 24.88,
+    "start": 24.19,
+    "end": 24.87,
     "key": true
    }
   ]
  },
  {
   "id": "s5d",
-  "t0": 26.49,
-  "t1": 27.36,
+  "t0": 25.9,
+  "t1": 27.61,
   "words": [
    {
     "w": "Fee?",
-    "start": 26.53,
-    "end": 26.58,
+    "start": 25.94,
+    "end": 26.4,
     "key": false
    },
    {
     "w": "Zero.",
-    "start": 26.53,
-    "end": 26.91,
+    "start": 26.4,
+    "end": 27.16,
     "key": true
    }
   ]
  },
  {
   "id": "s6a",
-  "t0": 30.06,
-  "t1": 31.9,
+  "t0": 30.05,
+  "t1": 31.8,
   "words": [
    {
     "w": "Statements",
-    "start": 30.1,
-    "end": 30.883,
+    "start": 30.09,
+    "end": 30.63,
     "key": true
    },
    {
     "w": "in",
-    "start": 30.883,
-    "end": 31.474,
+    "start": 30.63,
+    "end": 30.87,
     "key": false
    },
    {
     "w": "one",
-    "start": 31.474,
-    "end": 31.665,
+    "start": 30.87,
+    "end": 31.09,
     "key": false
    },
    {
     "w": "tap.",
-    "start": 31.665,
-    "end": 31.709,
+    "start": 31.09,
+    "end": 31.35,
     "key": false
    }
   ]
  },
  {
   "id": "s6b",
-  "t0": 32.26,
-  "t1": 33.47,
+  "t0": 32.25,
+  "t1": 33.46,
   "words": [
    {
     "w": "Dark",
-    "start": 32.3,
-    "end": 32.7,
+    "start": 32.29,
+    "end": 32.69,
     "key": true
    },
    {
     "w": "mode.",
-    "start": 32.7,
-    "end": 33.02,
+    "start": 32.69,
+    "end": 33.01,
     "key": false
    }
   ]
  },
  {
   "id": "s6c",
-  "t0": 35.388,
-  "t1": 35.15,
+  "t0": 33.9,
+  "t1": 34.81,
   "words": [
    {
     "w": "Two-factor.",
-    "start": 35.428,
-    "end": 35.88,
+    "start": 33.94,
+    "end": 34.36,
     "key": true
    }
   ]
  },
  {
   "id": "s6d",
-  "t0": 35.19,
-  "t1": 36.26,
+  "t0": 35.06,
+  "t1": 36.09,
   "words": [
    {
     "w": "Locked",
-    "start": 35.23,
-    "end": 35.53,
+    "start": 35.1,
+    "end": 35.38,
     "key": true
    },
    {
     "w": "in.",
-    "start": 35.53,
-    "end": 35.81,
+    "start": 35.38,
+    "end": 35.64,
     "key": false
    }
   ]

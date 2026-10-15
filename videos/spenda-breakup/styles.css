@@ -10,6 +10,15 @@
 @font-face { font-family: "Inter"; font-weight: 600; src: url("assets/fonts/inter-latin-600-normal.woff2") format("woff2"); }
 @font-face { font-family: "JetBrains Mono"; font-weight: 500; src: url("assets/fonts/jetbrains-mono-500-normal.woff2") format("woff2"); }
 @font-face { font-family: "JetBrains Mono"; font-weight: 700; src: url("assets/fonts/jetbrains-mono-700-normal.woff2") format("woff2"); }
+/* ₦ (U+20A6): Sora has no Naira sign, so it comes from Montserrat latin-ext */
+@font-face { font-family: "Sora"; font-weight: 400; src: url("assets/fonts/montserrat-latin-ext-500-normal.woff2") format("woff2"); unicode-range: U+20A6; }
+@font-face { font-family: "Sora"; font-weight: 500; src: url("assets/fonts/montserrat-latin-ext-500-normal.woff2") format("woff2"); unicode-range: U+20A6; }
+@font-face { font-family: "Sora"; font-weight: 600; src: url("assets/fonts/montserrat-latin-ext-600-normal.woff2") format("woff2"); unicode-range: U+20A6; }
+@font-face { font-family: "Sora"; font-weight: 700; src: url("assets/fonts/montserrat-latin-ext-700-normal.woff2") format("woff2"); unicode-range: U+20A6; }
+@font-face { font-family: "Montserrat"; font-weight: 500; src: url("assets/fonts/montserrat-latin-ext-500-normal.woff2") format("woff2"); unicode-range: U+20A6; }
+@font-face { font-family: "Montserrat"; font-weight: 700; src: url("assets/fonts/montserrat-latin-ext-700-normal.woff2") format("woff2"); unicode-range: U+20A6; }
+@font-face { font-family: "Montserrat"; font-weight: 800; src: url("assets/fonts/montserrat-latin-ext-800-normal.woff2") format("woff2"); unicode-range: U+20A6; }
+@font-face { font-family: "Montserrat"; font-weight: 900; src: url("assets/fonts/montserrat-latin-ext-900-normal.woff2") format("woff2"); unicode-range: U+20A6; }
 
 :root {
   --black: #000000;
@@ -26,7 +35,7 @@ html, body { width: 1080px; height: 1920px; overflow: hidden; background: #00000
 /* ---------------------------------------------------------------- scenes */
 .scene { position: absolute; inset: 0; overflow: hidden; background-color: #000000; }
 .scene.light { background-color: #f2f2f2; }
-.fx-canvas { position: absolute; left: 0; top: 0; width: 1080px; height: 1920px; pointer-events: none; }
+.fx-canvas { opacity: 0; position: absolute; left: 0; top: 0; width: 1080px; height: 1920px; pointer-events: none; }
 .grain { position: absolute; inset: -64px; background-image: url("assets/fx/grain.png"); background-size: 256px 256px; opacity: 0.05; pointer-events: none; }
 .light .grain { opacity: 0.06; }
 .vignette { position: absolute; inset: 0; background: radial-gradient(ellipse 75% 60% at 50% 45%, rgba(0, 0, 0, 0) 55%, rgba(0, 0, 0, 0.55) 100%); pointer-events: none; }
@@ -183,6 +192,7 @@ html, body { width: 1080px; height: 1920px; overflow: hidden; background: #00000
 .cv-btn, .st-btn { position: relative; margin-top: 30px; height: 88px; border-radius: 20px; background: #000000; color: #ffffff; display: flex; align-items: center; justify-content: center; gap: 12px; font-size: 24px; font-weight: 600; overflow: hidden; }
 .cv-btn i, .st-btn i { position: absolute; left: 0; bottom: 0; width: 100%; height: 8px; background: var(--green); transform: scaleX(0); transform-origin: left center; }
 #p5-success { background: rgba(255, 255, 255, 0); }
+#p5-deposit, #p5-convert { opacity: 0; }
 .sx-dim { position: absolute; inset: 0; background: #b8b9b4; opacity: 0; }
 .sx-sheet { position: absolute; left: 0; right: 0; bottom: 0; height: 640px; background: #ffffff; border-radius: 46px 46px 0 0; text-align: center; padding-top: 22px; transform: translateY(660px); }
 .sx-grab { margin: 0 auto; width: 84px; height: 8px; border-radius: 4px; background: #e5e5e5; }
@@ -227,14 +237,14 @@ html, body { width: 1080px; height: 1920px; overflow: hidden; background: #00000
 .chip3d { position: absolute; display: flex; align-items: center; gap: 14px; padding: 0 34px; height: 104px; border-radius: 52px; background: #ffffff; color: #000000; font-family: "Sora"; font-weight: 700; font-size: 44px; box-shadow: 0 34px 70px rgba(0, 0, 0, 0.55); opacity: 0; }
 .chip3d span { font-size: 32px; font-weight: 500; color: #555555; }
 .chip3d .tok { width: 60px; height: 60px; }
-#s5-chip-fee { left: 600px; top: 640px; }
-#s5-chip-usdt { left: 70px; top: 470px; }
+#s5-chip-fee { left: 600px; top: 1090px; }
+#s5-chip-usdt { left: 60px; top: 1090px; }
 .bokeh { position: absolute; inset: 0; filter: blur(26px); }
 .bokeh i { position: absolute; display: block; border-radius: 50%; }
 
 /* ---------------------------------------------------------------- S6b dark flood */
 .dark-flood { position: absolute; inset: 0; background: #000000; clip-path: circle(0px at 695px 660px); }
-#p6b-darkscr { clip-path: circle(0px at 384px 412px); }
+#p6b-darkscr { clip-path: circle(0px at 384px 412px); opacity: 0; }
 
 /* ---------------------------------------------------------------- S7 punchline */
 .pl-bg { position: absolute; inset: 0; background: #000000; }
