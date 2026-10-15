@@ -19,7 +19,7 @@
     transitions: [
       { time: X.s1s2, shader: "glitch", duration: 0.36 },
       { time: X.s2s3, shader: "chromatic-split", duration: 0.34 },
-      { time: X.s3s4, shader: "domain-warp", duration: 0.45 },
+      { time: X.s3s4, shader: "cross-warp-morph", duration: 0.45 },
       { time: X.s4s5, shader: "light-leak", duration: 0.6 },
       { time: X.s56a, shader: "whip-pan", duration: 0.34 },
       { time: X.s6ab, shader: "whip-pan", duration: 0.3 },
