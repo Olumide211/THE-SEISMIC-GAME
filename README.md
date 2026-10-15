@@ -18,28 +18,19 @@ Set up on Linux (Ubuntu 24.04, apt), CPU only, no NVIDIA GPU.
 | three | 0.186 | ✅ `package.json` |
 | HyperFrames agent skills (10) | latest | ✅ `npx hyperframes skills update` installed them into `~/.claude/skills` |
 | Headless Chrome (for rendering) | 152 | ✅ `npx hyperframes browser ensure` |
-| voxcpm (VoxCPM2) | 2.0.3 | ⚠️ installed in `.venv` (Python 3.12, uv); model weights not downloaded yet |
-| kokoro (lighter voice, added because there's no GPU) | latest | ⚠️ installed in `.venv`; model weights not downloaded yet |
+| voxcpm (VoxCPM2) | 2.0.3 | ✅ `.venv` (Python 3.12, uv); clones `voice/me.wav` via `scripts/narrate.py` |
+| kokoro (lighter voice, added because there's no GPU) | latest | ✅ `.venv`, model downloaded |
 | espeak-ng | 1.51 | ✅ apt (Kokoro's fallback for unknown words) |
-| openai-whisper | latest | ⚠️ `uv tool install`; `whisper` command works, models not downloaded yet |
+| openai-whisper | latest | ✅ `uv tool install`; tested with word timestamps |
 | Fonts: Anton, Instrument Serif, JetBrains Mono, Space Grotesk | — | ✅ `.woff2` in `assets/fonts/` with OFL licenses and `fonts.css` |
-| Kenney sound effects | — | ❌ not downloaded, see `sfx/README.md` |
+| Kenney sound effects (5 packs, 416 sounds, CC0) | — | ✅ `sfx/`, see `sfx/README.md` |
 
-### What's still missing
+### Network hosts this needs
 
-The cloud session's network policy blocked these hosts, so these parts aren't
-done yet:
-
-- **huggingface.co**: VoxCPM2 and Kokoro download their voice models from here
-  the first time you use them.
-- **openaipublic.azureedge.net**: Whisper downloads its models from here.
-- **kenney.nl**: the five sound-effect packs.
-- **fonts.google.com**: not needed in the end. The same Google Fonts files came
-  from the Fontsource packages on npm.
-
-On a normal internet connection the voice and Whisper models download on first
-use. In a Claude cloud session, add those hosts under Network access in the
-environment settings first.
+Voice and Whisper models download on first use from `huggingface.co`
+(and `*.hf.co`) and `openaipublic.azureedge.net`. In a Claude cloud session,
+those hosts have to be under Allowed domains in the environment's Network
+access settings.
 
 ## Make a video
 
@@ -64,7 +55,7 @@ rendered in 7 s.
 If you work on videos with Claude Code, it uses the HyperFrames skills (start
 with `/hyperframes`). To reinstall them: `npm run skills`.
 
-### Voiceover (once the models can download)
+### Voiceover
 
 ```bash
 uv run python -c "

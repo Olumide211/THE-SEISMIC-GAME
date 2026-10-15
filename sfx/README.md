@@ -1,11 +1,15 @@
-# Sound effects (Kenney, CC0) — not downloaded yet
+# Sound effects (Kenney, CC0)
 
-kenney.nl was blocked by this cloud session's network policy, so these packs
-still need to be fetched. Download each pack from https://kenney.nl/assets,
-unzip it into its own folder here, and keep the included License.txt:
+Downloaded from https://kenney.nl/assets. Each folder keeps the pack's
+License.txt (Creative Commons Zero, so there's no attribution requirement).
 
-- Interface Sounds → `sfx/interface-sounds/`
-- Impact Sounds    → `sfx/impact-sounds/`
-- Sci-fi Sounds    → `sfx/sci-fi-sounds/`
-- UI Audio         → `sfx/ui-audio/`
-- Digital Audio    → `sfx/digital-audio/`
+| Folder | Pack | Sounds |
+| --- | --- | --- |
+| `interface-sounds/` | Interface Sounds | 100 |
+| `impact-sounds/` | Impact Sounds | 130 |
+| `sci-fi-sounds/` | Sci-fi Sounds | 73 |
+| `ui-audio/` | UI Audio | 51 |
+| `digital-audio/` | Digital Audio | 62 |
+
+All files are .ogg. Copy the ones a video uses into that video's
+`assets/sfx/` folder (HyperFrames only loads files inside the project).
