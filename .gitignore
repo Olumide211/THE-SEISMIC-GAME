@@ -2,3 +2,6 @@ node_modules/
 .venv/
 __pycache__/
 **/.hyperframes/
+
+# Personal voice samples stay local
+voice/

@@ -73,9 +73,18 @@ audio = np.concatenate([a for _,_,a in KPipeline(lang_code='a')('The ground is s
 sf.write('voice.wav', audio, 24000)"
 ```
 
-VoxCPM2 gives higher quality and can clone a voice, but it's slow on CPU:
-`uv run python -c "from voxcpm import VoxCPM; ..."`. See
-https://github.com/OpenBMB/VoxCPM.
+To narrate in your own voice (VoxCPM2 clone of `voice/me.wav`), put one line
+per sentence in a text file and run:
+
+```bash
+uv run python scripts/narrate.py script.txt -o videos/my-video/assets/audio
+```
+
+It writes `line-NN.wav`, a joined `narration.wav`, and `narration.json` with
+each line's start and end time. Put the exact words of the sample in
+`voice/me.txt` for a closer match. `voice/` is gitignored so your recording
+stays on this machine. VoxCPM2 is slow on CPU, so expect several seconds of
+compute per second of speech. See https://github.com/OpenBMB/VoxCPM.
 
 ### Caption word timing
 
