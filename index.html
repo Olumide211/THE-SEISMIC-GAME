@@ -52,6 +52,14 @@
             color: rgba(255, 255, 255, 0.55);
         }
 
+        .overlay {
+            transition: opacity 0.4s ease;
+        }
+
+        .overlay.hidden {
+            opacity: 0;
+        }
+
         .overlay a {
             pointer-events: auto;
             color: #ff69b4;
@@ -82,7 +90,8 @@
 
     <div class="overlay">
         <h1>Event Horizon</h1>
-        <p>Move the mouse to orbit &middot; scroll to zoom &middot; <a href="quiz.html">Play the Seismic Quiz</a></p>
+        <p>Move the mouse to orbit &middot; scroll to zoom &middot; click or press space to send a gravitational wave &middot; H hides this text</p>
+        <p><a href="quiz.html">Play the Seismic Quiz</a></p>
     </div>
 
     <script type="module" src="./main.js"></script>
