@@ -4,7 +4,7 @@ A 25.2 s, 30 fps, 1920x1080 cinematic 3D product reveal for Spenda 2.0, a Naira-
 It follows `reference/reference.mp4` shot for shot in camera, motion, lighting, pacing and transitions.
 `ref-frames/` holds that reference sampled every 0.25 s (`f_NNN.png`, so t = NNN / 4).
 
-Output: `out/spenda-launch.mp4` (H.264 high profile, CRF 12, AAC 320k, with the supplied soundtrack).
+Output: `out/spenda-launch.mp4` (H.264 high profile, CRF 14 (~27 Mbps), AAC 320k, with the supplied soundtrack).
 
 ## Pipeline
 

@@ -6,7 +6,7 @@ cd "$(dirname "$0")/.."
 ffmpeg -y -framerate 30 -start_number 0 -i out/frames/element-%03d.png \
   -i assets/audio.mp3 \
   -map 0:v -map 1:a \
-  -c:v libx264 -preset slow -profile:v high -pix_fmt yuv420p -crf 12 -maxrate 40M -bufsize 80M \
+  -c:v libx264 -preset slow -profile:v high -pix_fmt yuv420p -crf 14 -maxrate 28M -bufsize 56M \
   -x264-params "keyint=30:min-keyint=30" -movflags +faststart \
   -c:a aac -b:a 320k -af "afade=t=out:st=24.9:d=0.3" -t 25.2 \
   out/spenda-launch.mp4
