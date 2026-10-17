@@ -1,0 +1,14 @@
+{
+  "prompt_text": "Hello Claude, this is my voice. I'm trying to let you know that this is the voice you have to clone. I have my permission to clone. This is Bree's voice. So thank you.",
+  "note": "speak = phonetic text fed to the voice; show = real spelling used for captions (same words, same order); at = where the line starts in the 30 s film; max = latest it may end",
+  "lines": [
+    {"id": "l1", "at": 0.3, "max": 3.6, "speak": "One hundred U-S-D-T to Naira. Two apps. One race.", "show": "100 USDT to Naira. Two apps. One race."},
+    {"id": "l2", "at": 4.6, "max": 9.0, "speak": "On P-two-P, you pick a vendor, send proof, then wait... and pray.", "show": "On P2P, you pick a vendor, send proof, then wait… and pray."},
+    {"id": "l3", "at": 9.4, "max": 15.0, "speak": "On Spenda, send your U-S-D-T. It auto-converts to Naira, and goes straight to your bank.", "show": "On Spenda, send your USDT. It auto-converts to Naira, and goes straight to your bank."},
+    {"id": "l4", "at": 15.6, "max": 17.5, "speak": "Credit alert. In seconds.", "show": "Credit alert. In seconds."},
+    {"id": "l5", "at": 18.0, "max": 21.0, "speak": "And you're already spending it.", "show": "And you're already spending it."},
+    {"id": "l6", "at": 21.4, "max": 24.0, "speak": "Still waiting on P-two-P?", "show": "Still waiting on P2P?"},
+    {"id": "l7", "at": 24.1, "max": 26.5, "speak": "No vendor. No screenshots. No wahala.", "show": "No vendor. No screenshots. No wahala."},
+    {"id": "l8", "at": 26.6, "max": 29.2, "speak": "Spenda. Crypto to cash, in seconds.", "show": "Spenda. Crypto to cash in seconds."}
+  ]
+}

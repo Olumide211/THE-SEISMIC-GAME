@@ -11,3 +11,6 @@ public/tex-race/
 public/cloth_race
 cloth/frames_race/
 out/frames-race/
+# voice recording and generated takes stay local (personal voice data)
+vo/*.wav
+vo/takes/
