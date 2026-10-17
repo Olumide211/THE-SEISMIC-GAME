@@ -5,23 +5,27 @@ import {FPS, prog, smooth} from './kit';
 
 export type Segment = {shot: Shot; a: number; b: number};
 
-/* Cloth plates (Blender) cover 0-2.9s: main pass alone, then the holdout pass
-   (slab cut out) over the first 3D shot while the satin sweeps past the lens. */
-export const PLATE_LAST = 88;
-export const HOLD_FIRST = 72;
-export const plateFor = (t: number) => {
+/* Cloth plates (Blender): the main pass alone, then the holdout pass (slabs cut out) over
+   the first 3D shot while the satin sweeps away. */
+export type PlateConfig = {dir: string; last: number; holdFirst: number; end?: number};
+export const LAUNCH_PLATES: PlateConfig = {dir: 'cloth', last: 88, holdFirst: 72};
+export const plateFor = (t: number, cfg: PlateConfig = LAUNCH_PLATES) => {
   const f = Math.round(t * FPS) + 1;
-  if (f > PLATE_LAST) return null;
-  return f >= HOLD_FIRST ? {kind: 'hold' as const, frame: f} : {kind: 'main' as const, frame: f};
+  if (f > cfg.last) return null;
+  return f >= cfg.holdFirst ? {kind: 'hold' as const, frame: f} : {kind: 'main' as const, frame: f};
 };
 
 export class Director {
   post: Post;
   segs: Segment[];
   tmpA = new THREE.Matrix4();
-  constructor(public ctx: Ctx, segs: Segment[], w: number, h: number) {
+  constructor(public ctx: Ctx, segs: Segment[], w: number, h: number, public plates: PlateConfig = LAUNCH_PLATES) {
     this.post = new Post(ctx.renderer, w, h);
     this.segs = segs;
+    for (const s of segs) {
+      s.shot.camera.aspect = w / h;
+      s.shot.camera.updateProjectionMatrix();
+    }
   }
 
   active(t: number) {
@@ -63,7 +67,8 @@ export class Director {
       b.set(ref[i][0], ref[i][1], 0);
       maxPx = Math.max(maxPx, Math.hypot((a.x - b.x) * this.post.w * 0.5, (a.y - b.y) * this.post.h * 0.5));
     });
-    return Math.max(shot.minSamples(t), Math.min(12, Math.ceil((maxPx * sh) / 4)));
+    const n = Math.max(shot.minSamples(t), Math.min(12, Math.ceil((maxPx * sh) / 4)));
+    return Number.isFinite(n) && n >= 1 ? n : 1;
   }
 
   renderShot(shot: Shot, t: number, slot: number) {
@@ -85,7 +90,7 @@ export class Director {
     const act = this.active(t);
     let slot = 0;
     let grade: Grade = {...BASE_GRADE};
-    const pinfo = plateFor(t);
+    const pinfo = plateFor(t, this.plates);
     if (act.length === 0 || (pinfo && pinfo.kind === 'main')) {
       // pure cloth plate
       const r = this.ctx.renderer;
@@ -106,8 +111,9 @@ export class Director {
       grade = Object.fromEntries(Object.keys(ga).map((key) => [key, (ga as any)[key] * (1 - k) + (gb as any)[key] * k])) as Grade;
     }
     let overlayOnly = 0;
-    if (pinfo) overlayOnly = pinfo.kind === 'main' ? 1 : 1 - smooth(prog(pinfo.frame, HOLD_FIRST, HOLD_FIRST + 7));
-    const fade = 1 - smooth(prog(t, 25.0, 25.2));
+    if (pinfo) overlayOnly = pinfo.kind === 'main' ? 1 : 1 - smooth(prog(pinfo.frame, this.plates.holdFirst, this.plates.holdFirst + 7));
+    const end = this.plates.end ?? 25.2;
+    const fade = 1 - smooth(prog(t, end - 0.2, end));
     this.post.finish(slot, {
       ...grade,
       fade,

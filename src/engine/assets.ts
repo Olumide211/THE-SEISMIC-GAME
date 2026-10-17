@@ -4,7 +4,7 @@ import ids from '../ui/texture-ids.json';
 
 export type TexMap = Record<string, THREE.Texture>;
 
-let cache: Promise<TexMap> | null = null;
+const caches = new Map<string, Promise<TexMap>>();
 
 function load(url: string, renderer?: THREE.WebGLRenderer) {
   return new Promise<THREE.Texture>((res, rej) => {
@@ -23,22 +23,27 @@ function load(url: string, renderer?: THREE.WebGLRenderer) {
   });
 }
 
-/** all React-rendered UI textures (public/tex/*.png), loaded once per tab */
-export function loadUITextures(renderer: THREE.WebGLRenderer): Promise<TexMap> {
-  if (!cache) {
-    cache = Promise.all((ids as string[]).map((id) => load(staticFile(`tex/${id}.png`), renderer).then((t) => [id, t] as const))).then((pairs) =>
-      Object.fromEntries(pairs),
+/** React-rendered UI textures (public/<dir>/<id>.png), loaded once per tab per set */
+export function loadTextureSet(renderer: THREE.WebGLRenderer, list: string[], dir: string): Promise<TexMap> {
+  if (!caches.has(dir)) {
+    caches.set(
+      dir,
+      Promise.all(list.map((id) => load(staticFile(`${dir}/${id}.png`), renderer).then((t) => [id, t] as const))).then((pairs) => Object.fromEntries(pairs)),
     );
   }
-  return cache;
+  return caches.get(dir)!;
+}
+
+export function loadUITextures(renderer: THREE.WebGLRenderer): Promise<TexMap> {
+  return loadTextureSet(renderer, ids as string[], 'tex');
 }
 
 /* cloth plates rendered by Blender (cloth/cloth.py), one per frame */
 const plateCache = new Map<string, Promise<THREE.Texture>>();
-export function loadPlate(kind: 'main' | 'hold', frame: number) {
-  const key = `${kind}_${frame}`;
+export function loadPlate(kind: 'main' | 'hold', frame: number, dir = 'cloth') {
+  const key = `${dir}/${kind}_${frame}`;
   if (!plateCache.has(key)) {
-    const url = staticFile(`cloth/${kind}_${String(frame).padStart(4, '0')}.png`);
+    const url = staticFile(`${dir}/${kind}_${String(frame).padStart(4, '0')}.png`);
     plateCache.set(
       key,
       load(url).then((t) => {

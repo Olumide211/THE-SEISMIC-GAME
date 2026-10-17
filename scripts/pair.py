@@ -4,8 +4,15 @@ import sys
 from PIL import Image, ImageDraw
 
 ours, ref, out, label = sys.argv[1:5]
+vertical = len(sys.argv) > 5 and sys.argv[5] == 'v'
 W, H = 960, 540
-a = Image.open(ours).convert('RGB').resize((W, H), Image.LANCZOS)
+if vertical:
+    # 9:16 still (left) next to the 16:9 reference for look comparison
+    a0 = Image.open(ours).convert('RGB').resize((304, 540), Image.LANCZOS)
+    a = Image.new('RGB', (W, H))
+    a.paste(a0, ((W - 304) // 2, 0))
+else:
+    a = Image.open(ours).convert('RGB').resize((W, H), Image.LANCZOS)
 try:
     b = Image.open(ref).convert('RGB').resize((W, H), Image.LANCZOS)
 except FileNotFoundError:

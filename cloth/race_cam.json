@@ -1,0 +1,46 @@
+{
+  "note": "Camera for 0-3.5s in three.js coords (y up, z toward camera); shared by cloth_race.py and the Remotion scene so the holdout plates line up. Segments ease with smoothstep. Blender coords = (x, -z, y + zc).",
+  "zc": 1.38,
+  "fovDeg": 39.6,
+  "keys": [
+    [
+      0.0,
+      [
+        0.05,
+        0.3,
+        7.3
+      ],
+      [
+        0.0,
+        0.0,
+        0.0
+      ]
+    ],
+    [
+      2.5,
+      [
+        0.0,
+        0.25,
+        6.4
+      ],
+      [
+        0.0,
+        0.0,
+        0.0
+      ]
+    ],
+    [
+      3.5,
+      [
+        -0.12,
+        0.35,
+        5.9
+      ],
+      [
+        -0.04,
+        0.04,
+        0.0
+      ]
+    ]
+  ]
+}

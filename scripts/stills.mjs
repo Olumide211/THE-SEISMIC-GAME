@@ -12,15 +12,16 @@ const serveUrl = await bundle({entryPoint: path.join(root, 'src/index.ts'), publ
 const browserExecutable = '/opt/pw-browsers/chromium_headless_shell-1194/chrome-linux/headless_shell';
 const chromiumOptions = {gl: 'swangle'};
 const puppeteerInstance = await openBrowser('chrome', {browserExecutable, chromiumOptions});
-const composition = await selectComposition({serveUrl, id: 'SpendaLaunch', browserExecutable, puppeteerInstance, chromiumOptions});
+const compId = process.env.COMP ?? 'SpendaLaunch';
+const composition = await selectComposition({serveUrl, id: compId, browserExecutable, puppeteerInstance, chromiumOptions});
 fs.mkdirSync(path.join(root, outDir), {recursive: true});
 for (const s of times) {
   const frame = Math.round(parseFloat(s) * 30);
   const t0 = Date.now();
   const out = path.join(root, outDir, `t${s}.png`);
-  await renderStill({serveUrl, composition, frame, output: out, puppeteerInstance, chromiumOptions, imageFormat: 'png', timeoutInMilliseconds: 900000});
+  await renderStill({serveUrl, composition, frame, output: out, puppeteerInstance, chromiumOptions, imageFormat: 'png', timeoutInMilliseconds: 900000, onBrowserLog: (l) => { if (l.type === 'error' || l.type === 'warning') console.log('[browser]', l.type, l.text.slice(0, 300)); }});
   const ref = path.join(root, 'ref-frames', `f_${String(Math.round(parseFloat(s) * 4)).padStart(3, '0')}.png`);
-  execFileSync('python3', [path.join(root, 'scripts/pair.py'), out, ref, path.join(root, outDir, `cmp_${s}.png`), s]);
+  execFileSync('python3', [path.join(root, 'scripts/pair.py'), out, ref, path.join(root, outDir, `cmp_${s}.png`), s, compId === 'SpendaRace' ? 'v' : 'h']);
   console.log('still', s, ((Date.now() - t0) / 1000).toFixed(1) + 's');
 }
 await puppeteerInstance.close({silent: true});

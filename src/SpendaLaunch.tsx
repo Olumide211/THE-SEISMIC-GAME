@@ -47,6 +47,9 @@ const Stage: React.FC<{t: number; only?: string}> = ({t}) => {
         const plate = p ? await loadPlate(p.kind, p.frame) : null;
         d.render(t, plate);
         gl.getContext().finish();
+      } catch (e) {
+        console.error('render failed', e instanceof Error ? e.stack : e);
+        throw e;
       } finally {
         continueRender(handle);
       }

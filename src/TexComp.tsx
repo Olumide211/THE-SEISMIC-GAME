@@ -4,7 +4,10 @@ import '@fontsource/inter/600.css';
 import '@fontsource/inter/700.css';
 import React, {useEffect, useState} from 'react';
 import {AbsoluteFill, continueRender, delayRender} from 'remotion';
-import {TEXTURES} from './ui/registry';
+import {TEXTURES as LAUNCH_TEXTURES} from './ui/registry';
+import {RACE_TEXTURES} from './race/registry';
+
+const TEXTURES = {...LAUNCH_TEXTURES, ...RACE_TEXTURES};
 
 export const TexComp: React.FC<{id: string}> = ({id}) => {
   const [handle] = useState(() => delayRender('fonts'));
