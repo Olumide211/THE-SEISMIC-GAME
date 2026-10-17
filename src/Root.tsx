@@ -10,7 +10,7 @@ import {SpendaRace} from './SpendaRace';
 export const Root = () => (
   <>
     <Composition id="SpendaLaunch" component={SpendaLaunch} durationInFrames={756} fps={30} width={1920} height={1080} />
-    <Composition id="SpendaRace" component={SpendaRace} durationInFrames={900} fps={30} width={1080} height={1920} />
+    <Composition id="SpendaRace" component={SpendaRace} durationInFrames={900} fps={30} width={1080} height={1920} defaultProps={{layer: 'all' as const}} />
     <Composition
       id="Tex"
       component={TexComp}

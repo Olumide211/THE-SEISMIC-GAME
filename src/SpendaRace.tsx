@@ -59,8 +59,16 @@ const Stage: React.FC<{t: number}> = ({t}) => {
   return null;
 };
 
-export const SpendaRace: React.FC = () => {
+/** layer: 'all' (preview), 'base' (3D + overlays, no captions), 'captions' (transparent caption pass) */
+export const SpendaRace: React.FC<{layer?: 'all' | 'base' | 'captions'}> = ({layer = 'all'}) => {
   const t = useCurrentFrame() / FPS;
+  if (layer === 'captions') {
+    return (
+      <AbsoluteFill>
+        <Captions t={t} />
+      </AbsoluteFill>
+    );
+  }
   return (
     <AbsoluteFill style={{background: '#030303'}}>
       <ThreeCanvas
@@ -78,7 +86,7 @@ export const SpendaRace: React.FC = () => {
       </ThreeCanvas>
       <GoStreak t={t} />
       <Counter t={t} />
-      <Captions t={t} />
+      {layer === 'all' && <Captions t={t} />}
       <Sting t={t} shift={4.75} tagline={null} fadeEnd={30.0} ui={1.35} />
       <Audio src={staticFile('race-mix.wav')} />
     </AbsoluteFill>

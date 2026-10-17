@@ -1,0 +1,768 @@
+{
+ "words": [
+  {
+   "w": "100",
+   "start": 0.304,
+   "end": 0.989,
+   "line": "l1"
+  },
+  {
+   "w": "USDT",
+   "start": 0.989,
+   "end": 1.674,
+   "line": "l1"
+  },
+  {
+   "w": "to",
+   "start": 1.674,
+   "end": 2.017,
+   "line": "l1"
+  },
+  {
+   "w": "Naira.",
+   "start": 2.017,
+   "end": 2.774,
+   "line": "l1"
+  },
+  {
+   "w": "Two",
+   "start": 2.828,
+   "end": 3.098,
+   "line": "l1"
+  },
+  {
+   "w": "apps.",
+   "start": 3.098,
+   "end": 3.441,
+   "line": "l1"
+  },
+  {
+   "w": "One",
+   "start": 3.909,
+   "end": 3.981,
+   "line": "l1"
+  },
+  {
+   "w": "race.",
+   "start": 3.981,
+   "end": 4.288,
+   "line": "l1"
+  },
+  {
+   "w": "On",
+   "start": 4.6,
+   "end": 5.743,
+   "line": "l2"
+  },
+  {
+   "w": "P2P,",
+   "start": 5.743,
+   "end": 6.404,
+   "line": "l2"
+  },
+  {
+   "w": "you",
+   "start": 6.511,
+   "end": 6.564,
+   "line": "l2"
+  },
+  {
+   "w": "pick",
+   "start": 6.564,
+   "end": 6.85,
+   "line": "l2"
+  },
+  {
+   "w": "a",
+   "start": 6.85,
+   "end": 7.046,
+   "line": "l2"
+  },
+  {
+   "w": "vendor\u2026",
+   "start": 7.046,
+   "end": 7.779,
+   "line": "l2"
+  },
+  {
+   "w": "then",
+   "start": 7.779,
+   "end": 7.779,
+   "line": "l2"
+  },
+  {
+   "w": "wait,",
+   "start": 7.779,
+   "end": 8.1,
+   "line": "l2"
+  },
+  {
+   "w": "and",
+   "start": 8.725,
+   "end": 8.975,
+   "line": "l2"
+  },
+  {
+   "w": "pray",
+   "start": 8.975,
+   "end": 9.314,
+   "line": "l2"
+  },
+  {
+   "w": "\ud83d\ude2e\u200d\ud83d\udca8",
+   "start": 9.314,
+   "end": 9.364,
+   "line": "l2"
+  },
+  {
+   "w": "Spenda",
+   "start": 9.95,
+   "end": 10.777,
+   "line": "l3"
+  },
+  {
+   "w": "converts",
+   "start": 10.777,
+   "end": 11.328,
+   "line": "l3"
+  },
+  {
+   "w": "your",
+   "start": 11.328,
+   "end": 12.274,
+   "line": "l3"
+  },
+  {
+   "w": "USDT",
+   "start": 12.274,
+   "end": 13.179,
+   "line": "l3"
+  },
+  {
+   "w": "to",
+   "start": 13.179,
+   "end": 13.416,
+   "line": "l3"
+  },
+  {
+   "w": "Naira,",
+   "start": 13.416,
+   "end": 13.908,
+   "line": "l3"
+  },
+  {
+   "w": "straight",
+   "start": 13.908,
+   "end": 14.184,
+   "line": "l3"
+  },
+  {
+   "w": "to",
+   "start": 14.184,
+   "end": 14.42,
+   "line": "l3"
+  },
+  {
+   "w": "your",
+   "start": 14.42,
+   "end": 14.538,
+   "line": "l3"
+  },
+  {
+   "w": "bank.",
+   "start": 14.538,
+   "end": 14.873,
+   "line": "l3"
+  },
+  {
+   "w": "Credit",
+   "start": 15.55,
+   "end": 16.663,
+   "line": "l4"
+  },
+  {
+   "w": "alert.",
+   "start": 16.663,
+   "end": 16.978,
+   "line": "l4"
+  },
+  {
+   "w": "In",
+   "start": 16.978,
+   "end": 17.312,
+   "line": "l4"
+  },
+  {
+   "w": "seconds.",
+   "start": 17.312,
+   "end": 17.683,
+   "line": "l4"
+  },
+  {
+   "w": "And",
+   "start": 18.0,
+   "end": 18.66,
+   "line": "l5"
+  },
+  {
+   "w": "you're",
+   "start": 18.66,
+   "end": 18.94,
+   "line": "l5"
+  },
+  {
+   "w": "already",
+   "start": 18.94,
+   "end": 19.18,
+   "line": "l5"
+  },
+  {
+   "w": "spending",
+   "start": 19.18,
+   "end": 19.6,
+   "line": "l5"
+  },
+  {
+   "w": "it.",
+   "start": 19.6,
+   "end": 20.0,
+   "line": "l5"
+  },
+  {
+   "w": "Still",
+   "start": 21.4,
+   "end": 22.36,
+   "line": "l6"
+  },
+  {
+   "w": "waiting",
+   "start": 22.36,
+   "end": 22.62,
+   "line": "l6"
+  },
+  {
+   "w": "on",
+   "start": 22.62,
+   "end": 22.88,
+   "line": "l6"
+  },
+  {
+   "w": "P2P?",
+   "start": 22.88,
+   "end": 23.48,
+   "line": "l6"
+  },
+  {
+   "w": "No",
+   "start": 23.68,
+   "end": 24.763,
+   "line": "l7"
+  },
+  {
+   "w": "vendor.",
+   "start": 24.763,
+   "end": 25.067,
+   "line": "l7"
+  },
+  {
+   "w": "No",
+   "start": 25.486,
+   "end": 25.486,
+   "line": "l7"
+  },
+  {
+   "w": "screenshots.",
+   "start": 25.486,
+   "end": 25.809,
+   "line": "l7"
+  },
+  {
+   "w": "No",
+   "start": 26.265,
+   "end": 26.303,
+   "line": "l7"
+  },
+  {
+   "w": "wahala.",
+   "start": 26.303,
+   "end": 26.759,
+   "line": "l7"
+  },
+  {
+   "w": "Crypto",
+   "start": 26.95,
+   "end": 27.825,
+   "line": "l8"
+  },
+  {
+   "w": "to",
+   "start": 27.825,
+   "end": 28.039,
+   "line": "l8"
+  },
+  {
+   "w": "cash",
+   "start": 28.039,
+   "end": 28.379,
+   "line": "l8"
+  },
+  {
+   "w": "in",
+   "start": 28.379,
+   "end": 29.468,
+   "line": "l8"
+  },
+  {
+   "w": "seconds.",
+   "start": 29.468,
+   "end": 29.95,
+   "line": "l8"
+  }
+ ],
+ "captions": [
+  {
+   "text": "100 USDT to Naira.",
+   "start": 0.304,
+   "end": 2.774,
+   "words": [
+    {
+     "w": "100",
+     "start": 0.304,
+     "end": 0.989,
+     "line": "l1"
+    },
+    {
+     "w": "USDT",
+     "start": 0.989,
+     "end": 1.674,
+     "line": "l1"
+    },
+    {
+     "w": "to",
+     "start": 1.674,
+     "end": 2.017,
+     "line": "l1"
+    },
+    {
+     "w": "Naira.",
+     "start": 2.017,
+     "end": 2.774,
+     "line": "l1"
+    }
+   ]
+  },
+  {
+   "text": "Two apps.",
+   "start": 2.828,
+   "end": 3.441,
+   "words": [
+    {
+     "w": "Two",
+     "start": 2.828,
+     "end": 3.098,
+     "line": "l1"
+    },
+    {
+     "w": "apps.",
+     "start": 3.098,
+     "end": 3.441,
+     "line": "l1"
+    }
+   ]
+  },
+  {
+   "text": "One race.",
+   "start": 3.909,
+   "end": 4.288,
+   "words": [
+    {
+     "w": "One",
+     "start": 3.909,
+     "end": 3.981,
+     "line": "l1"
+    },
+    {
+     "w": "race.",
+     "start": 3.981,
+     "end": 4.288,
+     "line": "l1"
+    }
+   ]
+  },
+  {
+   "text": "On P2P,",
+   "start": 4.6,
+   "end": 6.404,
+   "words": [
+    {
+     "w": "On",
+     "start": 4.6,
+     "end": 5.743,
+     "line": "l2"
+    },
+    {
+     "w": "P2P,",
+     "start": 5.743,
+     "end": 6.404,
+     "line": "l2"
+    }
+   ]
+  },
+  {
+   "text": "you pick a vendor\u2026",
+   "start": 6.511,
+   "end": 7.779,
+   "words": [
+    {
+     "w": "you",
+     "start": 6.511,
+     "end": 6.564,
+     "line": "l2"
+    },
+    {
+     "w": "pick",
+     "start": 6.564,
+     "end": 6.85,
+     "line": "l2"
+    },
+    {
+     "w": "a",
+     "start": 6.85,
+     "end": 7.046,
+     "line": "l2"
+    },
+    {
+     "w": "vendor\u2026",
+     "start": 7.046,
+     "end": 7.779,
+     "line": "l2"
+    }
+   ]
+  },
+  {
+   "text": "then wait,",
+   "start": 7.779,
+   "end": 8.1,
+   "words": [
+    {
+     "w": "then",
+     "start": 7.779,
+     "end": 7.779,
+     "line": "l2"
+    },
+    {
+     "w": "wait,",
+     "start": 7.779,
+     "end": 8.1,
+     "line": "l2"
+    }
+   ]
+  },
+  {
+   "text": "and pray \ud83d\ude2e\u200d\ud83d\udca8",
+   "start": 8.725,
+   "end": 9.364,
+   "words": [
+    {
+     "w": "and",
+     "start": 8.725,
+     "end": 8.975,
+     "line": "l2"
+    },
+    {
+     "w": "pray",
+     "start": 8.975,
+     "end": 9.314,
+     "line": "l2"
+    },
+    {
+     "w": "\ud83d\ude2e\u200d\ud83d\udca8",
+     "start": 9.314,
+     "end": 9.364,
+     "line": "l2"
+    }
+   ]
+  },
+  {
+   "text": "Spenda converts your USDT",
+   "start": 9.95,
+   "end": 13.179,
+   "words": [
+    {
+     "w": "Spenda",
+     "start": 9.95,
+     "end": 10.777,
+     "line": "l3"
+    },
+    {
+     "w": "converts",
+     "start": 10.777,
+     "end": 11.328,
+     "line": "l3"
+    },
+    {
+     "w": "your",
+     "start": 11.328,
+     "end": 12.274,
+     "line": "l3"
+    },
+    {
+     "w": "USDT",
+     "start": 12.274,
+     "end": 13.179,
+     "line": "l3"
+    }
+   ]
+  },
+  {
+   "text": "to Naira,",
+   "start": 13.179,
+   "end": 13.908,
+   "words": [
+    {
+     "w": "to",
+     "start": 13.179,
+     "end": 13.416,
+     "line": "l3"
+    },
+    {
+     "w": "Naira,",
+     "start": 13.416,
+     "end": 13.908,
+     "line": "l3"
+    }
+   ]
+  },
+  {
+   "text": "straight to your bank.",
+   "start": 13.908,
+   "end": 14.873,
+   "words": [
+    {
+     "w": "straight",
+     "start": 13.908,
+     "end": 14.184,
+     "line": "l3"
+    },
+    {
+     "w": "to",
+     "start": 14.184,
+     "end": 14.42,
+     "line": "l3"
+    },
+    {
+     "w": "your",
+     "start": 14.42,
+     "end": 14.538,
+     "line": "l3"
+    },
+    {
+     "w": "bank.",
+     "start": 14.538,
+     "end": 14.873,
+     "line": "l3"
+    }
+   ]
+  },
+  {
+   "text": "Credit alert.",
+   "start": 15.55,
+   "end": 16.978,
+   "words": [
+    {
+     "w": "Credit",
+     "start": 15.55,
+     "end": 16.663,
+     "line": "l4"
+    },
+    {
+     "w": "alert.",
+     "start": 16.663,
+     "end": 16.978,
+     "line": "l4"
+    }
+   ]
+  },
+  {
+   "text": "In seconds.",
+   "start": 16.978,
+   "end": 17.683,
+   "words": [
+    {
+     "w": "In",
+     "start": 16.978,
+     "end": 17.312,
+     "line": "l4"
+    },
+    {
+     "w": "seconds.",
+     "start": 17.312,
+     "end": 17.683,
+     "line": "l4"
+    }
+   ]
+  },
+  {
+   "text": "And you're already spending it.",
+   "start": 18.0,
+   "end": 20.0,
+   "words": [
+    {
+     "w": "And",
+     "start": 18.0,
+     "end": 18.66,
+     "line": "l5"
+    },
+    {
+     "w": "you're",
+     "start": 18.66,
+     "end": 18.94,
+     "line": "l5"
+    },
+    {
+     "w": "already",
+     "start": 18.94,
+     "end": 19.18,
+     "line": "l5"
+    },
+    {
+     "w": "spending",
+     "start": 19.18,
+     "end": 19.6,
+     "line": "l5"
+    },
+    {
+     "w": "it.",
+     "start": 19.6,
+     "end": 20.0,
+     "line": "l5"
+    }
+   ]
+  },
+  {
+   "text": "Still waiting on P2P?",
+   "start": 21.4,
+   "end": 23.48,
+   "words": [
+    {
+     "w": "Still",
+     "start": 21.4,
+     "end": 22.36,
+     "line": "l6"
+    },
+    {
+     "w": "waiting",
+     "start": 22.36,
+     "end": 22.62,
+     "line": "l6"
+    },
+    {
+     "w": "on",
+     "start": 22.62,
+     "end": 22.88,
+     "line": "l6"
+    },
+    {
+     "w": "P2P?",
+     "start": 22.88,
+     "end": 23.48,
+     "line": "l6"
+    }
+   ]
+  },
+  {
+   "text": "No vendor.",
+   "start": 23.68,
+   "end": 25.067,
+   "words": [
+    {
+     "w": "No",
+     "start": 23.68,
+     "end": 24.763,
+     "line": "l7"
+    },
+    {
+     "w": "vendor.",
+     "start": 24.763,
+     "end": 25.067,
+     "line": "l7"
+    }
+   ]
+  },
+  {
+   "text": "No screenshots.",
+   "start": 25.486,
+   "end": 25.809,
+   "words": [
+    {
+     "w": "No",
+     "start": 25.486,
+     "end": 25.486,
+     "line": "l7"
+    },
+    {
+     "w": "screenshots.",
+     "start": 25.486,
+     "end": 25.809,
+     "line": "l7"
+    }
+   ]
+  },
+  {
+   "text": "No wahala.",
+   "start": 26.265,
+   "end": 26.759,
+   "words": [
+    {
+     "w": "No",
+     "start": 26.265,
+     "end": 26.303,
+     "line": "l7"
+    },
+    {
+     "w": "wahala.",
+     "start": 26.303,
+     "end": 26.759,
+     "line": "l7"
+    }
+   ]
+  },
+  {
+   "text": "Crypto to cash in seconds.",
+   "start": 26.95,
+   "end": 29.95,
+   "words": [
+    {
+     "w": "Crypto",
+     "start": 26.95,
+     "end": 27.825,
+     "line": "l8"
+    },
+    {
+     "w": "to",
+     "start": 27.825,
+     "end": 28.039,
+     "line": "l8"
+    },
+    {
+     "w": "cash",
+     "start": 28.039,
+     "end": 28.379,
+     "line": "l8"
+    },
+    {
+     "w": "in",
+     "start": 28.379,
+     "end": 29.468,
+     "line": "l8"
+    },
+    {
+     "w": "seconds.",
+     "start": 29.468,
+     "end": 29.95,
+     "line": "l8"
+    }
+   ]
+  }
+ ]
+}

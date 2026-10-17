@@ -18,7 +18,7 @@
   },
   {
    "id": "l3",
-   "at": 9.35,
+   "at": 9.95,
    "max": 15.05,
    "speak": "Spenda converts your U-S-D-T to Naira, straight to your bank.",
    "show": "Spenda converts your USDT to Naira, straight to your bank."
@@ -46,15 +46,15 @@
   },
   {
    "id": "l7",
-   "at": 23.9,
-   "max": 26.95,
+   "at": 23.68,
+   "max": 26.93,
    "speak": "No vendor. No screenshots. No wahala.",
    "show": "No vendor. No screenshots. No wahala."
   },
   {
    "id": "l8",
-   "at": 27.0,
-   "max": 29.75,
+   "at": 26.95,
+   "max": 29.7,
    "speak": "Crypto to cash, in seconds.",
    "show": "Crypto to cash in seconds."
   }

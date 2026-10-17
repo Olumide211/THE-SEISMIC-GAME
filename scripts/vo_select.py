@@ -192,8 +192,12 @@ def main():
             chunk.append(w)
             end_here = re.search(r'[.,?!…]$', w['w']) is not None
             if (end_here and len(chunk) >= 2) or len(chunk) >= 5 or k == len(line_words) - 1:
+                # never end a caption on a dangling function word; carry it into the next one
+                carry = []
+                while not end_here and k < len(line_words) - 1 and len(chunk) > 2 and re.sub(r'\W', '', chunk[-1]['w'].lower()) in {'to', 'your', 'a', 'the', 'of', 'in', 'and', 'on'}:
+                    carry.insert(0, chunk.pop())
                 captions.append({'text': ' '.join(c['w'] for c in chunk), 'start': chunk[0]['start'], 'end': chunk[-1]['end'], 'words': chunk})
-                chunk = []
+                chunk = carry
         placed.append({'line': line['id'], 'take': entry['take'], 'start': round(start, 3), 'end': round(start + len(clip) / SR, 3), 'speed': round(speed, 3)})
     # merge 1-word stragglers into the previous caption of the same line
     merged = []

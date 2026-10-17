@@ -2,236 +2,200 @@
  "words": [
   {
    "w": "100",
-   "start": 0.355,
-   "end": 1.045,
+   "start": 0.304,
+   "end": 0.989,
    "line": "l1"
   },
   {
    "w": "USDT",
-   "start": 1.045,
-   "end": 1.736,
+   "start": 0.989,
+   "end": 1.674,
    "line": "l1"
   },
   {
    "w": "to",
-   "start": 1.736,
-   "end": 2.082,
+   "start": 1.674,
+   "end": 2.017,
    "line": "l1"
   },
   {
    "w": "Naira.",
-   "start": 2.082,
-   "end": 2.845,
+   "start": 2.017,
+   "end": 2.774,
    "line": "l1"
   },
   {
    "w": "Two",
-   "start": 2.9,
-   "end": 3.173,
+   "start": 2.828,
+   "end": 3.098,
    "line": "l1"
   },
   {
    "w": "apps.",
-   "start": 3.173,
-   "end": 3.518,
+   "start": 3.098,
+   "end": 3.441,
    "line": "l1"
   },
   {
    "w": "One",
-   "start": 3.991,
-   "end": 4.064,
+   "start": 3.909,
+   "end": 3.981,
    "line": "l1"
   },
   {
    "w": "race.",
-   "start": 4.064,
-   "end": 4.373,
+   "start": 3.981,
+   "end": 4.288,
    "line": "l1"
   },
   {
    "w": "On",
    "start": 4.6,
-   "end": 5.273,
+   "end": 5.743,
    "line": "l2"
   },
   {
    "w": "P2P,",
-   "start": 5.273,
-   "end": 5.909,
+   "start": 5.743,
+   "end": 6.404,
    "line": "l2"
   },
   {
    "w": "you",
-   "start": 6.055,
-   "end": 6.073,
+   "start": 6.511,
+   "end": 6.564,
    "line": "l2"
   },
   {
    "w": "pick",
-   "start": 6.073,
-   "end": 6.345,
+   "start": 6.564,
+   "end": 6.85,
    "line": "l2"
   },
   {
    "w": "a",
-   "start": 6.345,
-   "end": 6.527,
+   "start": 6.85,
+   "end": 7.046,
    "line": "l2"
   },
   {
-   "w": "vendor,",
-   "start": 6.527,
-   "end": 6.818,
-   "line": "l2"
-  },
-  {
-   "w": "send",
-   "start": 7.436,
-   "end": 7.545,
-   "line": "l2"
-  },
-  {
-   "w": "proof,",
-   "start": 7.545,
-   "end": 7.927,
+   "w": "vendor\u2026",
+   "start": 7.046,
+   "end": 7.779,
    "line": "l2"
   },
   {
    "w": "then",
-   "start": 8.873,
-   "end": 8.945,
+   "start": 7.779,
+   "end": 7.779,
    "line": "l2"
   },
   {
-   "w": "wait\u2026",
-   "start": 8.945,
-   "end": 10.018,
+   "w": "wait,",
+   "start": 7.779,
+   "end": 8.1,
    "line": "l2"
   },
   {
    "w": "and",
-   "start": 10.018,
-   "end": 10.073,
+   "start": 8.725,
+   "end": 8.975,
    "line": "l2"
   },
   {
-   "w": "pray.",
-   "start": 10.073,
-   "end": 10.309,
+   "w": "pray",
+   "start": 8.975,
+   "end": 9.314,
    "line": "l2"
   },
   {
-   "w": "On",
-   "start": 9.4,
-   "end": 10.145,
+   "w": "\ud83d\ude2e\u200d\ud83d\udca8",
+   "start": 9.314,
+   "end": 9.364,
+   "line": "l2"
+  },
+  {
+   "w": "Spenda",
+   "start": 9.95,
+   "end": 10.777,
    "line": "l3"
   },
   {
-   "w": "Spenda,",
-   "start": 10.145,
-   "end": 10.709,
-   "line": "l3"
-  },
-  {
-   "w": "send",
-   "start": 11.455,
-   "end": 11.709,
+   "w": "converts",
+   "start": 10.777,
+   "end": 11.328,
    "line": "l3"
   },
   {
    "w": "your",
-   "start": 11.709,
-   "end": 11.891,
+   "start": 11.328,
+   "end": 12.274,
    "line": "l3"
   },
   {
-   "w": "USDT.",
-   "start": 11.891,
-   "end": 12.945,
-   "line": "l3"
-  },
-  {
-   "w": "It",
-   "start": 13.836,
-   "end": 14.055,
-   "line": "l3"
-  },
-  {
-   "w": "auto-converts",
-   "start": 14.055,
-   "end": 14.6,
+   "w": "USDT",
+   "start": 12.274,
+   "end": 13.179,
    "line": "l3"
   },
   {
    "w": "to",
-   "start": 14.6,
-   "end": 14.891,
+   "start": 13.179,
+   "end": 13.416,
    "line": "l3"
   },
   {
    "w": "Naira,",
-   "start": 14.891,
-   "end": 15.509,
-   "line": "l3"
-  },
-  {
-   "w": "and",
-   "start": 15.745,
-   "end": 16.0,
-   "line": "l3"
-  },
-  {
-   "w": "goes",
-   "start": 16.0,
-   "end": 16.182,
+   "start": 13.416,
+   "end": 13.908,
    "line": "l3"
   },
   {
    "w": "straight",
-   "start": 16.182,
-   "end": 16.436,
+   "start": 13.908,
+   "end": 14.184,
    "line": "l3"
   },
   {
    "w": "to",
-   "start": 16.436,
-   "end": 16.618,
+   "start": 14.184,
+   "end": 14.42,
    "line": "l3"
   },
   {
    "w": "your",
-   "start": 16.618,
-   "end": 16.745,
+   "start": 14.42,
+   "end": 14.538,
    "line": "l3"
   },
   {
    "w": "bank.",
-   "start": 16.745,
-   "end": 17.018,
+   "start": 14.538,
+   "end": 14.873,
    "line": "l3"
   },
   {
    "w": "Credit",
-   "start": 15.6,
-   "end": 16.691,
+   "start": 15.55,
+   "end": 16.663,
    "line": "l4"
   },
   {
    "w": "alert.",
-   "start": 16.691,
-   "end": 17.0,
+   "start": 16.663,
+   "end": 16.978,
    "line": "l4"
   },
   {
    "w": "In",
-   "start": 17.0,
-   "end": 17.327,
+   "start": 16.978,
+   "end": 17.312,
    "line": "l4"
   },
   {
    "w": "seconds.",
-   "start": 17.327,
-   "end": 17.691,
+   "start": 17.312,
+   "end": 17.683,
    "line": "l4"
   },
   {
@@ -290,143 +254,137 @@
   },
   {
    "w": "No",
-   "start": 24.1,
-   "end": 24.536,
+   "start": 23.68,
+   "end": 24.763,
    "line": "l7"
   },
   {
    "w": "vendor.",
-   "start": 24.536,
-   "end": 24.845,
+   "start": 24.763,
+   "end": 25.067,
    "line": "l7"
   },
   {
    "w": "No",
-   "start": 25.155,
-   "end": 25.245,
+   "start": 25.486,
+   "end": 25.486,
    "line": "l7"
   },
   {
    "w": "screenshots.",
-   "start": 25.245,
-   "end": 25.736,
+   "start": 25.486,
+   "end": 25.809,
    "line": "l7"
   },
   {
    "w": "No",
-   "start": 26.645,
-   "end": 26.845,
+   "start": 26.265,
+   "end": 26.303,
    "line": "l7"
   },
   {
    "w": "wahala.",
-   "start": 26.845,
-   "end": 27.191,
+   "start": 26.303,
+   "end": 26.759,
    "line": "l7"
   },
   {
-   "w": "Spenda.",
-   "start": 26.6,
-   "end": 27.564,
-   "line": "l8"
-  },
-  {
    "w": "Crypto",
-   "start": 27.927,
-   "end": 27.964,
+   "start": 26.95,
+   "end": 27.825,
    "line": "l8"
   },
   {
    "w": "to",
-   "start": 27.964,
-   "end": 28.436,
+   "start": 27.825,
+   "end": 28.039,
    "line": "l8"
   },
   {
    "w": "cash",
-   "start": 28.436,
-   "end": 28.855,
+   "start": 28.039,
+   "end": 28.379,
    "line": "l8"
   },
   {
    "w": "in",
-   "start": 28.855,
-   "end": 29.818,
+   "start": 28.379,
+   "end": 29.468,
    "line": "l8"
   },
   {
    "w": "seconds.",
-   "start": 29.818,
-   "end": 30.291,
+   "start": 29.468,
+   "end": 29.95,
    "line": "l8"
   }
  ],
  "captions": [
   {
    "text": "100 USDT to Naira.",
-   "start": 0.355,
-   "end": 2.845,
+   "start": 0.304,
+   "end": 2.774,
    "words": [
     {
      "w": "100",
-     "start": 0.355,
-     "end": 1.045,
+     "start": 0.304,
+     "end": 0.989,
      "line": "l1"
     },
     {
      "w": "USDT",
-     "start": 1.045,
-     "end": 1.736,
+     "start": 0.989,
+     "end": 1.674,
      "line": "l1"
     },
     {
      "w": "to",
-     "start": 1.736,
-     "end": 2.082,
+     "start": 1.674,
+     "end": 2.017,
      "line": "l1"
     },
     {
      "w": "Naira.",
-     "start": 2.082,
-     "end": 2.845,
+     "start": 2.017,
+     "end": 2.774,
      "line": "l1"
     }
    ]
   },
   {
    "text": "Two apps.",
-   "start": 2.9,
-   "end": 3.518,
+   "start": 2.828,
+   "end": 3.441,
    "words": [
     {
      "w": "Two",
-     "start": 2.9,
-     "end": 3.173,
+     "start": 2.828,
+     "end": 3.098,
      "line": "l1"
     },
     {
      "w": "apps.",
-     "start": 3.173,
-     "end": 3.518,
+     "start": 3.098,
+     "end": 3.441,
      "line": "l1"
     }
    ]
   },
   {
    "text": "One race.",
-   "start": 3.991,
-   "end": 4.373,
+   "start": 3.909,
+   "end": 4.288,
    "words": [
     {
      "w": "One",
-     "start": 3.991,
-     "end": 4.064,
+     "start": 3.909,
+     "end": 3.981,
      "line": "l1"
     },
     {
      "w": "race.",
-     "start": 4.064,
-     "end": 4.373,
+     "start": 3.981,
+     "end": 4.288,
      "line": "l1"
     }
    ]
@@ -434,269 +392,212 @@
   {
    "text": "On P2P,",
    "start": 4.6,
-   "end": 5.909,
+   "end": 6.404,
    "words": [
     {
      "w": "On",
      "start": 4.6,
-     "end": 5.273,
+     "end": 5.743,
      "line": "l2"
     },
     {
      "w": "P2P,",
-     "start": 5.273,
-     "end": 5.909,
+     "start": 5.743,
+     "end": 6.404,
      "line": "l2"
     }
    ]
   },
   {
-   "text": "you pick a vendor,",
-   "start": 6.055,
-   "end": 6.818,
+   "text": "you pick a vendor\u2026",
+   "start": 6.511,
+   "end": 7.779,
    "words": [
     {
      "w": "you",
-     "start": 6.055,
-     "end": 6.073,
+     "start": 6.511,
+     "end": 6.564,
      "line": "l2"
     },
     {
      "w": "pick",
-     "start": 6.073,
-     "end": 6.345,
+     "start": 6.564,
+     "end": 6.85,
      "line": "l2"
     },
     {
      "w": "a",
-     "start": 6.345,
-     "end": 6.527,
+     "start": 6.85,
+     "end": 7.046,
      "line": "l2"
     },
     {
-     "w": "vendor,",
-     "start": 6.527,
-     "end": 6.818,
+     "w": "vendor\u2026",
+     "start": 7.046,
+     "end": 7.779,
      "line": "l2"
     }
    ]
   },
   {
-   "text": "send proof,",
-   "start": 7.436,
-   "end": 7.927,
-   "words": [
-    {
-     "w": "send",
-     "start": 7.436,
-     "end": 7.545,
-     "line": "l2"
-    },
-    {
-     "w": "proof,",
-     "start": 7.545,
-     "end": 7.927,
-     "line": "l2"
-    }
-   ]
-  },
-  {
-   "text": "then wait\u2026",
-   "start": 8.873,
-   "end": 10.018,
+   "text": "then wait,",
+   "start": 7.779,
+   "end": 8.1,
    "words": [
     {
      "w": "then",
-     "start": 8.873,
-     "end": 8.945,
+     "start": 7.779,
+     "end": 7.779,
      "line": "l2"
     },
     {
-     "w": "wait\u2026",
-     "start": 8.945,
-     "end": 10.018,
+     "w": "wait,",
+     "start": 7.779,
+     "end": 8.1,
      "line": "l2"
     }
    ]
   },
   {
-   "text": "and pray.",
-   "start": 10.018,
-   "end": 10.309,
+   "text": "and pray \ud83d\ude2e\u200d\ud83d\udca8",
+   "start": 8.725,
+   "end": 9.364,
    "words": [
     {
      "w": "and",
-     "start": 10.018,
-     "end": 10.073,
+     "start": 8.725,
+     "end": 8.975,
      "line": "l2"
     },
     {
-     "w": "pray.",
-     "start": 10.073,
-     "end": 10.309,
+     "w": "pray",
+     "start": 8.975,
+     "end": 9.314,
+     "line": "l2"
+    },
+    {
+     "w": "\ud83d\ude2e\u200d\ud83d\udca8",
+     "start": 9.314,
+     "end": 9.364,
      "line": "l2"
     }
    ]
   },
   {
-   "text": "On Spenda,",
-   "start": 9.4,
-   "end": 10.709,
+   "text": "Spenda converts your USDT",
+   "start": 9.95,
+   "end": 13.179,
    "words": [
     {
-     "w": "On",
-     "start": 9.4,
-     "end": 10.145,
+     "w": "Spenda",
+     "start": 9.95,
+     "end": 10.777,
      "line": "l3"
     },
     {
-     "w": "Spenda,",
-     "start": 10.145,
-     "end": 10.709,
-     "line": "l3"
-    }
-   ]
-  },
-  {
-   "text": "send your USDT.",
-   "start": 11.455,
-   "end": 12.945,
-   "words": [
-    {
-     "w": "send",
-     "start": 11.455,
-     "end": 11.709,
+     "w": "converts",
+     "start": 10.777,
+     "end": 11.328,
      "line": "l3"
     },
     {
      "w": "your",
-     "start": 11.709,
-     "end": 11.891,
+     "start": 11.328,
+     "end": 12.274,
      "line": "l3"
     },
     {
-     "w": "USDT.",
-     "start": 11.891,
-     "end": 12.945,
+     "w": "USDT",
+     "start": 12.274,
+     "end": 13.179,
      "line": "l3"
     }
    ]
   },
   {
-   "text": "It auto-converts to Naira,",
-   "start": 13.836,
-   "end": 15.509,
+   "text": "to Naira,",
+   "start": 13.179,
+   "end": 13.908,
    "words": [
     {
-     "w": "It",
-     "start": 13.836,
-     "end": 14.055,
-     "line": "l3"
-    },
-    {
-     "w": "auto-converts",
-     "start": 14.055,
-     "end": 14.6,
-     "line": "l3"
-    },
-    {
      "w": "to",
-     "start": 14.6,
-     "end": 14.891,
+     "start": 13.179,
+     "end": 13.416,
      "line": "l3"
     },
     {
      "w": "Naira,",
-     "start": 14.891,
-     "end": 15.509,
+     "start": 13.416,
+     "end": 13.908,
      "line": "l3"
     }
    ]
   },
   {
-   "text": "and goes straight to your",
-   "start": 15.745,
-   "end": 16.745,
+   "text": "straight to your bank.",
+   "start": 13.908,
+   "end": 14.873,
    "words": [
     {
-     "w": "and",
-     "start": 15.745,
-     "end": 16.0,
-     "line": "l3"
-    },
-    {
-     "w": "goes",
-     "start": 16.0,
-     "end": 16.182,
-     "line": "l3"
-    },
-    {
      "w": "straight",
-     "start": 16.182,
-     "end": 16.436,
+     "start": 13.908,
+     "end": 14.184,
      "line": "l3"
     },
     {
      "w": "to",
-     "start": 16.436,
-     "end": 16.618,
+     "start": 14.184,
+     "end": 14.42,
      "line": "l3"
     },
     {
      "w": "your",
-     "start": 16.618,
-     "end": 16.745,
+     "start": 14.42,
+     "end": 14.538,
      "line": "l3"
-    }
-   ]
-  },
-  {
-   "text": "bank.",
-   "start": 16.745,
-   "end": 17.018,
-   "words": [
+    },
     {
      "w": "bank.",
-     "start": 16.745,
-     "end": 17.018,
+     "start": 14.538,
+     "end": 14.873,
      "line": "l3"
     }
    ]
   },
   {
    "text": "Credit alert.",
-   "start": 15.6,
-   "end": 17.0,
+   "start": 15.55,
+   "end": 16.978,
    "words": [
     {
      "w": "Credit",
-     "start": 15.6,
-     "end": 16.691,
+     "start": 15.55,
+     "end": 16.663,
      "line": "l4"
     },
     {
      "w": "alert.",
-     "start": 16.691,
-     "end": 17.0,
+     "start": 16.663,
+     "end": 16.978,
      "line": "l4"
     }
    ]
   },
   {
    "text": "In seconds.",
-   "start": 17.0,
-   "end": 17.691,
+   "start": 16.978,
+   "end": 17.683,
    "words": [
     {
      "w": "In",
-     "start": 17.0,
-     "end": 17.327,
+     "start": 16.978,
+     "end": 17.312,
      "line": "l4"
     },
     {
      "w": "seconds.",
-     "start": 17.327,
-     "end": 17.691,
+     "start": 17.312,
+     "end": 17.683,
      "line": "l4"
     }
    ]
@@ -771,107 +672,94 @@
   },
   {
    "text": "No vendor.",
-   "start": 24.1,
-   "end": 24.845,
+   "start": 23.68,
+   "end": 25.067,
    "words": [
     {
      "w": "No",
-     "start": 24.1,
-     "end": 24.536,
+     "start": 23.68,
+     "end": 24.763,
      "line": "l7"
     },
     {
      "w": "vendor.",
-     "start": 24.536,
-     "end": 24.845,
+     "start": 24.763,
+     "end": 25.067,
      "line": "l7"
     }
    ]
   },
   {
    "text": "No screenshots.",
-   "start": 25.155,
-   "end": 25.736,
+   "start": 25.486,
+   "end": 25.809,
    "words": [
     {
      "w": "No",
-     "start": 25.155,
-     "end": 25.245,
+     "start": 25.486,
+     "end": 25.486,
      "line": "l7"
     },
     {
      "w": "screenshots.",
-     "start": 25.245,
-     "end": 25.736,
+     "start": 25.486,
+     "end": 25.809,
      "line": "l7"
     }
    ]
   },
   {
    "text": "No wahala.",
-   "start": 26.645,
-   "end": 27.191,
+   "start": 26.265,
+   "end": 26.759,
    "words": [
     {
      "w": "No",
-     "start": 26.645,
-     "end": 26.845,
+     "start": 26.265,
+     "end": 26.303,
      "line": "l7"
     },
     {
      "w": "wahala.",
-     "start": 26.845,
-     "end": 27.191,
+     "start": 26.303,
+     "end": 26.759,
      "line": "l7"
     }
    ]
   },
   {
-   "text": "Spenda. Crypto to cash in",
-   "start": 26.6,
-   "end": 29.818,
+   "text": "Crypto to cash in seconds.",
+   "start": 26.95,
+   "end": 29.95,
    "words": [
     {
-     "w": "Spenda.",
-     "start": 26.6,
-     "end": 27.564,
-     "line": "l8"
-    },
-    {
      "w": "Crypto",
-     "start": 27.927,
-     "end": 27.964,
+     "start": 26.95,
+     "end": 27.825,
      "line": "l8"
     },
     {
      "w": "to",
-     "start": 27.964,
-     "end": 28.436,
+     "start": 27.825,
+     "end": 28.039,
      "line": "l8"
     },
     {
      "w": "cash",
-     "start": 28.436,
-     "end": 28.855,
+     "start": 28.039,
+     "end": 28.379,
      "line": "l8"
     },
     {
      "w": "in",
-     "start": 28.855,
-     "end": 29.818,
+     "start": 28.379,
+     "end": 29.468,
      "line": "l8"
-    }
-   ]
-  },
-  {
-   "text": "seconds.",
-   "start": 29.818,
-   "end": 30.291,
-   "words": [
+    },
     {
      "w": "seconds.",
-     "start": 29.818,
-     "end": 30.291,
+     "start": 29.468,
+     "end": 29.95,
      "line": "l8"
     }
    ]

@@ -17,7 +17,7 @@ const CLOTH_KEYS: CamKey[] = (cam0.keys as [number, V3, V3][]).map(([t, p, a]) =
 const KEYS: CamKey[] = [
   ...CLOTH_KEYS,
   // START: both phones, slow drift while the thumbs tap
-  [4.5, [-0.05, 0.28, 5.3], [0.0, 0.0, 0.0], -4, easeInOut],
+  [4.5, [0.0, 0.28, 6.3], [0.0, 0.0, 0.0], -4, easeInOut],
   // P2P PAIN: push into the left phone, Spenda falls out of focus
   [5.3, [-1.2, 0.42, 2.9], [P2P_X, 0.05, 0.0], -10, easeInOut],
   [8.95, [-1.0, 0.18, 2.2], [P2P_X, -0.05, 0.0], -13, (x) => x],
