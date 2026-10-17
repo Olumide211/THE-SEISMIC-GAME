@@ -1,0 +1,230 @@
+{
+  "takes": [
+    {
+      "line": "l1",
+      "take": "l1_1.wav",
+      "heard": "100 USDT to Naira. Two apps. One race.",
+      "score": 1.0,
+      "speech_s": 5.1,
+      "window_s": 3.3,
+      "fits": false,
+      "fillers": []
+    },
+    {
+      "line": "l1",
+      "take": "l1_2.wav",
+      "heard": "100 USDT to Naira. Two apps. One race.",
+      "score": 1.0,
+      "speech_s": 4.42,
+      "window_s": 3.3,
+      "fits": false,
+      "fillers": [],
+      "chosen": true
+    },
+    {
+      "line": "l2",
+      "take": "l2_1.wav",
+      "heard": "On P2P, you pick a vendor, send proof, then wait\u2026 and pray.",
+      "score": 1.0,
+      "speech_s": 9.66,
+      "window_s": 4.4,
+      "fits": false,
+      "fillers": []
+    },
+    {
+      "line": "l2",
+      "take": "l2_2.wav",
+      "heard": "On P2P, you pick a vendor, send proof, then wait\u2026 and pray.",
+      "score": 1.0,
+      "speech_s": 6.28,
+      "window_s": 4.4,
+      "fits": false,
+      "fillers": [],
+      "chosen": true
+    },
+    {
+      "line": "l3",
+      "take": "l3_1.wav",
+      "heard": "On Spenda, send your USDT. It auto-converts to Naira, and goes straight to your bank.",
+      "score": 0.903,
+      "speech_s": 8.38,
+      "window_s": 5.6,
+      "fits": false,
+      "fillers": [],
+      "chosen": true
+    },
+    {
+      "line": "l3",
+      "take": "l3_2.wav",
+      "heard": "On Spenda, send your USDT. It auto-converts to Naira, and goes straight to your bank.",
+      "score": 0.903,
+      "speech_s": 8.38,
+      "window_s": 5.6,
+      "fits": false,
+      "fillers": []
+    },
+    {
+      "line": "l4",
+      "take": "l4_1.wav",
+      "heard": "Credit alert. In seconds.",
+      "score": 1.0,
+      "speech_s": 2.64,
+      "window_s": 1.9,
+      "fits": false,
+      "fillers": []
+    },
+    {
+      "line": "l4",
+      "take": "l4_2.wav",
+      "heard": "Credit alert in seconds.",
+      "score": 1.0,
+      "speech_s": 2.3,
+      "window_s": 1.9,
+      "fits": false,
+      "fillers": [],
+      "chosen": true
+    },
+    {
+      "line": "l5",
+      "take": "l5_1.wav",
+      "heard": "And you're already spending it.",
+      "score": 1.0,
+      "speech_s": 3.04,
+      "window_s": 3.0,
+      "fits": false,
+      "fillers": []
+    },
+    {
+      "line": "l5",
+      "take": "l5_2.wav",
+      "heard": "And you're already spending it.",
+      "score": 1.0,
+      "speech_s": 2.0,
+      "window_s": 3.0,
+      "fits": true,
+      "fillers": [],
+      "chosen": true
+    },
+    {
+      "line": "l6",
+      "take": "l6_1.wav",
+      "heard": "Still waiting on P2P?",
+      "score": 1.0,
+      "speech_s": 2.08,
+      "window_s": 2.6,
+      "fits": true,
+      "fillers": [],
+      "chosen": true
+    },
+    {
+      "line": "l6",
+      "take": "l6_2.wav",
+      "heard": "Still waiting on P2P?",
+      "score": 1.0,
+      "speech_s": 1.78,
+      "window_s": 2.6,
+      "fits": true,
+      "fillers": []
+    },
+    {
+      "line": "l7",
+      "take": "l7_1.wav",
+      "heard": "No vendor. No screenshots. No wahala.",
+      "score": 1.0,
+      "speech_s": 3.4,
+      "window_s": 2.4,
+      "fits": false,
+      "fillers": [],
+      "chosen": true
+    },
+    {
+      "line": "l7",
+      "take": "l7_2.wav",
+      "heard": "No screen shots. No wahala.",
+      "score": 0.545,
+      "speech_s": 3.62,
+      "window_s": 2.4,
+      "fits": false,
+      "fillers": []
+    },
+    {
+      "line": "l8",
+      "take": "l8_1.wav",
+      "heard": "Spenda. Crypto to cash in seconds.",
+      "score": 1.0,
+      "speech_s": 4.06,
+      "window_s": 2.6,
+      "fits": false,
+      "fillers": [],
+      "chosen": true
+    },
+    {
+      "line": "l8",
+      "take": "l8_2.wav",
+      "heard": "Spenda. Crypto to cash in seconds.",
+      "score": 1.0,
+      "speech_s": 6.28,
+      "window_s": 2.6,
+      "fits": false,
+      "fillers": []
+    }
+  ],
+  "placed": [
+    {
+      "line": "l1",
+      "take": "l1_2.wav",
+      "start": 0.3,
+      "end": 4.54,
+      "speed": 1.1
+    },
+    {
+      "line": "l2",
+      "take": "l2_2.wav",
+      "start": 4.6,
+      "end": 10.379,
+      "speed": 1.1
+    },
+    {
+      "line": "l3",
+      "take": "l3_1.wav",
+      "start": 9.4,
+      "end": 17.186,
+      "speed": 1.1
+    },
+    {
+      "line": "l4",
+      "take": "l4_2.wav",
+      "start": 15.6,
+      "end": 17.867,
+      "speed": 1.1
+    },
+    {
+      "line": "l5",
+      "take": "l5_2.wav",
+      "start": 18.0,
+      "end": 20.18,
+      "speed": 1.0
+    },
+    {
+      "line": "l6",
+      "take": "l6_1.wav",
+      "start": 21.4,
+      "end": 23.66,
+      "speed": 1.0
+    },
+    {
+      "line": "l7",
+      "take": "l7_1.wav",
+      "start": 24.1,
+      "end": 27.354,
+      "speed": 1.1
+    },
+    {
+      "line": "l8",
+      "take": "l8_1.wav",
+      "start": 26.6,
+      "end": 30.458,
+      "speed": 1.1
+    }
+  ]
+}

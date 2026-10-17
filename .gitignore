@@ -14,3 +14,4 @@ out/frames-race/
 # voice recording and generated takes stay local (personal voice data)
 vo/*.wav
 vo/takes/
+public/race-mix.wav

@@ -80,7 +80,7 @@ export const SpendaRace: React.FC = () => {
       <Counter t={t} />
       <Captions t={t} />
       <Sting t={t} shift={4.75} tagline={null} fadeEnd={30.0} ui={1.35} />
-      <Audio src={staticFile('race-audio.wav')} />
+      <Audio src={staticFile('race-mix.wav')} />
     </AbsoluteFill>
   );
 };

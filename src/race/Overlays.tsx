@@ -3,29 +3,27 @@ import {AbsoluteFill} from 'remotion';
 import {clamp01, easeInOut, easeOut, expoOut, lerp, prog, smooth} from '../engine/kit';
 import {FONT} from '../ui/theme';
 
-/* Captions: 2-5 words, large white Inter semibold, centered, subtle drop shadow.
-   Placed in the lower third, clear of the phones in wide shots. */
-const CAPTIONS: [number, number, string][] = [
-  [0.25, 1.3, '$100 USDT → Naira.'],
-  [1.3, 2.45, 'Two apps. One race.'],
-  [5.5, 8.85, 'Waiting… and praying 😮‍💨'],
-  [15.75, 17.45, 'Money in your bank. Seconds.'],
-  [18.0, 20.9, 'Already spending it.'],
-  [21.5, 23.95, 'Still waiting?'],
-  [24.2, 25.65, 'No vendor. No screenshots. No wahala.'],
-  [25.7, 26.95, 'Spenda: crypto to cash in seconds.'],
-];
+import vo from './vo-words.json';
+
+/* Captions follow the voiceover: 2-5 word chunks timed from Whisper word timestamps
+   (real spelling), large white Inter semibold, centered, subtle drop shadow, lower third. */
+const CHUNKS = (vo.captions as {text: string; start: number; end: number}[]).map((c, i, all) => {
+  const next = all[i + 1];
+  const end = Math.min(c.end + 0.3, next ? next.start - 0.04 : c.end + 0.3);
+  return [c.start - 0.06, Math.max(end, c.start + 0.7), c.text] as [number, number, string];
+});
+const CAPTIONS: [number, number, string][] = CHUNKS;
 
 export const Captions: React.FC<{t: number}> = ({t}) => (
   <AbsoluteFill style={{pointerEvents: 'none'}}>
     {CAPTIONS.map(([a, b, text]) => {
       if (t < a - 0.05 || t > b + 0.05) return null;
-      const inK = easeOut(prog(t, a, a + 0.22));
-      const outK = smooth(prog(t, b - 0.18, b));
+      const inK = easeOut(prog(t, a, a + 0.14));
+      const outK = smooth(prog(t, b - 0.12, b));
       const o = inK * (1 - outK);
       return (
         <div
-          key={text}
+          key={`${a}-${text}`}
           style={{
             position: 'absolute',
             left: 70,

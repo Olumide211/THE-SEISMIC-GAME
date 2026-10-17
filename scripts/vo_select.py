@@ -146,7 +146,7 @@ def main():
         dur = len(clip) / SR
         speed = 1.0
         if dur > window:
-            speed = min(1.1, dur / window)
+            speed = min(1.12, dur / window)
             import subprocess
 
             raw = subprocess.run(
