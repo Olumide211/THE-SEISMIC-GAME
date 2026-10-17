@@ -1,0 +1,9 @@
+node_modules/
+# build outputs (regenerate: npm run textures / npm run cloth / npm run render)
+public/tex/
+public/cloth
+cloth/frames/
+out/frames/
+out/stills/
+out/test.png
+out/.tmp-*

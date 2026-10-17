@@ -1,0 +1,32 @@
+{
+  "name": "spenda-launch",
+  "private": true,
+  "version": "1.0.0",
+  "scripts": {
+    "studio": "remotion studio",
+    "textures": "node scripts/render-textures.mjs",
+    "cloth": "/tmp/claude-0/blendenv/bin/python cloth/cloth.py --samples 40 --start 1 --end 80 --pass main && /tmp/claude-0/blendenv/bin/python cloth/cloth.py --samples 40 --start 72 --end 88 --pass hold",
+    "frames": "remotion render src/index.ts SpendaLaunch out/frames --sequence --image-format=png --concurrency=1 --gl=swangle --timeout=900000",
+    "encode": "bash scripts/encode.sh",
+    "stills": "node scripts/stills.mjs"
+  },
+  "dependencies": {
+    "@fontsource/inter": "^5.3.0",
+    "@react-three/fiber": "^9.3.0",
+    "@remotion/bundler": "^4.0.536",
+    "@remotion/cli": "^4.0.536",
+    "@remotion/media-utils": "^4.0.536",
+    "@remotion/renderer": "^4.0.536",
+    "@remotion/three": "^4.0.536",
+    "postprocessing": "^6.37.8",
+    "react": "^19.1.1",
+    "react-dom": "^19.1.1",
+    "remotion": "^4.0.536",
+    "three": "^0.180.0"
+  },
+  "devDependencies": {
+    "@types/react": "^19.3.0",
+    "@types/three": "^0.186.0",
+    "typescript": "^7.0.2"
+  }
+}

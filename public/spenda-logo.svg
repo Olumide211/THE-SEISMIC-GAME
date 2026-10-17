@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 90 124" fill="#FFFFFF">
+  <!-- Spenda "S" mark: two ribbon leaves, offset on the diagonal -->
+  <path d="M30 34 A34 34 0 0 1 64 0 L83 0 Q90 0 90 7 L90 53 Q90 60 83 60 L37 60 Q30 60 30 53 Z"/>
+  <path d="M60 90 A34 34 0 0 1 26 124 L7 124 Q0 124 0 117 L0 71 Q0 64 7 64 L53 64 Q60 64 60 71 Z"/>
+</svg>
