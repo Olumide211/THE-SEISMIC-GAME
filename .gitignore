@@ -15,3 +15,5 @@ out/frames-race/
 vo/*.wav
 vo/takes/
 public/race-mix.wav
+out/frames-race-base/
+out/frames-race-cap/
